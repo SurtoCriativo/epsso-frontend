@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("/fonts/GT-Walsheim-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("/fonts/GT-Walsheim-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("/fonts/GT-Walsheim-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.input {
+  @apply w-full rounded-xl border border-gray-300 px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all;
+}
+
+body {
+  font-family: "GT Walsheim", sans-serif;
+}
+
+@theme {
+  /* Font Family */
+  --font-family-sans: "GT Walsheim", sans-serif;
+
+  /* CSS Variables for background/foreground */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* Brand Colors */
+  --color-brand-300: #7fbc53;
+  --color-brand-400: #087c33;
+  --color-brand-500: #099939;
+  --color-brand-700: #04652e;
+
+  /* Green Accents */
+  --color-green-accents-400: #008f32;
+  --color-green-accents-500: #007a2b;
+  --color-green-accents-600: #005b27;
+  --color-green-accents-800: #0c2900;
+  --color-green-accents-900: #001407;
+
+  /* Green Muted */
+  --color-green-muted-500: #495b50;
+
+  /* Green Soft */
+  --color-green-soft-100: #f8fdf7;
+  --color-green-soft-200: #f1fbf7;
+  --color-green-soft-300: #daf1e6;
+  --color-green-soft-400: #dee3e0;
+
+  /* Neutral Cool */
+  --color-neutral-cool-700: #dee3e0;
+
+  /* Neutral */
+  --color-neutral-500: #e0e0e0;
+  --color-neutral-700: #444d5a;
+
+  /* Solid Colors */
+  --color-solid-white: #ffffff;
+  --color-solid-black: #000000;
+
+  /* Red */
+  --color-red-500: #ff4b40;
+}
