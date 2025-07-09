@@ -33,7 +33,7 @@ export default function TeamVoicesSection() {
               >
                 {/* Ícone de aspas no topo direito */}
                 <img
-                  src="/purpose/icon-quotation-marks.svg"
+                  src="/about/icon-quotation-marks.svg"
                   alt="Aspas"
                   width={48}
                   height={32}

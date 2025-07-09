@@ -7,7 +7,7 @@ export default function PurposeSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-green-100 text-green-700 mb-4">
             <img
-              src="/purpose/message-square.svg" // Ajuste aqui se o caminho do ícone mudar
+              src="/about/message-square.svg" // Ajuste aqui se o caminho do ícone mudar
               alt="Ícone"
               width={16}
               height={16}
@@ -41,7 +41,7 @@ export default function PurposeSection() {
         <div className="relative w-full max-w-[540px] ml-auto">
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/purpose/child.svg"
+              src="/about/child.svg"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}

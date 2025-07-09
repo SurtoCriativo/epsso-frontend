@@ -1,22 +1,22 @@
+import HeroSection from "./_components/HeroSection/HeroSection";
+// import BlogSection from "./_components/BlogSection";
+import { BusinessSolutions } from "./_components/BusinessSolutions";
+import { PlayerSolution } from "./_components/PlayerSolution/PlayerSolution";
 import ContactForm from "../../components/ContactForm";
-import BlogSection from "./_components/BlogSection";
-import BusinessSolutions from "./_components/BusinessSolutions";
-import CompleteManagementSection from "./_components/CompleteManagementSection";
-import CourseSection from "./_components/CourseSection";
-import ErgonomicsSection from "./_components/ErgonomicsSection";
-import HeroSection from "./_components/HeroSection";
-import TestimonialsSection from "./_components/TestimonialSection";
+// import CourseSection from "./_components/CourseSection";
+// import ErgonomicsSection from "./_components/ErgonomicsSection";
+import Testimonials from "./_components/Testimonials/Testimonial";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <BusinessSolutions />
-      <CompleteManagementSection />
-      <ErgonomicsSection />
-      <CourseSection />
-      <TestimonialsSection />
-      <BlogSection />
+      <PlayerSolution />
+      {/* <ErgonomicsSection /> */}
+      {/* <CourseSection /> */}
+      <Testimonials />
+      {/* <BlogSection /> */}
       <ContactForm />
     </>
   );

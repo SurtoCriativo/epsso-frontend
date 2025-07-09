@@ -6,7 +6,7 @@ export default function ValuesSection() {
       {/* Imagem de topo */}
       <div className="w-full">
         <img
-          src="/purpose/value-peoples.svg"
+          src="/about/value-peoples.svg"
           alt="Equipe de trabalho"
           width={1920}
           height={320}

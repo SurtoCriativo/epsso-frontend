@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1A1A1A] text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1128px] mx-auto">
         {/* Grid alinhado lateralmente com espaçamento controlado */}
         <div className="flex flex-wrap justify-between items-start gap-y-10">
           {/* Coluna 1: Logo + Redes Sociais */}
@@ -47,6 +47,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Coluna 2: Institucional */}
           <div className="flex flex-col">
             <h4 className={headingStyle}>Institucional</h4>
             <ul className={listStyle}>
@@ -63,6 +64,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Coluna 3: Soluções */}
           <div className="flex flex-col">
             <h4 className={headingStyle}>Soluções</h4>
             <ul className={listStyle}>
@@ -79,6 +81,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Coluna 4: Suporte */}
           <div className="flex flex-col">
             <h4 className={headingStyle}>Suporte</h4>
             <ul className={listStyle}>
@@ -94,21 +97,14 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          <div className="">
-            <Link
-              to="#"
-              className={`${headingStyle} ${linkStyle} flex text-center gap-1`}
-            >
-              Blog
-            </Link>
-          </div>
         </div>
 
+        {/* Linha divisória */}
         <div className="mt-10">
-          <div className="border-t border-white/10 max-w-7xl mx-auto" />
+          <div className="border-t border-white/10 max-w-[1128px] mx-auto" />
         </div>
 
+        {/* Direitos autorais */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white/70 mt-6">
           <p>
             © {new Date().getFullYear()} EPSSO. Todos os direitos reservados.

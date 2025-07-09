@@ -8,7 +8,7 @@ export default function WorkWithUsSection() {
         {/* Imagem à esquerda */}
         <div className="relative w-full h-auto flex justify-center">
           <img
-            src="/purpose/group-people.svg"
+            src="/about/group-people.svg"
             alt="Equipe EPSSO"
             width={361}
             height={376}
@@ -26,7 +26,7 @@ export default function WorkWithUsSection() {
             }}
           >
             <img
-              src="/purpose/message-square.svg"
+              src="/about/message-square.svg"
               alt="Mensagem"
               width={16}
               height={16}

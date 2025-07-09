@@ -5,7 +5,7 @@ export default function WhoWeAreSection() {
         {/* Imagem à esquerda */}
         <div className="w-full md:w-[360px] order-2 md:order-1 flex-shrink-0">
           <img
-            src="/purpose/peoples.svg"
+            src="/about/peoples.svg"
             alt="Equipe EPSSO"
             width={360}
             height={360}

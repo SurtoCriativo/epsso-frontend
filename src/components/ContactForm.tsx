@@ -11,11 +11,13 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
+    watch,
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
     mode: "onBlur",
   });
+
+  const messageValue = watch("message") || "";
 
   const onSubmit = (data: ContactFormSchema) => {
     console.log(data);
@@ -23,22 +25,32 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-green-800 to-green-600 py-24">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-16">
+    <div className="py-24 px-4 md:px-0 bg-[linear-gradient(0deg,_#007A2B_0%,_#005B27_100%)]">
+      <div className="max-w-[1128px] mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-16">
         {/* Texto lateral */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-lg text-white"
+          className="max-w-lg text-white text-left w-full md:w-auto"
         >
-          <button className="bg-green-soft-300 text-green-accents-600 font-medium rounded-full px-3 py-2 mb-6 flex items-center gap-2 text-sm shadow">
-            FALE COM A EPSSO
+          <button
+            className="bg-green-soft-300 text-green-accents-600 rounded-full shadow mx-auto md:mx-0 flex items-center gap-2 w-[134px] h-[28px] px-3 text-[10px]"
+            style={{ fontWeight: 500, margin: 0 }}
+          >
+            <img
+              src="/about/message-square.svg"
+              alt="Mensagem"
+              className="w-3 h-3 text-green-600"
+              aria-hidden="true"
+            />
+            <span>FALE COM A EPSSO</span>
           </button>
-          <h2 className="text-4xl font-bold mb-4 leading-tight">
+
+          <h2 className="text-[32px] md:text-4xl mb-4 leading-tight mt-6">
             Pronto para cuidar da saúde e segurança da sua empresa?
           </h2>
-          <p className="text-white text-opacity-90 text-base leading-relaxed">
+          <p className="text-white text-opacity-90 text-[14px] leading-relaxed">
             Preencha o formulário e um dos nossos especialistas entrará em
             contato com você. Juntos, encontraremos a melhor solução para a sua
             empresa.
@@ -51,16 +63,16 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white text-gray-800 p-8 md:p-10 w-full max-w-xl rounded-2xl shadow-lg space-y-6"
+          className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] md:min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-y-auto"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-[16px]">
             <div>
-              <label className="block text-sm font-medium mb-1">Nome</label>
+              <label className="block text-sm font-medium mb-2">Nome</label>
               <input
                 type="text"
                 {...register("name")}
                 placeholder="Seu Nome"
-                className="input"
+                className="input w-full py-3 px-4 h-[48px]"
               />
               {errors.name && (
                 <span className="text-red-500 text-sm">
@@ -68,15 +80,16 @@ export default function ContactForm() {
                 </span>
               )}
             </div>
+
             <div>
-              <label className="block text-sm font-medium mb-1">
+              <label className="block text-sm font-medium mb-2">
                 Sobrenome
               </label>
               <input
                 type="text"
                 {...register("lastname")}
                 placeholder="Seu Sobrenome"
-                className="input"
+                className="input w-full py-3 px-4 h-[48px]"
               />
               {errors.lastname && (
                 <span className="text-red-500 text-sm">
@@ -86,12 +99,14 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">Telefone</label>
+              <label className="block text-sm font-medium mb-2">
+                Telefone (WhatsApp)
+              </label>
               <input
                 type="text"
                 {...register("phone")}
                 placeholder="(00) 00000-0000"
-                className="input"
+                className="input w-full py-3 px-4 h-[48px]"
                 maxLength={11}
               />
               {errors.phone && (
@@ -100,15 +115,16 @@ export default function ContactForm() {
                 </span>
               )}
             </div>
+
             <div>
-              <label className="block text-sm font-medium mb-1">
+              <label className="block text-sm font-medium mb-2">
                 E-mail corporativo
               </label>
               <input
                 type="email"
                 {...register("email")}
                 placeholder="exemplo@seuemail.com.br"
-                className="input"
+                className="input w-full py-3 px-4 h-[48px]"
               />
               {errors.email && (
                 <span className="text-red-500 text-sm">
@@ -117,29 +133,15 @@ export default function ContactForm() {
               )}
             </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-1">Empresa</label>
-              <input
-                type="text"
-                {...register("company")}
-                placeholder="Sua Empresa"
-                className="input"
-              />
-              {errors.company && (
-                <span className="text-red-500 text-sm">
-                  {errors.company.message}
-                </span>
-              )}
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium mb-2">
                 Site da empresa
               </label>
               <input
                 type="url"
                 {...register("website")}
                 placeholder="https://www.site.com.br"
-                className="input"
+                className="input w-full py-3 px-4 h-[48px]"
               />
               {errors.website && (
                 <span className="text-red-500 text-sm">
@@ -149,10 +151,13 @@ export default function ContactForm() {
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium mb-1">Cargo</label>
-              <select {...register("job_role")} className="input">
-                <option value="">Escolha uma opção</option>
-                <option value="rh">Recursos Humanos</option>
+              <label className="block text-sm font-medium mb-2">Setor</label>
+              <select
+                {...register("job_role")}
+                className="input w-full h-[48px]"
+              >
+                <option value="">Selecione</option>
+                <option value="rh">RH</option>
                 <option value="gestor">Gestor</option>
                 <option value="outro">Outro</option>
               </select>
@@ -164,16 +169,38 @@ export default function ContactForm() {
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium mb-1">Mensagem</label>
+              <label className="block text-sm font-medium mb-2">
+                Estou procurando soluções em:
+              </label>
+              <select
+                {...register("solutions")}
+                className="input w-full h-[48px]"
+              >
+                <option value="">Selecione</option>
+                <option value="seguranca">Segurança do Trabalho</option>
+                <option value="medicina">Medicina do Trabalho</option>
+                <option value="cursos">Cursos e Treinamentos</option>
+              </select>
+              {errors.solutions && (
+                <span className="text-red-500 text-sm">
+                  {errors.solutions.message}
+                </span>
+              )}
+            </div>
+
+            <div className="md:col-span-2 relative">
+              <label className="block text-sm font-medium mb-2">
+                Mensagem <span className="text-gray-500">(opcional)</span>
+              </label>
               <textarea
-                rows={4}
+                rows={5}
                 maxLength={120}
                 {...register("message")}
-                placeholder="Fale um pouco mais sobre seu desafio ou dúvida..."
-                className="input resize-none"
+                placeholder="Gostaria de nos informar mais algum detalhe?"
+                className="input resize-none w-full py-3 px-4 h-[121px]"
               />
-              <div className="text-right text-sm text-gray-500">
-                {getValues("message")?.length}/120
+              <div className="absolute bottom-2 right-4 text-right text-xs text-gray-400">
+                {messageValue.length}/120
               </div>
               {errors.message && (
                 <span className="text-red-500 text-sm">
@@ -181,18 +208,14 @@ export default function ContactForm() {
                 </span>
               )}
             </div>
-
-            <div className="md:col-span-2 flex justify-center pt-2">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                type="submit"
-                className="bg-green-700 text-white font-semibold rounded-full px-8 py-3 transition-colors hover:bg-green-800"
-              >
-                Solicitar contato
-              </motion.button>
-            </div>
           </div>
+
+          <button
+            type="submit"
+            className="bg-dark-green-300 hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition"
+          >
+            Solicitar Contato
+          </button>
         </motion.form>
       </div>
     </div>

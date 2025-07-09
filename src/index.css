@@ -24,8 +24,27 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/Lexend-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 500 900; /* faixa de peso suportada pela variável */
+  font-stretch: 75% 125%; /* faixa de largura */
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 .input {
-  @apply w-full rounded-xl border border-gray-300 px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all;
+  @apply w-full rounded-xl border border-gray-300 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all;
 }
 
 body {
@@ -43,6 +62,7 @@ body {
   /* Brand Colors */
   --color-brand-300: #7fbc53;
   --color-brand-400: #087c33;
+  --color-brand-450: #289900;
   --color-brand-500: #099939;
   --color-brand-700: #04652e;
 
@@ -62,14 +82,21 @@ body {
   --color-green-soft-300: #daf1e6;
   --color-green-soft-400: #dee3e0;
 
+  /* Custom Dark Green */
+  --color-dark-green: #034d22;
+  --color-dark-green-200: #00290e;
+  --color-dark-green-300: #005b27;
+
   /* Neutral Cool */
   --color-neutral-cool-700: #dee3e0;
 
   /* Neutral */
+  --color-neutral: #080b12;
   --color-neutral-500: #e0e0e0;
   --color-neutral-700: #444d5a;
 
   /* Solid Colors */
+  --color-neutral-light: #f7f9fb;
   --color-solid-white: #ffffff;
   --color-solid-black: #000000;
 
