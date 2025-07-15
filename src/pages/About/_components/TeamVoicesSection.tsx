@@ -9,29 +9,28 @@ export interface Testimonial {
 
 export default function TeamVoicesSection() {
   return (
-    <section className="w-full py-[120px]">
+    <section className="w-full bg-transparent">
+      {/* Container branco com sombra */}
       <div
         className="w-full"
         style={{
           borderRadius: "0px 0px 24px 24px",
           background: "var(--background-pure-white, #FFF)",
-          boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.04)",
+          boxShadow: "0px 16px 32px 8px rgba(0, 0, 0, 0.04)",
         }}
       >
-        <div className="max-w-[1128px] mx-auto px-4 text-center py-[120px]">
-          {/* Título */}
+        {/* Conteúdo interno com padding */}
+        <div className="max-w-[1128px] mx-auto text-center pt-[120px] pb-[120px]">
           <h2 className="text-brand-400 text-[24px] font-bold mb-12">
             Aqui, construímos juntos
           </h2>
 
-          {/* Grid de cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             {testimonials.map((item, index) => (
               <div
                 key={index}
                 className="w-[264px] p-8 bg-white border border-black/10 rounded-[16px] shadow-[0px_4px_8px_rgba(0,0,0,0.02),_0px_6px_12px_rgba(0,0,0,0.03)] text-left flex flex-col gap-4 self-start relative"
               >
-                {/* Ícone de aspas no topo direito */}
                 <img
                   src="/about/icon-quotation-marks.svg"
                   alt="Aspas"
@@ -39,10 +38,7 @@ export default function TeamVoicesSection() {
                   height={32}
                   className="absolute top-6 right-6"
                 />
-
-                {/* Avatar + Nome e Role */}
                 <div className="flex items-center gap-3">
-                  {/* Avatar dentro de fundo com radius */}
                   <div className="w-[32px] h-[32px] rounded-[8px] overflow-hidden">
                     <img
                       src={item.avatar}
@@ -52,8 +48,6 @@ export default function TeamVoicesSection() {
                       className="object-cover w-full h-full"
                     />
                   </div>
-
-                  {/* Nome + Role */}
                   <div className="w-[152px]">
                     <p className="text-black text-[16px] font-medium not-italic leading-tight mb-1">
                       {item.name}
@@ -63,8 +57,6 @@ export default function TeamVoicesSection() {
                     </p>
                   </div>
                 </div>
-
-                {/* Texto do depoimento */}
                 <p className="text-neutral-900 text-[16px] font-normal not-italic leading-relaxed">
                   {item.quote}
                 </p>

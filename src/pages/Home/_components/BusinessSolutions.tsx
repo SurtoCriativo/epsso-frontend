@@ -139,8 +139,8 @@ export const BusinessSolutions = () => {
   return (
     <section className="bg-white py-12 md:py-20">
       {/* Header */}
-      <div className="max-w-[1128px] mx-auto">
-        <div className="flex justify-between items-center">
+      <div className="max-w-[1128px] mx-auto px-4 md:px-0">
+        <div className="justify-between items-center hidden md:flex">
           <button
             onClick={handlePrev}
             className={`p-2 rounded-full transition-colors ${
@@ -167,10 +167,15 @@ export const BusinessSolutions = () => {
             <ArrowRightIcon className="w-6 h-6" />
           </button>
         </div>
+
+        {/* Mobile Título */}
+        <div className="md:hidden text-center mb-6">
+          <h2 className="text-2xl font-bold text-green-800">Nossas Soluções</h2>
+        </div>
       </div>
 
       {/* Tabs */}
-      <div className="w-full overflow-x-auto scrollbar-hide mt-10 mb-10 pb-4">
+      <div className="w-full overflow-x-auto scrollbar-hide mt-10 mb-10 pb-4 px-4 md:px-0">
         <div className="max-w-[1128px] mx-auto">
           <div className="h-[48px] flex space-x-3 md:space-x-4">
             {solutionsData.map((solution) => (
@@ -191,7 +196,7 @@ export const BusinessSolutions = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-[1128px] mx-auto">
+      <div className="max-w-[1128px] mx-auto px-4 md:px-0">
         {selectedSolution && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Image */}

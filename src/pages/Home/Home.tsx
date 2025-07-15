@@ -6,6 +6,7 @@ import ContactForm from "../../components/ContactForm";
 // import CourseSection from "./_components/CourseSection";
 // import ErgonomicsSection from "./_components/ErgonomicsSection";
 import Testimonials from "./_components/Testimonials/Testimonial";
+import ClientLogosCarousel from "./_components/ClientLogosCarousel/ClientLogosCarousel";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       {/* <ErgonomicsSection /> */}
       {/* <CourseSection /> */}
       <Testimonials />
-      {/* <BlogSection /> */}
+      {<ClientLogosCarousel />}
       <ContactForm />
     </>
   );

@@ -52,8 +52,8 @@ const TestimonialsDesktop: React.FC = () => {
   };
 
   return (
-    <div className="max-w-[1128px] mx-auto py-12">
-      <h2 className="text-2xl font-medium text-center mb-2 w-full">
+    <div className="max-w-[1128px] mx-auto pt-12">
+      <h2 className="text-2xl text-dark-green-100 font-medium text-center mb-2 w-full">
         Clientes que escolheram nossa qualidade e compromisso
       </h2>
       <p className="text-center mb-8 text-gray-500 w-full max-w-[960px] mx-auto">

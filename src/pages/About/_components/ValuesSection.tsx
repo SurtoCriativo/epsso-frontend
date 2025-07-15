@@ -3,14 +3,14 @@ import { ourValues } from "../../../contants/ourValues";
 export default function ValuesSection() {
   return (
     <section className="w-full">
-      {/* Imagem de topo */}
-      <div className="w-full">
+      {/* Imagem de topo responsiva com foco central no mobile */}
+      <div className="w-full overflow-hidden">
         <img
           src="/about/value-peoples.svg"
           alt="Equipe de trabalho"
           width={1920}
           height={320}
-          className="w-full h-auto object-cover"
+          className="w-full object-cover object-center h-[250px] md:h-auto"
         />
       </div>
 
