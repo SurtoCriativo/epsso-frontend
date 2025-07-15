@@ -20,12 +20,55 @@ export default function TeamVoicesSection() {
         }}
       >
         {/* Conteúdo interno com padding */}
-        <div className="max-w-[1128px] mx-auto text-center pt-[120px] pb-[120px]">
+        <div className="max-w-[1128px] mx-auto text-center pt-[80px] pb-[80px] md:pt-[120px] md:pb-[120px] px-4">
           <h2 className="text-brand-400 text-[24px] font-bold mb-12">
             Aqui, construímos juntos
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+          {/* Mobile: Carousel horizontal (cards com mesma largura do desktop) */}
+          <div className="lg:hidden flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 px-4">
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className="snap-start flex-shrink-0"
+                style={{ width: "264px" }}
+              >
+                <div className="w-full p-6 lg:p-8 bg-white border border-black/10 rounded-[16px] shadow-[0px_4px_8px_rgba(0,0,0,0.02),_0px_6px_12px_rgba(0,0,0,0.03)] text-left flex flex-col gap-4 relative">
+                  <img
+                    src="/about/icon-quotation-marks.svg"
+                    alt="Aspas"
+                    className="absolute top-6 right-6 w-8 h-5 lg:w-12 lg:h-8"
+                  />
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-[32px] h-[32px] rounded-[8px] overflow-hidden">
+                      <img
+                        src={item.avatar}
+                        alt={item.name}
+                        width={32}
+                        height={32}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="w-[152px]">
+                      <p className="text-black text-[16px] font-medium not-italic leading-tight mb-1">
+                        {item.name}
+                      </p>
+                      <p className="text-gray-400 text-[14px] font-normal not-italic leading-tight">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-neutral-900 text-[16px] font-normal not-italic leading-relaxed">
+                    {item.quote}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: Grid layout */}
+          <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
             {testimonials.map((item, index) => (
               <div
                 key={index}

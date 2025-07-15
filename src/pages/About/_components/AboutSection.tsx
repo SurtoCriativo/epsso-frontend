@@ -1,13 +1,13 @@
 export default function PurposeSection() {
   return (
-    <section className="w-full bg-white py-[120px]">
+    <section className="w-full bg-white py-[40px] md:py-[60px]">
       <div className="max-w-[1128px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Texto à esquerda */}
         <div className="text-left">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-green-100 text-green-700 mb-4">
             <img
-              src="/about/message-square.svg" // Ajuste aqui se o caminho do ícone mudar
+              src="/about/message-square.svg"
               alt="Ícone"
               width={16}
               height={16}

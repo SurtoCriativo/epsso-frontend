@@ -16,7 +16,7 @@ export default function ValuesSection() {
 
       {/* Bloco verde com gradiente + border radius */}
       <div
-        className="w-full py-[120px] text-white"
+        className="w-full w-full py-[80px] md:py-[120px] text-white"
         style={{
           borderRadius: "0px 0px 16px 16px",
           background:
@@ -33,19 +33,24 @@ export default function ValuesSection() {
           {/* Grid de valores */}
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-[100px] md:gap-y-[100px]">
             {ourValues.map((item, index) => (
-              <div key={index} className="flex flex-col space-y-4">
+              <div
+                key={index}
+                className={`flex flex-col space-y-4 ${
+                  index > 0 ? "mt-[40px]" : ""
+                } md:mt-0`}
+              >
                 {/* Ícone */}
                 <div className="w-[48px] h-[48px] p-[12px] bg-brand-300 rounded flex items-center justify-center">
                   {item.icon}
                 </div>
 
                 {/* Título */}
-                <h3 className="text-white text-[20px] font-medium w-[320px]">
+                <h3 className="text-white text-[20px] font-medium">
                   {item.title}
                 </h3>
 
                 {/* Texto */}
-                <p className="text-white text-[14px] font-normal not-italic leading-relaxed w-[320px]">
+                <p className="text-white text-[14px] font-normal not-italic leading-relaxed w-[328px] md:w-auto">
                   {item.description}
                 </p>
               </div>

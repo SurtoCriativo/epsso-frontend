@@ -1,9 +1,9 @@
 export default function WhoWeAreSection() {
   return (
-    <section className="w-full bg-white py-[120px]">
+    <section className="w-full bg-white py-[40px] md:py-[60px]">
       <div className="max-w-[1128px] mx-auto px-4 flex flex-col md:flex-row md:gap-x-[48px] md:items-start">
-        {/* Imagem à esquerda */}
-        <div className="w-full md:w-[360px] order-2 md:order-1 flex-shrink-0">
+        {/* Imagem à esquerda (visível só no desktop) */}
+        <div className="w-full md:w-[360px] order-2 md:order-1 flex-shrink-0 hidden md:block">
           <img
             src="/about/peoples.svg"
             alt="Equipe EPSSO"
