@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Services from "./pages/ServicesEpsso/Services";
+import TrabalheConoscoSection from "./pages/TrabalheConoscoSection/TrabalheConoscoSection";
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/seguranca-trabalho" element={<Services />} />
+          <Route
+            path="/trabalhe-conosco"
+            element={<TrabalheConoscoSection />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

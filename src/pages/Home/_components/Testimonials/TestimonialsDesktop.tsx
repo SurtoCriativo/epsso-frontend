@@ -86,7 +86,14 @@ const TestimonialsDesktop: React.FC = () => {
                   .map((item, idx) => (
                     <div
                       key={idx}
-                      className="w-[468px] h-[268px] p-8 border rounded-lg shadow flex flex-col"
+                      className="w-[468px] h-[268px] p-8 flex flex-col"
+                      style={{
+                        borderRadius: "16px",
+                        border: "1px solid rgba(0, 0, 0, 0.10)",
+                        background: "#FFF",
+                        boxShadow:
+                          "0px 4px 8px 0px rgba(0, 0, 0, 0.02), 0px 6px 12px 0px rgba(0, 0, 0, 0.03)",
+                      }}
                     >
                       <div className="flex items-center mb-4">
                         <img

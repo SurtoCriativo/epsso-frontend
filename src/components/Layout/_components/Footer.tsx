@@ -56,11 +56,9 @@ export default function Footer() {
                   Sobre a EPSSO
                 </Link>
               </li>
-              <li>
-                <Link to="#" className={linkStyle}>
-                  Trabalhe Conosco
-                </Link>
-              </li>
+              <Link to="/trabalhe-conosco" className={linkStyle}>
+                Trabalhe Conosco
+              </Link>
             </ul>
           </div>
 

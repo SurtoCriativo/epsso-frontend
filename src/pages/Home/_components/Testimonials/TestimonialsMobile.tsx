@@ -2,28 +2,28 @@ import React, { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    avatar: "/avatar1.png",
+    avatar: "about/avatar-1.svg",
     name: "Bruna Lacerda",
     company: "CBO Análises Laboratoriais",
     comment:
       "A EPSSO acaba sendo uma extensão da CBO na parte de segurança do trabalho.",
   },
   {
-    avatar: "/avatar2.png",
+    avatar: "about/avatar-2.svg",
     name: "Lécio Mauro Silva",
     company: "Promac Equipamentos",
     comment:
       "Temos o cuidado de contratar uma empresa que nos atendesse com perfeição, orientando da melhor forma sobre saúde e qualidade de vida dos colaboradores.",
   },
   {
-    avatar: "/avatar3.png",
+    avatar: "about/avatar-3.svg",
     name: "Juliana Costa",
     company: "Empresa XPTO",
     comment:
       "Estamos muito satisfeitos com o serviço e o atendimento recebido pela nossa equipe.",
   },
   {
-    avatar: "/avatar4.png",
+    avatar: "about/avatar-4.svg",
     name: "Carlos Souza",
     company: "Indústria ABC",
     comment:
@@ -33,7 +33,7 @@ const testimonials = [
 
 const TestimonialsMobile: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(testimonials.length / 1);
+  const totalPages = testimonials.length;
 
   const [touchStartX, setTouchStartX] = useState(0);
 
@@ -84,7 +84,14 @@ const TestimonialsMobile: React.FC = () => {
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="w-[328px] h-[260px] p-8 border rounded-lg shadow flex flex-col flex-shrink-0"
+              className="w-[328px] h-[260px] p-8 flex flex-col flex-shrink-0"
+              style={{
+                borderRadius: "16px",
+                border: "1px solid rgba(0, 0, 0, 0.10)",
+                background: "#FFF",
+                boxShadow:
+                  "0px 4px 8px 0px rgba(0, 0, 0, 0.02), 0px 6px 12px 0px rgba(0, 0, 0, 0.03)",
+              }}
             >
               <div className="flex items-center mb-4">
                 <img
