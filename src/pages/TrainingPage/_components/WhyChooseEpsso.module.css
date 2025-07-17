@@ -1,0 +1,10 @@
+/* Conteúdo para WhyChooseEpsso.module.css */
+
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollbar {
+  -ms-overflow-style: none; /* Para Internet Explorer e Edge */
+  scrollbar-width: none; /* Para Firefox */
+}

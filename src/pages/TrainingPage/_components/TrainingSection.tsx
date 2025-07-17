@@ -1,0 +1,259 @@
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Star } from "lucide-react";
+import {
+  type TrainingFormSchema,
+  trainingFormSchema,
+} from "../../../schemas/trainingFormSchema";
+
+const testimonials = [
+  {
+    name: "Juliana Martins",
+    date: "21/06/2025",
+    avatar: "/trainingpage/avatar-juliana.png",
+    quote:
+      "Os cursos da EPSSO são excelentes! O conteúdo é atualizado e a plataforma é muito fácil de usar. Eu recomendo bastante.",
+  },
+  {
+    name: "Carlos Henrique",
+    date: "03/04/2025",
+    avatar: "/trainingpage/avatar-carlos.png",
+    quote:
+      "Fizemos os treinamentos com a EPSSO e ficamos impressionados com a qualidade e a clareza do conteúdo. A equipe toda aprendeu muito!",
+  },
+];
+
+export default function TrainingSection() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm<TrainingFormSchema>({
+    resolver: zodResolver(trainingFormSchema),
+    mode: "onBlur",
+  });
+
+  const messageValue = watch("message") || "";
+
+  const onSubmit = (data: TrainingFormSchema) => {
+    console.log(data);
+    alert("Formulário enviado com sucesso!");
+  };
+
+  return (
+    <section className="w-full bg-[linear-gradient(0deg,#007A2B_0%,#005B27_100%)] py-20 px-4">
+      <div className="max-w-[1128px] mx-auto grid grid-cols-1 md:grid-cols-2 items-start">
+        {/* Depoimentos */}
+        <div className="text-white flex flex-col">
+          <h2 className="text-xl font-semibold mb-8 px-4 md:px-0">
+            Depoimentos
+          </h2>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="mb-10 px-4 md:px-0 max-w-[456px]">
+              <div className="flex items-center gap-4 mb-2">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium leading-tight">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-xs text-white/70 leading-tight">
+                    {testimonial.date}
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-[2px] mb-2">
+                {Array(5)
+                  .fill(0)
+                  .map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      className="fill-[#7FBC53] text-[#7FBC53]"
+                    />
+                  ))}
+              </div>
+              <p className="text-sm text-white/90 leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Formulário */}
+        <div className="flex flex-col">
+          <h2 className="text-white text-xl font-semibold mb-8 px-4 md:px-0 max-w-[456px]">
+            Pronto para treinar sua equipe?
+          </h2>
+          <motion.form
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-[16px]">
+              <div>
+                <label className="block text-sm font-medium mb-2">Nome</label>
+                <input
+                  type="text"
+                  {...register("name")}
+                  placeholder="Seu Nome"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm">{errors.name.message}</p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Sobrenome
+                </label>
+                <input
+                  type="text"
+                  {...register("lastname")}
+                  placeholder="Seu Sobrenome"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.lastname && (
+                  <p className="text-red-500 text-sm">
+                    {errors.lastname.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Telefone
+                </label>
+                <input
+                  type="text"
+                  {...register("phone")}
+                  placeholder="(00) 00000-0000"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm">{errors.phone.message}</p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  E-mail corporativo
+                </label>
+                <input
+                  type="email"
+                  {...register("email")}
+                  placeholder="exemplo@seuemail.com.br"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email.message}</p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Empresa
+                </label>
+                <input
+                  type="text"
+                  {...register("company")}
+                  placeholder="Sua Empresa"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.company && (
+                  <p className="text-red-500 text-sm">
+                    {errors.company.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Site da empresa
+                </label>
+                <input
+                  type="url"
+                  {...register("website")}
+                  placeholder="https://www.site.com.br"
+                  className="input w-full py-3 px-4 h-[48px]"
+                />
+                {errors.website && (
+                  <p className="text-red-500 text-sm">
+                    {errors.website.message}
+                  </p>
+                )}
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium mb-2">Setor</label>
+                <select
+                  {...register("job_role")}
+                  className="input w-full h-[48px]"
+                >
+                  <option value="">Selecione</option>
+                  <option value="rh">RH</option>
+                  <option value="gestor">Gestor</option>
+                  <option value="outro">Outro</option>
+                </select>
+                {errors.job_role && (
+                  <p className="text-red-500 text-sm">
+                    {errors.job_role.message}
+                  </p>
+                )}
+              </div>
+              {/* CAMPO ADICIONADO ABAIXO */}
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium mb-2">
+                  Solução
+                </label>
+                <select
+                  {...register("solutions")}
+                  className="input w-full h-[48px]"
+                >
+                  <option value="">Selecione</option>
+                  <option value="treinamentos">Treinamentos</option>
+                  <option value="plataforma">Plataforma</option>
+                  <option value="ambos">Ambos</option>
+                </select>
+                {errors.solutions && (
+                  <p className="text-red-500 text-sm">
+                    {errors.solutions.message}
+                  </p>
+                )}
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium mb-2">
+                  Mensagem <span className="text-gray-500">(opcional)</span>
+                </label>
+                <textarea
+                  rows={4}
+                  maxLength={120}
+                  {...register("message")}
+                  placeholder="Gostaria de nos informar mais algum detalhe?"
+                  className="input resize-none w-full py-3 px-4 h-[121px]"
+                />
+                <p className="text-right text-xs text-gray-500 mt-1">
+                  {messageValue.length}/120
+                </p>
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="bg-[#7FBC53] hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition"
+            >
+              Solicitar contato
+            </button>
+          </motion.form>
+        </div>
+      </div>
+    </section>
+  );
+}

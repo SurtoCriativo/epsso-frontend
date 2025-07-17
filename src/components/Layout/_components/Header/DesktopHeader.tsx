@@ -87,7 +87,7 @@ export default function DesktopHeader({
 
           <li>
             <a
-              href="#"
+              href="/cursos-e-treinamentos"
               className="transition-colors duration-200 hover:text-green-700"
             >
               Cursos e Treinamentos
@@ -105,7 +105,7 @@ export default function DesktopHeader({
 
           <li>
             <a
-              href="#"
+              href="/fale-conosco"
               className="transition-colors duration-200 hover:text-green-700"
             >
               Fale Conosco

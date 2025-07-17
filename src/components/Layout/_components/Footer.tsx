@@ -72,7 +72,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="#" className={linkStyle}>
+                <Link to="/cursos-e-treinamentos" className={linkStyle}>
                   Cursos e Treinamentos
                 </Link>
               </li>

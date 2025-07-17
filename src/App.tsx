@@ -4,6 +4,8 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Services from "./pages/ServicesEpsso/Services";
 import TrabalheConoscoSection from "./pages/TrabalheConoscoSection/TrabalheConoscoSection";
+import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import TrainingPage from "./pages/TrainingPage/TrainingPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             path="/trabalhe-conosco"
             element={<TrabalheConoscoSection />}
           />
+          <Route path="/fale-conosco" element={<ContactUsPage />} />
+          <Route path="/cursos-e-treinamentos" element={<TrainingPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
