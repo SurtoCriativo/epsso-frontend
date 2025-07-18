@@ -7,4 +7,11 @@ const getPosts = axios.create({
   },
 });
 
-export default getPosts;
+const getCategories = axios.create({
+  baseURL: "https://epsso.com.br/diretorio/wp-json/wp/v2/categories/",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export { getPosts, getCategories };

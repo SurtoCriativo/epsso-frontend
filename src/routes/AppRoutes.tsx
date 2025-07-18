@@ -15,6 +15,9 @@ const ContactUsPage = lazy(
 );
 const TrainingPage = lazy(() => import("../pages/TrainingPage/TrainingPage"));
 const BlogPage = lazy(() => import("../pages/Blog/BlogPage"));
+const PostDetails = lazy(
+  () => import("../pages/Blog/_components/PostDetails/PostDetails")
+);
 const OccupationalMedicine = lazy(
   () => import("../pages/OurSolutions/OccupationalMedicine")
 );
@@ -126,6 +129,14 @@ function AppRoutes() {
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <BlogPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/blog/:slug"
+          element={
+            <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
+              <PostDetails />
             </Suspense>
           }
         />
