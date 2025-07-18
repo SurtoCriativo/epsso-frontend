@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroSectionMobile() {
   const commonStyle = {
     fontFamily: "Lexend, sans-serif",
@@ -41,22 +43,24 @@ export default function HeroSectionMobile() {
 
         {/* Botão com espaçamento de 40px */}
         <div className="mt-10">
-          <button className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition">
-            Fale com a gente
-            <svg
-              className="ml-2 h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </button>
+          <Link to="/fale-conosco">
+            <button className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition">
+              Fale com a gente
+              <svg
+                className="ml-2 h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
 

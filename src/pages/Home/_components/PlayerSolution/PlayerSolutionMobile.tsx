@@ -1,26 +1,43 @@
 import React, { useState, useEffect, useRef } from "react";
-import { HandHeart, ShieldCheck, Layers, Cpu } from "lucide-react";
+import {
+  HandHeart,
+  ShieldCheck,
+  Layers,
+  Cpu,
+  type LucideProps,
+} from "lucide-react";
 
 declare global {
   interface Window {
-    YT: typeof YT;
     onYouTubeIframeAPIReady: () => void;
+    YT: {
+      Player: new (
+        elementId: string,
+        options: {
+          videoId: string;
+          events?: {
+            onReady?: (event: { target: YTPlayerProps }) => void;
+            // Você pode adicionar outros eventos se quiser
+          };
+        }
+      ) => YTPlayerProps;
+    };
   }
 }
 
-interface YTPlayer {
+interface YTPlayerProps {
   playVideo: () => void;
   pauseVideo: () => void;
   mute: () => void;
   unMute: () => void;
 }
 
-interface Feature {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+interface FeatureProps {
+  icon: React.ComponentType<LucideProps>;
   text: string;
 }
 
-const featuresData: Feature[] = [
+const featuresData: FeatureProps[] = [
   { icon: HandHeart, text: "Cuidado Humano em Cada Passo" },
   { icon: ShieldCheck, text: "Consultoria que Inspira Confiança" },
   { icon: Layers, text: "Soluções que se adaptam a você" },
@@ -30,7 +47,7 @@ const featuresData: Feature[] = [
 const PlayerSolutionMobile = () => {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const playerRef = useRef<YTPlayer | null>(null);
+  const playerRef = useRef<YTPlayerProps | null>(null);
   const videoContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -48,7 +65,7 @@ const PlayerSolutionMobile = () => {
             playerRef.current?.mute();
           },
         },
-      }) as YTPlayer;
+      }) as YTPlayerProps;
     };
   }, []);
 

@@ -61,7 +61,7 @@ export default function DesktopHeader({
         <ul className="flex items-center justify-end gap-8 text-[14px] font-medium text-neutral-900 tracking-[-0.028em]">
           <li>
             <a
-              href="/about"
+              href="/sobre-a-epsso"
               className="transition-colors duration-200 hover:text-green-700"
             >
               Sobre a EPSSO
@@ -76,7 +76,7 @@ export default function DesktopHeader({
             <button
               type="button"
               ref={buttonRef}
-              className="flex items-center gap-1 transition-colors duration-200 hover:text-green-700 focus:outline-none"
+              className="flex items-center gap-1 transition-colors duration-200 hover:text-green-700 focus:outline-none cursor-pointer"
               aria-haspopup="true"
               aria-expanded={isOpen}
               aria-controls="solutions-dropdown"
@@ -96,7 +96,7 @@ export default function DesktopHeader({
 
           <li>
             <a
-              href="#"
+              href="/blog"
               className="transition-colors duration-200 hover:text-green-700"
             >
               Blog
@@ -131,6 +131,7 @@ export default function DesktopHeader({
           left={dropdownPosition.left}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          onClose={() => setIsOpen(false)}
         />
       )}
     </div>

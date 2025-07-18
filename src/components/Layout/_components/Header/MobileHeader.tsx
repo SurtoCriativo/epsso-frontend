@@ -49,7 +49,7 @@ export default function MobileHeader() {
         >
           <ul className="flex flex-col p-4 gap-4 text-[14px] font-medium text-neutral-900">
             <li>
-              <a href="#" className="hover:text-green-700">
+              <a href="/sobre-a-epsso" className="hover:text-green-700">
                 Sobre a EPSSO
               </a>
             </li>
@@ -59,17 +59,17 @@ export default function MobileHeader() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-700">
+              <a href="/cursos-e-treinamentos" className="hover:text-green-700">
                 Cursos e Treinamentos
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-700">
+              <a href="/blog" className="hover:text-green-700">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-700">
+              <a href="/fale-conosco" className="hover:text-green-700">
                 Fale Conosco
               </a>
             </li>

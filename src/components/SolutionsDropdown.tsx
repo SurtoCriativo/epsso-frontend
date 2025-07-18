@@ -6,6 +6,7 @@ interface SolutionsDropdownProps {
   left: number;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  onClose: () => void;
 }
 
 export default function SolutionsDropdown({
@@ -13,6 +14,7 @@ export default function SolutionsDropdown({
   left,
   onMouseEnter,
   onMouseLeave,
+  onClose,
 }: SolutionsDropdownProps) {
   return (
     <div
@@ -20,13 +22,14 @@ export default function SolutionsDropdown({
       style={{ top: `${top}px`, left: `${left}px` }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClose}
     >
       <div className="grid grid-cols-2 gap-4">
         {solutionsOptions.map((item, index) => (
           <Link
-            to={item.url}
+            to={item.slug}
             key={index}
-            className="flex items-start gap-3 bg-[#ECFDF3] w-[17.75rem] h-[5.875rem] p-2 rounded-md hover:bg-[#d7f7e3] transition-colors"
+            className="flex items-start gap-3 bg-[#ECFDF3] w-[17.75rem] h-[5.875rem] p-2 rounded-md hover:bg-[#d7f7e3] transition-colors cursor-pointer"
           >
             <div className="w-8 h-8 bg-brand-300 rounded-[4px] flex items-center justify-center shrink-0">
               <img src={item.icon} alt="icon" width={14} height={14} />

@@ -152,7 +152,7 @@ const PlayerSolutionDesktop: React.FC = () => {
             ref={videoContainerRef}
             className="md:col-span-3 justify-self-end w-full md:w-[744px] h-auto md:h-[448px] aspect-video md:aspect-auto rounded-2xl overflow-hidden shadow-2xl relative"
           >
-            <div id="yt-player-desktop" className="w-full h-full"></div>
+            <div id="yt-player-desktop" className="w-full h-full" />
 
             {isMuted && (
               <button

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroSection() {
   return (
     <section
@@ -41,24 +43,26 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition"
-          >
-            Fale com a gente
-            <svg
-              aria-hidden="true"
-              className="ml-2 h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <Link to="/fale-conosco">
+            <button
+              type="button"
+              className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition cursor-pointer"
             >
-              <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+              Fale com a gente
+              <svg
+                aria-hidden="true"
+                className="ml-2 h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </Link>
         </div>
 
         {/* Wrapper da imagem */}

@@ -1,10 +1,18 @@
-import ContactHeroForm from "./_components/ContactHeroForm";
-import ContactUsForm from "./_components/ContactUsForm"; // Importa o componente ContactUsForm completo
+import { MessageSquare } from "lucide-react";
+import QuoteSection from "../../components/_shared/QuoteSection";
+import ContactUsForm from "./_components/ContactUsForm";
 
 export default function ContactUsPage() {
   return (
     <main className="">
-      <ContactHeroForm />
+      <QuoteSection>
+        <p className="text-dark-green-300 text-sm font-medium mb-2 flex items-center justify-center">
+          <MessageSquare className="w-4 h-4 mr-2" /> CONTATO
+        </p>
+        <h1 className="text-[40px] font-medium text-gray-800 leading-tight w-[358px] mx-auto">
+          Como nós podemos <br className="md:hidden" /> te ajudar hoje?
+        </h1>
+      </QuoteSection>
       <ContactUsForm />
     </main>
   );
