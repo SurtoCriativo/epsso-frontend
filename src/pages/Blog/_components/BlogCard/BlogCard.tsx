@@ -121,7 +121,7 @@ const BlogCardButton = ({
   className,
 }: BlogCardButtonProps) => {
   return (
-    <div className="px-4 pb-6 mt-auto">
+    <div className="pb-6 mt-auto">
       <button
         onClick={onClick}
         disabled={disabled}

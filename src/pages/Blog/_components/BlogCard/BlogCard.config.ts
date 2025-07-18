@@ -94,7 +94,7 @@ export const badgeVariants = {
 
 // Button variants
 export const buttonVariants = {
-  primary: "text-green-accents-600 underline  hover:text-brand-300",
+  primary: "text-green-accents-600 underline  hover:text-brand-400",
   secondary: "bg-gray-600 text-white hover:bg-gray-700",
   outline: "border border-teal-600 text-teal-600 hover:bg-teal-50",
 } as const;
