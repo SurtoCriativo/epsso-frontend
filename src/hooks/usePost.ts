@@ -1,19 +1,30 @@
-import { useQuery, type UseQueryResult } from "@tanstack/react-query";
-import api from "../services/api";
+import { useQuery } from "@tanstack/react-query";
 import type { PostProps } from "../types/post";
+import { getPosts } from "../services/api";
 
-export function usePosts(page: number): UseQueryResult<PostProps[], Error> {
-  return useQuery<PostProps[], Error>({
+interface UsePostsResult {
+  posts: PostProps[];
+  totalPages: number;
+}
+
+export function usePosts(page: number) {
+  return useQuery<UsePostsResult, Error>({
     queryKey: ["posts", page],
     queryFn: async () => {
-      const response = await api.get<PostProps[]>("/posts", {
-        params: { per_page: 6, page },
+      const response = await getPosts.get<PostProps[]>("/posts", {
+        params: {
+          per_page: 6,
+          page,
+          _embed: true,
+        },
       });
-      return response.data;
+
+      return {
+        posts: response.data,
+        totalPages: Number(response.headers["x-wp-totalpages"] ?? 1),
+      };
     },
-    // keepPreviousData: true, // keeps last page visible while loading next :contentReference[oaicite:3]{index=3}
-    staleTime: 1000 * 60 * 5, // cache each page for 5 minutes :contentReference[oaicite:4]{index=4}
-    retry: 1, // retry once on failure
-    // you can also add onError, onSuccess, etc. here
+    staleTime: 1000 * 60 * 5,
+    retry: 1,
   });
 }

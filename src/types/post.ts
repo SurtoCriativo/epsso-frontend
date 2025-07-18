@@ -1,11 +1,38 @@
 export interface PostProps {
   id: number;
-  date: string;
   slug: string;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-  content: { rendered: string };
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+    protected: boolean;
+  };
+  excerpt: {
+    rendered: string;
+    protected: boolean;
+  };
+  categories: number[];
   link: string;
   featured_media: number;
-  // add other fields if you need them…
+
+  // Add this 👇
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url: string;
+    }[];
+    author?: {
+      name: string;
+    }[];
+  };
+}
+
+export interface CategoryProps {
+  id: number;
+  name: string;
+  slug: string;
+  count: number;
+  link: string;
+  parent: number;
+  description: string;
 }
