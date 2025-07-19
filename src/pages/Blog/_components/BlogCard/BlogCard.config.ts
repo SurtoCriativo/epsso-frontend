@@ -100,7 +100,7 @@ export const buttonVariants = {
 } as const;
 
 // Type for the composed BlogCard component
-export interface BlogCardComposition {
+export interface BlogCardCompositionProps {
   Image: React.FC<BlogCardImageProps>;
   Badge: React.FC<BlogCardBadgeProps>;
   Title: React.FC<BlogCardTitleProps>;

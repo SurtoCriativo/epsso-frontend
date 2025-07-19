@@ -38,7 +38,7 @@ const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 // Tipagem
-interface Solution {
+interface SolutionProps {
   id: number;
   tabTitle: string;
   image: string;
@@ -46,7 +46,7 @@ interface Solution {
   contentDescription: string;
 }
 
-const solutionsData: Solution[] = [
+const solutionsData: SolutionProps[] = [
   {
     id: 1,
     tabTitle: "Segurança do Trabalho",

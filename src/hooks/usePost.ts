@@ -2,22 +2,38 @@ import { useQuery } from "@tanstack/react-query";
 import type { PostProps } from "../types/post";
 import { getPosts } from "../services/api";
 
-interface UsePostsResult {
+interface UsePostsResultProps {
   posts: PostProps[];
   totalPages: number;
 }
 
-export function usePosts(page: number) {
-  return useQuery<UsePostsResult, Error>({
-    queryKey: ["posts", page],
+interface UsePostsParamsProps {
+  page: number;
+  categoryId?: number | null;
+  perPage?: number;
+}
+
+export function usePosts({
+  page,
+  categoryId,
+  perPage = 6,
+}: UsePostsParamsProps) {
+  return useQuery<UsePostsResultProps, Error>({
+    queryKey: ["posts", page, categoryId, perPage],
     queryFn: async () => {
-      const response = await getPosts.get<PostProps[]>("/posts", {
-        params: {
-          per_page: 6,
-          page,
-          _embed: true,
-        },
-      });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const params: any = {
+        per_page: perPage,
+        page,
+        _embed: true,
+      };
+
+      // Add category filter to API request if selected
+      if (categoryId) {
+        params.categories = categoryId;
+      }
+
+      const response = await getPosts.get<PostProps[]>("/posts", { params });
 
       return {
         posts: response.data,

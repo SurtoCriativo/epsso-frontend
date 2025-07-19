@@ -1,6 +1,10 @@
-import type { Testimonial } from "../pages/About/_components/TeamVoicesSection";
-
-export const testimonials: Testimonial[] = [
+export interface TestimonialProps {
+  name: string;
+  role: string;
+  avatar: string;
+  quote: string;
+}
+export const testimonials: TestimonialProps[] = [
   {
     name: "Bruno Teixeira",
     role: "Consultor de Segurança do Trabalho",

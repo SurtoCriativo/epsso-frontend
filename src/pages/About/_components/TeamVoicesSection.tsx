@@ -1,12 +1,5 @@
 import { testimonials } from "../../../contants/testimonials";
 
-export interface Testimonial {
-  name: string;
-  role: string;
-  avatar: string;
-  quote: string;
-}
-
 export default function TeamVoicesSection() {
   return (
     <section className="w-full bg-transparent">

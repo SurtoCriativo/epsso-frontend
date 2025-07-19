@@ -1,6 +1,6 @@
 import type { Filter } from "../pages/TrainingPage/_components/CoursesSection";
 
-interface CourseCard {
+interface CourseCardProps {
   id: string;
   image: string;
   title: string;
@@ -8,7 +8,7 @@ interface CourseCard {
   category: Filter;
 }
 
-export const courseCards: CourseCard[] = [
+export const courseCards: CourseCardProps[] = [
   // NRs
   {
     id: "nr-17",

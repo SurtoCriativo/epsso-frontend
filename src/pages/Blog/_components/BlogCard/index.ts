@@ -1,6 +1,5 @@
 export { default as BlogCard } from "./BlogCard";
 
-// Export types and interfaces from config
 export type {
   BlogCardProps,
   BlogCardImageProps,
@@ -8,10 +7,9 @@ export type {
   BlogCardTitleProps,
   BlogCardContentProps,
   BlogCardButtonProps,
-  BlogCardComposition,
+  BlogCardCompositionProps,
 } from "./BlogCard.config";
 
-// Export style configuration and variants
 export {
   BlogCardStyles,
   badgeVariants,

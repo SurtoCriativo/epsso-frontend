@@ -1,6 +1,7 @@
 export interface PostProps {
   id: number;
   slug: string;
+  date?: string;
   title: {
     rendered: string;
   };
