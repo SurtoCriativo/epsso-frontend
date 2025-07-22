@@ -8,6 +8,7 @@ import { useStripHtml } from "../../../hooks/useStripHtml";
 import CategoryFilter from "./CategoryFilter/CategoryFilter";
 import BlogPostCard from "./BlogPostCard/BlogPostCard";
 import Pagination from "./Pagination/Pagination";
+import HighlightPosts from "./HighlightPosts/HighlightPosts";
 
 export default function Blog() {
   const [page, setPage] = useState(1);
@@ -52,19 +53,29 @@ export default function Blog() {
         onChange={handleCategoryChange}
       />
 
-      <h1 className="text-2xl font-medium text-brand-400 pb-9">
-        Últimas notícias
-      </h1>
+      {/* Main content area with grid layout */}
+      <div className="flex gap-8">
+        {/* Left side - Últimas notícias */}
+        <div className="flex-1">
+          <h1 className="text-2xl font-medium text-brand-400 pb-9">
+            Últimas notícias
+          </h1>
+          <div className="grid justify-start [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4">
+            {posts.map((post) => (
+              <BlogPostCard
+                key={post.id}
+                post={post}
+                categories={categories}
+                stripHtml={stripHtml}
+              />
+            ))}
+          </div>
+        </div>
 
-      <div className="grid justify-start [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4">
-        {posts.map((post) => (
-          <BlogPostCard
-            key={post.id}
-            post={post}
-            categories={categories}
-            stripHtml={stripHtml}
-          />
-        ))}
+        {/* Right side - Destaques */}
+        <div className="hidden lg:block">
+          <HighlightPosts />
+        </div>
       </div>
 
       <Pagination

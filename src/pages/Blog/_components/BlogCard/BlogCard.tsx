@@ -36,6 +36,11 @@ const BlogCardImage = ({ children, alt, className }: BlogCardImageProps) => {
           React.cloneElement(children as React.ReactElement<any>, {
             className: "w-full h-full object-cover",
             alt: alt || "Blog image",
+            loading: "eager",
+            fetchpriority: "high",
+            decoding: "async",
+            width: 264,
+            height: 160,
           })
         : children}
     </div>
@@ -76,7 +81,7 @@ const BlogCardTitle = ({
   return (
     <div className="px-4 py-6">
       <h3
-        className={`text-base font-bold leading-6 text-gray-900 ${
+        className={`text-base font-bold leading-6 text-neutral-700 ${
           className || ""
         }`}
         title={shouldTruncate ? title : undefined}

@@ -16,8 +16,6 @@ export interface PostProps {
   categories: number[];
   link: string;
   featured_media: number;
-
-  // Add this 👇
   _embedded?: {
     "wp:featuredmedia"?: {
       source_url: string;

@@ -22,7 +22,7 @@ export default function CategoryFilter({
         id="category"
         value={selectedCategoryId || 0}
         onChange={onChange}
-        className="px-2 py-1 text-[20px] underline cursor-pointer text-green-accents-400 font-medium leading-7 hover:bg-neutral-light rounded-4xl"
+        className="w-[218px] px-2 py-1 text-[20px] underline cursor-pointer text-green-accents-400 font-medium leading-7 hover:bg-neutral-light rounded-4xl"
       >
         <option value={0} className="text-neutral-800 bg-white">
           Todas as categorias
