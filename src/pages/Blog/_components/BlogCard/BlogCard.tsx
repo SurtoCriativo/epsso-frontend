@@ -75,7 +75,7 @@ const BlogCardTitle = ({
   const title = children?.toString() || "";
   const shouldTruncate = title.length >= maxLength;
   const displayTitle = shouldTruncate
-    ? `${title.substring(0, maxLength - 3)}...`
+    ? `${title.substring(0, maxLength - 4)}...`
     : title;
 
   return (
