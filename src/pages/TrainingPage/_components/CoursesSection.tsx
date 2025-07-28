@@ -50,7 +50,7 @@ export default function TrainingSection() {
         </div>
 
         {/* Cards */}
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
           {filteredCards.map((item) => {
             if ("heading" in item) {
               return (
@@ -68,7 +68,7 @@ export default function TrainingSection() {
             return (
               <div
                 key={item.id}
-                className="w-[326px] h-[322px] md:w-[207px] md:h-[288px] bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm"
+                className="w-[326px] h-[322px] md:w-[206px] md:h-[288px] bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm"
               >
                 <img
                   src={item.image}
