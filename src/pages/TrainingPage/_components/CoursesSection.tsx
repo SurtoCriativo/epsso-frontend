@@ -45,7 +45,7 @@ export default function TrainingSection() {
               className={`px-4 py-1 text-sm rounded-lg h-[32px] transition-all font-medium shadow-sm ${
                 selected === filter
                   ? "bg-green-800 text-white"
-                  : "bg-gray-100 text-neutral-darker hover:bg-green-200"
+                  : "bg-gray-100 text-neutral-700 hover:bg-green-200"
               }`}
               onClick={() => setSelected(filter)}
             >
@@ -73,12 +73,12 @@ export default function TrainingSection() {
             return (
               <div
                 key={item.id}
-                className="w-[326px] h-[322px] md:w-[206px] md:h-[302px] bg-white  border-zinc-200 rounded-xl  shadow-sm"
+                className="w-[326px] h-[322px] md:w-[206px] md:h-[302px] bg-white border border-zinc-200 rounded-xl shadow-sm overflow-hidden"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="object-cover w-full h-[160px] md:h-[128px]"
+                  className="object-cover w-full h-[160px] md:h-[128px] rounded-t-xl"
                 />
                 <div className="p-4 flex flex-col gap-2">
                   <h4 className="text-[16px] md:text-[14px] font-bold leading-snug text-black">
