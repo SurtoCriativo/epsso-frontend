@@ -98,7 +98,7 @@ const PlayerSolutionMobile = () => {
   };
 
   return (
-    <section className="bg-[linear-gradient(250deg,_#044019_0%,_#00290E_100%)] text-white py-16 md:py-24">
+    <section className="bg-[linear-gradient(250deg,_#044019_0%,_#00290E_100%)] text-white py-20 md:py-24">
       <div className="px-4 flex flex-col items-center">
         {/* Título Centralizado */}
         <h2 className="w-[328px] text-2xl text-center mb-12">
@@ -135,8 +135,8 @@ const PlayerSolutionMobile = () => {
                 className="relative flex items-center gap-4 h-11"
               >
                 <div
-                  className={`relative flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-                    isActive ? "bg-green-400" : "bg-brand-300/8"
+                  className={`relative flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 ${
+                    isActive ? "bg-brand-300" : "bg-brand-300/8"
                   }`}
                 >
                   <Icon
@@ -152,7 +152,7 @@ const PlayerSolutionMobile = () => {
                 </p>
                 {index < featuresData.length - 1 && (
                   <div
-                    className="absolute left-5 top-full h-16 w-0 border-l border-dotted border-brand-300/50"
+                    className="absolute left-5 top-12 h-14 w-0 border-l border-dotted border-brand-300/50"
                     aria-hidden="true"
                   />
                 )}

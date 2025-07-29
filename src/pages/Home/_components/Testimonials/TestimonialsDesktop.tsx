@@ -1,5 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+// Ícones personalizados
+const ArrowLeftIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="m12 19-7-7 7-7" />
+    <path d="M19 12H5" />
+  </svg>
+);
+
+const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+);
 
 const testimonials = [
   {
@@ -52,11 +88,11 @@ const TestimonialsDesktop: React.FC = () => {
   };
 
   return (
-    <div className="max-w-[1128px] mx-auto pt-12">
-      <h2 className="text-2xl text-dark-green-100 font-medium text-center mb-2 w-full">
+    <div className="max-w-[1128px] mx-auto pt-28">
+      <h2 className="text-3xl text-dark-green-100 font-medium text-center mb-4 w-full">
         Clientes que escolheram nossa qualidade e compromisso
       </h2>
-      <p className="text-center mb-8 text-gray-500 w-full max-w-[960px] mx-auto">
+      <p className="font-[16px] text-center mb-8 text-gray-500 w-full max-w-[960px] mx-auto">
         Empresas que priorizam a saúde e a conformidade contam com a EPSSO para
         proteger seus times e alcançar melhores resultados. Veja o que dizem
         nossos clientes.
@@ -66,9 +102,9 @@ const TestimonialsDesktop: React.FC = () => {
         <button
           onClick={prev}
           aria-label="Voltar"
-          className="w-12 h-12 p-4 bg-[#005B27] rounded-full flex items-center justify-center"
+          className="w-12 h-12 p-3 bg-green-800 rounded-full flex items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
         >
-          <FaChevronLeft className="text-white w-4 h-4" />
+          <ArrowLeftIcon className="text-white" />
         </button>
 
         <div className="overflow-hidden flex-1 mx-6">
@@ -114,7 +150,7 @@ const TestimonialsDesktop: React.FC = () => {
                           style={{ width: "48px", height: "32px" }}
                         />
                       </div>
-                      <p className="text-gray-700 italic mt-auto">
+                      <p className="text-[18px] text-gray-700 mt-6">
                         "{item.comment}"
                       </p>
                     </div>
@@ -129,9 +165,9 @@ const TestimonialsDesktop: React.FC = () => {
         <button
           onClick={next}
           aria-label="Avançar"
-          className="w-12 h-12 p-4 bg-[#005B27] rounded-full flex items-center justify-center"
+          className="w-12 h-12 p-3 bg-[#005B27] rounded-full flex items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
         >
-          <FaChevronRight className="text-white w-4 h-4" />
+          <ArrowRightIcon className="text-white" />
         </button>
       </div>
 

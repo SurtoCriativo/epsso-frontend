@@ -72,6 +72,7 @@ body {
   --color-green-accents-600: #005b27;
   --color-green-accents-800: #0c2900;
   --color-green-accents-900: #001407;
+  --color-green-accents-1000: #00290e;
 
   /* Green Muted */
   --color-green-muted-500: #495b50;
@@ -82,6 +83,9 @@ body {
   --color-green-soft-300: #daf1e6;
   --color-green-soft-400: #dee3e0;
 
+  /* Green Light  */
+  --color-green-light: #008f32;
+
   /* Custom Dark Green */
   --color-dark-green: #034d22;
   --color-dark-green-100: #034d22;
@@ -91,6 +95,9 @@ body {
   /* Neutral Cool */
   --color-neutral-cool-700: #dee3e0;
 
+  /* Neutral light  */
+  --color-neutral-light-200: #e5e7eb;
+
   /* Neutral */
   --color-neutral: #080b12;
   --color-neutral-500: #e0e0e0;
@@ -98,6 +105,7 @@ body {
 
   /* Solid Colors */
   --color-neutral-light: #f7f9fb;
+  --color-neutral-darker: #1b1f24;
   --color-solid-white: #ffffff;
   --color-solid-black: #000000;
 

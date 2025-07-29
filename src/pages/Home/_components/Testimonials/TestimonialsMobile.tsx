@@ -58,15 +58,20 @@ const TestimonialsMobile: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center px-4 py-8">
-      <h2 className="text-[24px] font-medium text-center w-full mb-4">
+    <div className="flex flex-col items-center px-4 pt-20">
+      <h2 className="w-[328px] text-[24px] font-medium text-dark-green-100 text-center mb-4">
         Clientes que escolheram nossa qualidade e compromisso
       </h2>
 
-      <p className="text-[16px] font-medium text-center text-gray-500 max-w-[328px] mx-auto mb-10">
-        Empresas que priorizam a saúde e a conformidade contam com a EPSSO para
-        proteger seus times e alcançar melhores resultados. Veja o que dizem
-        nossos clientes.
+      <p className="text-[16px] font-normal text-center text-gray-500 w-[328px] mx-auto mb-10 leading-relaxed">
+        Empresas que priorizam a saúde e a<br />
+        conformidade contam com a EPSSO para
+        <br />
+        proteger seus times e alcançar melhores
+        <br />
+        resultados.
+        <br />
+        Veja o que dizem nossos clientes.
       </p>
 
       <div

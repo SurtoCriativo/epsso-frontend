@@ -1,5 +1,24 @@
 import { Link } from "react-router-dom";
 
+// Ícone reutilizado
+const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+);
+
 export default function HeroSection() {
   return (
     <section
@@ -34,33 +53,29 @@ export default function HeroSection() {
           <div className="w-full max-w-[648px] h-[210px]">
             <h1
               className="font-lexend text-[64px] font-medium leading-[110%] tracking-[-0.03em]"
-              style={{ fontFamily: "Lexend, sans-serif" }} // caso não tenha configurado no Tailwind
+              style={{ fontFamily: "Lexend, sans-serif" }}
             >
-              Protegendo o <span className="text-[#899E3C]">hoje</span>,
+              Protegendo o <span className="text-brand-300">hoje</span>,
               <br />
               para construir um <br />
-              <span className="text-[#69BF64]">amanhã</span> melhor.
+              <span className="text-brand-300">amanhã</span> melhor.
             </h1>
           </div>
 
           <Link to="/fale-conosco">
             <button
               type="button"
-              className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer"
+              style={{
+                fontFamily: '"GT Walsheim", sans-serif',
+                fontSize: "14px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "20px",
+              }}
             >
               Fale com a gente
-              <svg
-                aria-hidden="true"
-                className="ml-2 h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRightIcon className="w-5 h-5" />
             </button>
           </Link>
         </div>

@@ -50,8 +50,8 @@ export default function LogosCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="overflow-hidden w-full pt-20 pb-30 bg-transparent">
-      <h2 className="text-center mb-[40px] text-[32px] text-dark-green-100 font-medium select-none">
+    <section className="overflow-hidden w-full pt-20 pb-24 bg-transparent">
+      <h2 className="text-center mb-[40px] text-[24px] md:text-[32px] text-dark-green-100 font-medium select-none">
         Temos a confiança de marcas líderes de mercado
       </h2>
 

@@ -107,7 +107,7 @@ const PlayerSolutionDesktop: React.FC = () => {
   return (
     <section className="bg-[linear-gradient(250deg,_#044019_0%,_#00290E_100%)] text-white py-16 md:py-24">
       <div className="container mx-auto max-w-[1128px]">
-        <h2 className="text-2xl lg:text-3xl font-semibold text-center mb-16">
+        <h2 className="text-2xl lg:text-3xl font-normal text-center mb-16">
           Soluções para cuidar da saúde e da segurança do seu negócio
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 lg:gap-16 items-center">
@@ -122,8 +122,8 @@ const PlayerSolutionDesktop: React.FC = () => {
                     className="relative flex items-center gap-4 w-[360px] h-11"
                   >
                     <div
-                      className={`relative flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-                        isActive ? "bg-green-400" : "bg-brand-300/8"
+                      className={`relative flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300 ${
+                        isActive ? "bg-brand-300" : "bg-brand-300/8"
                       }`}
                     >
                       <Icon
@@ -138,7 +138,7 @@ const PlayerSolutionDesktop: React.FC = () => {
                     </p>
                     {index < featuresData.length - 1 && (
                       <div
-                        className="absolute left-5 top-full h-16 w-0 border-l border-dotted border-brand-300/50"
+                        className="absolute left-5 top-13  h-12 w-0 border-l border-dotted border-brand-300/50"
                         aria-hidden="true"
                       />
                     )}

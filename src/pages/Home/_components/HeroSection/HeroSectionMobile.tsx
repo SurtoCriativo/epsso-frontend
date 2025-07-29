@@ -12,7 +12,7 @@ export default function HeroSectionMobile() {
 
   return (
     <section
-      className="relative w-full h-[668px] text-white px-4 py-10 overflow-hidden"
+      className="relative w-full h-[668px] text-white px-4 pt-20 overflow-hidden"
       style={{
         background:
           "linear-gradient(0deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.24) 100%), linear-gradient(180deg, var(--background-green-lighter, #007A2B) 0%, var(--background-green-light, #005B27) 100%)",
@@ -23,19 +23,12 @@ export default function HeroSectionMobile() {
         {/* Texto */}
         <h1 style={commonStyle}>
           Protegendo o{" "}
-          <span
-            className="font-extrabold"
-            style={{ ...commonStyle, color: "#899E3C" }}
-          >
+          <span className="font-extrabold text-brand-300" style={commonStyle}>
             hoje
           </span>
-          ,
-          <br />
+          ,<br />
           para construir um <br />
-          <span
-            className="font-extrabold"
-            style={{ ...commonStyle, color: "#69BF64" }}
-          >
+          <span className="font-extrabold text-brand-300" style={commonStyle}>
             amanhã
           </span>{" "}
           melhor.
@@ -44,20 +37,31 @@ export default function HeroSectionMobile() {
         {/* Botão com espaçamento de 40px */}
         <div className="mt-10">
           <Link to="/fale-conosco">
-            <button className="inline-flex items-center px-6 py-3 bg-white text-[#005B27] font-medium rounded-full hover:opacity-90 transition">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer"
+              style={{
+                fontFamily: '"GT Walsheim", sans-serif',
+                fontSize: "14px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "20px",
+              }}
+            >
               Fale com a gente
               <svg
-                className="ml-2 h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                viewBox="0 0 24 24"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
               </svg>
             </button>
           </Link>

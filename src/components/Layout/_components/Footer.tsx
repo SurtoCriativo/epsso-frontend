@@ -2,24 +2,26 @@ import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
-  const headingStyle = "font-medium text-[20px] leading-[160%] pt-2 pb-6";
+  const headingStyle =
+    "font-medium text-[20px] leading-[160%] pt-2 text-center md:text-left";
   const linkStyle = "hover:text-brand-300 transition-colors duration-200";
-  const listStyle = "text-base leading-[2.2] text-white font-normal";
+  const listStyle =
+    "text-base leading-[2.2] text-white font-normal text-center md:text-left mt-[24px]";
 
   return (
-    <footer className="bg-[#1A1A1A] text-white py-10 px-6">
+    <footer className="bg-neutral text-white py-10 px-6">
       <div className="max-w-[1128px] mx-auto">
-        {/* Grid alinhado lateralmente com espaçamento controlado */}
-        <div className="flex flex-wrap justify-between items-start gap-y-10">
+        {/* Grid responsivo: empilha no mobile */}
+        <div className="flex flex-col md:flex-row flex-wrap justify-between items-center md:items-start gap-y-12 md:gap-y-28 text-center md:text-left">
           {/* Coluna 1: Logo + Redes Sociais */}
-          <div className="flex flex-col justify-between h-full pt-2 min-w-[180px]">
+          <div className="flex flex-col items-center md:items-center justify-center pt-2 min-w-[128px]">
             <img
               src="/logo-epsso-footer.svg"
               alt="Logo EPSSO"
-              width={120}
-              height={48}
+              width={144}
+              height={44}
             />
-            <div className="flex gap-4 mt-14">
+            <div className="flex gap-4 mt-4 md:mt-4">
               <a
                 href="https://br.linkedin.com/company/epsso"
                 target="_blank"
@@ -48,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Coluna 2: Institucional */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center md:items-start">
             <h4 className={headingStyle}>Institucional</h4>
             <ul className={listStyle}>
               <li>
@@ -56,14 +58,16 @@ export default function Footer() {
                   Sobre a EPSSO
                 </Link>
               </li>
-              <Link to="/trabalhe-conosco" className={linkStyle}>
-                Trabalhe Conosco
-              </Link>
+              <li>
+                <Link to="/trabalhe-conosco" className={linkStyle}>
+                  Trabalhe Conosco
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Coluna 3: Soluções */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center md:items-start">
             <h4 className={headingStyle}>Soluções</h4>
             <ul className={listStyle}>
               <li>
@@ -80,7 +84,7 @@ export default function Footer() {
           </div>
 
           {/* Coluna 4: Suporte */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center md:items-start">
             <h4 className={headingStyle}>Suporte</h4>
             <ul className={listStyle}>
               <li>
@@ -99,11 +103,11 @@ export default function Footer() {
 
         {/* Linha divisória */}
         <div className="mt-10">
-          <div className="border-t border-white/10 max-w-[1128px] mx-auto" />
+          <div className="border-b border-[#374151]" />
         </div>
 
         {/* Direitos autorais */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white/70 mt-6">
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white mt-6 gap-4">
           <p>
             © {new Date().getFullYear()} EPSSO. Todos os direitos reservados.
           </p>

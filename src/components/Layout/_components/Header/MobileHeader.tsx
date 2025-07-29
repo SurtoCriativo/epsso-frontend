@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { User } from "lucide-react";
+import { UserRound } from "lucide-react";
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,10 +76,10 @@ export default function MobileHeader() {
             <li>
               <a
                 href="https://sistema.soc.com.br/WebSoc/"
-                className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-full flex items-center gap-2 justify-center"
+                className="bg-green-700 hover:bg-green-800 text-white rounded-full flex items-center justify-center gap-2 w-[178px] h-[48px] mx-auto cursor-pointer"
                 aria-label="Área do Cliente"
               >
-                <User size={16} /> Área do Cliente
+                <UserRound size={16} /> Área do Cliente
               </a>
             </li>
           </ul>

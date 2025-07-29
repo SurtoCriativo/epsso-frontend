@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown, UserRound } from "lucide-react";
 import { Link } from "react-router-dom";
 import SolutionsDropdown from "../../../SolutionsDropdown";
 
@@ -118,10 +118,10 @@ export default function DesktopHeader({
       <div className="ml-8">
         <Link
           to="https://sistema.soc.com.br/WebSoc/"
-          className="bg-dark-green-300 hover:bg-green-700 text-white px-5 py-2 rounded-full flex items-center gap-2 transition"
+          className="w-[178px] h-[48px] bg-dark-green-300 hover:bg-green-700 text-white rounded-full flex items-center justify-center gap-2 text-[14px] font-medium transition cursor-pointer"
           aria-label="Área do Cliente"
         >
-          <User size={16} /> Área do Cliente
+          <UserRound size={16} /> Área do Cliente
         </Link>
       </div>
 

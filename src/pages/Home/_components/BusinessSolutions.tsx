@@ -118,7 +118,7 @@ const solutionsData: SolutionProps[] = [
 
 export const BusinessSolutions = () => {
   const [selectedId, setSelectedId] = useState(1);
-  const [activeButton, setActiveButton] = useState<"prev" | "next">("prev");
+  const [activeButton, setActiveButton] = useState<"prev" | "next">("next");
 
   const handlePrev = () => {
     setSelectedId((prevId) =>
@@ -137,40 +137,42 @@ export const BusinessSolutions = () => {
   const selectedSolution = solutionsData.find((s) => s.id === selectedId);
 
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-white py-20 md:py-28">
       {/* Header */}
       <div className="max-w-[1128px] mx-auto px-4 md:px-0">
         <div className="justify-between items-center hidden md:flex">
           <button
             onClick={handlePrev}
-            className={`p-2 rounded-full transition-colors ${
+            className={`p-3 rounded-full transition-colors cursor-pointer ${
               activeButton === "prev"
                 ? "bg-green-800 text-white"
-                : "bg-gray-100 text-gray-700"
+                : "bg-neutral-light-200 text-white"
             }`}
           >
-            <ArrowLeftIcon className="w-6 h-6" />
+            <ArrowLeftIcon className="w-5 h-5" />
           </button>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800">
+          <h2 className="text-3xl md:text-4xl font-medium text-green-light">
             Nossas Soluções
           </h2>
 
           <button
             onClick={handleNext}
-            className={`p-2 rounded-full transition-colors ${
+            className={`p-3 rounded-full transition-colors cursor-pointer ${
               activeButton === "next"
                 ? "bg-green-800 text-white"
-                : "bg-green-800/20 text-white"
+                : "bg-neutral-light-200 text-white"
             }`}
           >
-            <ArrowRightIcon className="w-6 h-6" />
+            <ArrowRightIcon className="w-5 h-5" />
           </button>
         </div>
 
         {/* Mobile Título */}
         <div className="md:hidden text-center mb-6">
-          <h2 className="text-2xl font-bold text-green-800">Nossas Soluções</h2>
+          <h2 className="text-3xl font-medium text-green-light">
+            Nossas Soluções
+          </h2>
         </div>
       </div>
 
@@ -182,10 +184,10 @@ export const BusinessSolutions = () => {
               <button
                 key={solution.id}
                 onClick={() => setSelectedId(solution.id)}
-                className={`py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`w-[211px] py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedId === solution.id
-                    ? "bg-green-800 text-white shadow-md"
-                    : "bg-green-50 text-green-800 hover:bg-green-100"
+                    ? "bg-green-accents-1000 text-white shadow-md"
+                    : "bg-green-50 text-green-light hover:bg-green-100"
                 }`}
               >
                 {solution.tabTitle}
@@ -217,10 +219,13 @@ export const BusinessSolutions = () => {
                 {selectedSolution.contentDescription}
               </p>
               <div className="mt-4">
-                <button className="flex items-center justify-center gap-3 bg-green-accents-600 hover:bg-green-700 text-white font-medium text-[14px] w-full md:w-[309px] h-[48px] rounded-full hover:brightness-95 transition-colors shadow-md">
+                <a
+                  href="/servicos/seguranca-trabalho"
+                  className="cursor-pointer flex items-center justify-center gap-3 bg-green-accents-600 hover:bg-green-700 text-white font-medium text-[14px] w-full md:w-[309px] h-[48px] rounded-full hover:brightness-95 transition-colors shadow-md"
+                >
                   <span>Garanta a segurança da sua equipe</span>
                   <ArrowRightIcon className="w-5 h-5" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
