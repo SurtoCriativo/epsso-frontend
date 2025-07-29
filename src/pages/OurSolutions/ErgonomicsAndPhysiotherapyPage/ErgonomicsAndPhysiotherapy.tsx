@@ -1,4 +1,4 @@
-import QuoteSection from "../../components/_shared/QuoteSection";
+import QuoteSection from "../../../components/_shared/QuoteSection";
 import { ShieldCheck } from "lucide-react";
 
 export default function ErgonomicsAndPhysiotherapy() {

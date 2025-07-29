@@ -1,5 +1,5 @@
 import { ShieldCheck } from "lucide-react";
-import QuoteSection from "../../components/_shared/QuoteSection";
+import QuoteSection from "../../../components/_shared/QuoteSection";
 
 export default function OutsourcedManagement() {
   return (

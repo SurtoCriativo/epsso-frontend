@@ -6,7 +6,9 @@ import SpinnerLoader from "../components/SpinnerLoader";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const About = lazy(() => import("../pages/About/About"));
-const WorkSafety = lazy(() => import("../pages/OurSolutions/WorkSafety"));
+const WorkSafety = lazy(
+  () => import("../pages/OurSolutions/WorkSafetyPage/WorkSafety")
+);
 const TrabalheConoscoSection = lazy(
   () => import("../pages/WorkWithUsSection/WorkWithUsSection")
 );
@@ -19,18 +21,32 @@ const PostDetails = lazy(
   () => import("../pages/Blog/_components/PostDetails/PostDetails")
 );
 const OccupationalMedicine = lazy(
-  () => import("../pages/OurSolutions/OccupationalMedicine")
+  () =>
+    import(
+      "../pages/OurSolutions/OccupationalMedicinePage/OccupationalMedicine"
+    )
 );
 const ErgonomicsAndPhysiotherapy = lazy(
-  () => import("../pages/OurSolutions/ErgonomicsAndPhysiotherapy")
+  () =>
+    import(
+      "../pages/OurSolutions/ErgonomicsAndPhysiotherapyPage/ErgonomicsAndPhysiotherapy"
+    )
 );
 const OutsourcedManagement = lazy(
-  () => import("../pages/OurSolutions/OutsourcedManagement")
+  () =>
+    import(
+      "../pages/OurSolutions/OutsourcedManagementPage/OutsourcedManagement"
+    )
 );
 const InformationManagement = lazy(
-  () => import("../pages/OurSolutions/InformationManagement")
+  () =>
+    import(
+      "../pages/OurSolutions/InformationManagementPage/InformationManagement"
+    )
 );
-const LegalAdvice = lazy(() => import("../pages/OurSolutions/LegalAdvice"));
+const LegalAdvice = lazy(
+  () => import("../pages/OurSolutions/LegalAdvice/LegalAdvice")
+);
 
 function AppRoutes() {
   return (

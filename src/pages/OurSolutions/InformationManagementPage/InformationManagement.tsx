@@ -1,7 +1,7 @@
 import { ShieldCheck } from "lucide-react";
-import QuoteSection from "../../components/_shared/QuoteSection";
+import QuoteSection from "../../../components/_shared/QuoteSection";
 
-export default function LegalAdvice() {
+export default function InformationManagement() {
   return (
     <main className="min-h-screen">
       {/* Quote no topo */}
@@ -10,7 +10,7 @@ export default function LegalAdvice() {
           className="text-brand-400 font-medium max-w-[613px] h-[80px] mx-auto"
           style={{ fontSize: "32px", fontStyle: "normal" }}
         >
-          Assessoria Jurídica
+          Gestão de informações
         </p>
         <ShieldCheck />
       </QuoteSection>

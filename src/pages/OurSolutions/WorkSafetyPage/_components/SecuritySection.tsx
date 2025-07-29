@@ -18,19 +18,24 @@ export default function SecuritySection() {
 
           {/* Parágrafo 1 */}
           <p className="text-neutral-700 leading-relaxed mb-4 max-w-[600px]">
-            Cuidar da segurança no ambiente de trabalho é uma responsabilidade
-            individual de cada colaborador. Mas cabe a sua empresa fornecer
-            condições ideais à prática segura das atividades laborais, seguindo
-            à risca as normas regulamentadoras da legislação trabalhista.
+            Na EPSSO, acreditamos que a segurança no ambiente de trabalho é uma
+            responsabilidade compartilhada, mas o papel da sua empresa é
+            fundamental para criar condições ideais que promovam uma prática
+            segura e eficiente. Nosso compromisso é oferecer soluções
+            personalizadas, alinhadas às normas regulamentadoras, garantindo um
+            ambiente mais seguro para todos.
           </p>
 
           {/* Parágrafo 2 */}
           <p className="text-neutral-700 leading-relaxed max-w-[600px]">
-            Ciente da importância da prevenção na redução dos riscos de
-            acidentes de trabalho, a EPSSO oferece assessoria completa em
-            Segurança do Trabalho, desenvolvendo e implementando programas,
-            treinamentos e laudos técnicos que asseguram a integridade física do
-            seu colaborador.
+            Com uma equipe de especialistas capacitados, fornecemos assessoria
+            completa em Segurança do Trabalho, desenvolvendo programas sob
+            medida, treinamentos inovadores e laudos técnicos precisos. Nosso
+            objetivo é proteger a integridade física dos seus colaboradores e
+            promover uma cultura de prevenção e confiança, refletindo a
+            qualidade e o conhecimento técnico que você merece. Conte conosco
+            para transformar a segurança do seu ambiente de trabalho em uma
+            vantagem competitiva!
           </p>
         </div>
 
