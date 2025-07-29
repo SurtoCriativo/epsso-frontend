@@ -1,29 +1,27 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { BadgeCheck, RefreshCcw, Laptop, Users } from "lucide-react";
-// --- 1. IMPORTE O ARQUIVO CSS ---
 import styles from "./WhyChooseEpsso.module.css";
 
 export default function WhyChooseEpsso() {
   const cards = [
     {
-      icon: <BadgeCheck className="text-green-700 w-6 h-6 shrink-0" />,
+      icon: "/trainingpage/icones/certificacao.svg",
       title: "Certificação digital",
       description: "Certificados válidos e reconhecidos.",
     },
     {
-      icon: <RefreshCcw className="text-green-700 w-6 h-6 shrink-0" />,
+      icon: "/trainingpage/icones/atualizado.svg",
       title: "Conteúdo atualizado",
       description: "Cursos sempre de acordo com as normas.",
     },
     {
-      icon: <Laptop className="text-green-700 w-6 h-6 shrink-0" />,
+      icon: "/trainingpage/icones/acesso-24h.svg",
       title: "Acesso online 24h",
       description: "Estude a qualquer hora e lugar.",
     },
     {
-      icon: <Users className="text-green-700 w-6 h-6 shrink-0" />,
+      icon: "/trainingpage/icones/especialista-sst.svg",
       title: "Especialistas em SST",
       description: "Equipe com ampla experiência.",
     },
@@ -61,7 +59,6 @@ export default function WhyChooseEpsso() {
         {/* Mobile Carousel */}
         <div
           ref={scrollContainerRef}
-          // --- 2. APLIQUE A CLASSE IMPORTADA AQUI ---
           className={`flex gap-4 overflow-x-auto scroll-smooth pb-2 md:hidden ${styles.noScrollbar}`}
         >
           {cards.map((card, idx) => (
@@ -69,9 +66,11 @@ export default function WhyChooseEpsso() {
               key={idx}
               className="min-w-[280px] max-w-[280px] flex-shrink-0 border border-zinc-200 rounded-xl p-6 flex flex-col gap-3"
             >
-              {card.icon}
-              <h3 className="font-semibold text-zinc-900">{card.title}</h3>
-              <p className="text-sm text-zinc-600">{card.description}</p>
+              <img src={card.icon} alt={card.title} className="w-6 h-6" />
+              <h3 className="font-semibold text-neutral-darker">
+                {card.title}
+              </h3>
+              <p className="text-sm text-dark-green">{card.description}</p>
             </div>
           ))}
         </div>
@@ -97,9 +96,11 @@ export default function WhyChooseEpsso() {
               key={idx}
               className="border border-zinc-200 rounded-xl p-6 flex flex-col gap-3"
             >
-              {card.icon}
-              <h3 className="font-semibold text-zinc-900">{card.title}</h3>
-              <p className="text-sm text-zinc-600">{card.description}</p>
+              <img src={card.icon} alt={card.title} className="w-6 h-6" />
+              <h3 className="font-semibold text-neutral-darker">
+                {card.title}
+              </h3>
+              <p className="text-sm text-dark-green">{card.description}</p>
             </div>
           ))}
         </div>
