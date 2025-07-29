@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function SecuritySection() {
+export default function OutsourcedManagementSection() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -31,7 +31,7 @@ export default function SecuritySection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/public/security-img.svg"
+              src="/public/medicine-img.svg"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}
@@ -51,7 +51,7 @@ export default function SecuritySection() {
               mb-6
             "
           >
-            Segurança do trabalho
+            Gestão de Serviços Terceirizados
           </h2>
 
           <p
@@ -62,29 +62,38 @@ export default function SecuritySection() {
               mb-4 md:mb-6
             "
           >
-            Na EPSSO, acreditamos que a segurança no ambiente de trabalho é uma
-            responsabilidade compartilhada, mas o papel da sua empresa é
-            fundamental para criar condições ideais que promovam uma prática
-            segura e eficiente. Nosso compromisso é oferecer soluções
-            personalizadas, alinhadas às normas regulamentadoras, garantindo um
-            ambiente mais seguro para todos.
+            Contratar serviços de outsourcing e terceirização é uma estratégia
+            eficiente que reduz custos, garante conformidade legal e permite que
+            sua empresa concentre esforços no foco principal da empresa -
+            enquanto a segurança e medicina do trabalho ficam por conta da
+            EPSSO.
           </p>
 
           <p
             className="
               text-left text-base
               text-neutral-700 leading-relaxed
-              max-w-[600px]
+              mb-4 md:mb-6
             "
           >
-            Com uma equipe de especialistas capacitados, fornecemos assessoria
-            completa em Segurança do Trabalho, desenvolvendo programas sob
-            medida, treinamentos inovadores e laudos técnicos precisos. Nosso
-            objetivo é proteger a integridade física dos seus colaboradores e
-            promover uma cultura de prevenção e confiança, refletindo a
-            qualidade e o conhecimento técnico que você merece. Conte conosco
-            para transformar a segurança do seu ambiente de trabalho em uma
-            vantagem competitiva!
+            Nossa equipe é formada por médicos, enfermeiros, psicólogos,
+            fisioterapeutas, engenheiros e técnicos em segurança do trabalho que
+            garantem uma gestão especializada, promovendo ambientes mais
+            seguros, reduzindo riscos e garantindo o cumprimento das normas
+            regulamentadoras. Assim, sua empresa otimiza recursos, aumenta a
+            eficiência interna e promove o bem-estar dos colaboradores com uma
+            equipe experiente.
+          </p>
+
+          <p
+            className="
+              text-left text-base
+              text-neutral-700 leading-relaxed
+            "
+          >
+            Com vasta experiência no mercado, a EPSSO oferece soluções
+            personalizadas para selecionar, treinar e gerenciar o profissional
+            que a sua empresa precisa.
           </p>
         </div>
       </div>

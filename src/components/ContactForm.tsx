@@ -6,6 +6,64 @@ import {
   contactFormSchema,
 } from "../schemas/contactFormSchema";
 
+// Define the service options with IDs
+const serviceOptions = [
+  {
+    id: "seguranca-do-trabalho",
+    value: "seguranca-do-trabalho",
+    label: "Segurança do Trabalho",
+  },
+  {
+    id: "medicina-do-trabalho",
+    value: "medicina-do-trabalho",
+    label: "Medicina do Trabalho",
+  },
+  { id: "e-social", value: "esocial", label: "e-Social" },
+  { id: "ergonomia", value: "ergonomia", label: "Ergonomia" },
+  {
+    id: "servicos-in-company",
+    value: "servicos-in-company",
+    label: "Serviços In Company",
+  },
+  {
+    id: "assessoria-juridica",
+    value: "assessoria-juridica",
+    label: "Assessoria Jurídica",
+  },
+  {
+    id: "gestao-de-terceirizados",
+    value: "gestao-de-terceirizados",
+    label: "Gestão de Terceirizados",
+  },
+  { id: "outros", value: "outros", label: "Outros" },
+];
+
+const sectorOptions = [
+  {
+    value: "rh",
+    label: "RH",
+  },
+  {
+    value: "seguranca",
+    label: "Segurança",
+  },
+  { value: "financeiro", label: "Financeiro" },
+  { value: "manutencao", label: "Manutenção" },
+  {
+    value: "operacoes",
+    label: "Operações",
+  },
+  {
+    value: "juridico",
+    label: "Jurídico",
+  },
+  {
+    value: "compliance",
+    label: "Compliance",
+  },
+  { value: "outro", label: "Outro" },
+];
+
 export default function ContactForm() {
   const {
     register,
@@ -15,12 +73,22 @@ export default function ContactForm() {
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
     mode: "onBlur",
+    defaultValues: {
+      solutions: "",
+      name: "",
+      lastname: "",
+      phone: "",
+      email: "",
+      website: "",
+      job_role: "",
+      message: "",
+    },
   });
 
   const messageValue = watch("message") || "";
 
   const onSubmit = (data: ContactFormSchema) => {
-    console.log(data);
+    console.log("Form submitted:", data);
     alert("Formulário enviado com sucesso!");
   };
 
@@ -63,9 +131,10 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] md:min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-y-auto"
+          className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-y-auto"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-[16px]">
+            {/* Nome */}
             <div>
               <label className="block text-sm font-medium mb-2">Nome</label>
               <input
@@ -81,6 +150,7 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Sobrenome */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Sobrenome
@@ -98,6 +168,7 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Telefone */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Telefone (WhatsApp)
@@ -116,9 +187,10 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* E‑mail */}
             <div>
               <label className="block text-sm font-medium mb-2">
-                E-mail corporativo
+                E‑mail corporativo
               </label>
               <input
                 type="email"
@@ -133,6 +205,7 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Site */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium mb-2">
                 Site da empresa
@@ -150,16 +223,19 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Setor */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium mb-2">Setor</label>
               <select
                 {...register("job_role")}
-                className="input w-full h-[48px]"
+                className="input w-full h-[48px] px-4"
               >
                 <option value="">Selecione</option>
-                <option value="rh">RH</option>
-                <option value="gestor">Gestor</option>
-                <option value="outro">Outro</option>
+                {sectorOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
               {errors.job_role && (
                 <span className="text-red-500 text-sm">
@@ -168,18 +244,21 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Solutions (pre‑filled based on route) */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium mb-2">
                 Estou procurando soluções em:
               </label>
               <select
                 {...register("solutions")}
-                className="input w-full h-[48px]"
+                className="input w-full h-[48px] px-4"
               >
                 <option value="">Selecione</option>
-                <option value="seguranca">Segurança do Trabalho</option>
-                <option value="medicina">Medicina do Trabalho</option>
-                <option value="cursos">Cursos e Treinamentos</option>
+                {serviceOptions.map((option) => (
+                  <option key={option.id} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
               {errors.solutions && (
                 <span className="text-red-500 text-sm">
@@ -188,6 +267,7 @@ export default function ContactForm() {
               )}
             </div>
 
+            {/* Mensagem */}
             <div className="md:col-span-2 relative">
               <label className="block text-sm font-medium mb-2">
                 Mensagem <span className="text-gray-500">(opcional)</span>

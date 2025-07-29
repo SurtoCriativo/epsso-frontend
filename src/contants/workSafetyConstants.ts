@@ -1,4 +1,4 @@
-export const medicineAccordionsContent = [
+export const workSafetyConstants = [
   {
     heading: "Programa de Assessoria em Segurança do Trabalho",
     content:

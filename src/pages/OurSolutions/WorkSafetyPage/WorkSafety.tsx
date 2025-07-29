@@ -3,8 +3,8 @@ import QuoteSection from "../../../components/_shared/QuoteSection";
 import ContactForm from "../../../components/ContactForm";
 import { Accordion } from "../../../components/ui/Accordion";
 import { Tooltip } from "../../../components/ui/Tooltip/Tooltip";
-import { medicineAccordionsContent } from "../../../contants/medicineAccordions";
 import SecuritySection from "./_components/SecuritySection";
+import { workSafetyConstants } from "../../../contants/workSafetyConstants";
 
 type PositionProps = "top" | "bottom" | "left" | "right";
 
@@ -22,7 +22,7 @@ const interactivePoints: {
     left: "7.5%",
     text: "Laudo de Insalubridade (NR15) e Periculosidade (NR16)",
     position: "right",
-    accordionIndex: 1, // Maps to index 1 in medicineAccordionsContent
+    accordionIndex: 1, // Maps to index 1 in workSafetyConstants
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const interactivePoints: {
     left: "60%",
     text: "PPRA - Programa de Prevenção de Riscos Ambientais",
     position: "right",
-    accordionIndex: 3, // Maps to index 3 in medicineAccordionsContent
+    accordionIndex: 3, // Maps to index 3 in workSafetyConstants
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const interactivePoints: {
     left: "79%",
     text: "CIPA - Comissão Interna de Prevenção de Acidentes",
     position: "right",
-    accordionIndex: 5, // Maps to index 5 in medicineAccordionsContent
+    accordionIndex: 5, // Maps to index 5 in workSafetyConstants
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const interactivePoints: {
     left: "7.5%",
     text: "LTCAT - Laudo Técnico das Condições do Ambiente de Trabalho",
     position: "right",
-    accordionIndex: 6, // Maps to index 6 in medicineAccordionsContent
+    accordionIndex: 6, // Maps to index 6 in workSafetyConstants
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const interactivePoints: {
     left: "40.5%",
     text: "PCMAT - Programa de Condições e Meio Ambiente de Trabalho na Indústria da Construção",
     position: "right",
-    accordionIndex: 9, // Maps to index 9 in medicineAccordionsContent
+    accordionIndex: 9, // Maps to index 9 in workSafetyConstants
   },
 ];
 
@@ -129,7 +129,7 @@ export default function WorkSafety() {
               const updatedAccordionElement =
                 accordionRefs.current[point.accordionIndex!];
               if (updatedAccordionElement) {
-                const yOffset = -100;
+                const yOffset = -97;
                 const y =
                   updatedAccordionElement.getBoundingClientRect().top +
                   window.pageYOffset +
@@ -149,8 +149,25 @@ export default function WorkSafety() {
     [currentOpenAccordion]
   );
 
+  // Wrap the onToggle handler with useCallback to ensure it's stable
+  // and use useEffect to defer state updates
+  const handleAccordionToggle = useCallback(
+    (index: number, isOpen: boolean) => {
+      // Use setTimeout to defer the state update to the next tick
+      // This prevents the "Cannot update a component while rendering" error
+      setTimeout(() => {
+        if (isOpen) {
+          setCurrentOpenAccordion(index);
+        } else if (currentOpenAccordion === index) {
+          setCurrentOpenAccordion(null);
+        }
+      }, 0);
+    },
+    [currentOpenAccordion]
+  );
+
   return (
-    <main className="w-full mx-auto px-4">
+    <main className="px-0 w-full mx-auto">
       {/* Quote no topo */}
       <QuoteSection>
         <p className="text-brand-400 font-medium mx-auto w-[342px] sm:w-[467px] text-[20px] sm:text-[32px]">
@@ -163,7 +180,7 @@ export default function WorkSafety() {
       <SecuritySection />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
-        <h1 className="font-medium text-2xl text-green-accents-400 pb-[40px]">
+        <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça nossas soluções em Segurança do Trabalho:
         </h1>
 
@@ -200,7 +217,7 @@ export default function WorkSafety() {
       {/* Multiple Accordions */}
       <div className="w-full max-w-[1128px] pb-[80px] mx-auto px-4 sm:px-0">
         <div className="flex flex-col gap-6">
-          {medicineAccordionsContent.map((item, i) => (
+          {workSafetyConstants.map((item, i) => (
             <div
               key={i}
               ref={(el) => {
@@ -209,14 +226,7 @@ export default function WorkSafety() {
             >
               <Accordion
                 defaultOpen={false}
-                onToggle={(isOpen) => {
-                  // Track which accordion is open/closed
-                  if (isOpen) {
-                    setCurrentOpenAccordion(i);
-                  } else if (currentOpenAccordion === i) {
-                    setCurrentOpenAccordion(null);
-                  }
-                }}
+                onToggle={(isOpen) => handleAccordionToggle(i, isOpen)}
               >
                 {/* pass index+1 into the badge */}
                 <Accordion.Heading

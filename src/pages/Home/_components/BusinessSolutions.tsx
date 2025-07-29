@@ -118,20 +118,17 @@ const solutionsData: SolutionProps[] = [
 
 export const BusinessSolutions = () => {
   const [selectedId, setSelectedId] = useState(1);
-  const [activeButton, setActiveButton] = useState<"prev" | "next">("next");
 
   const handlePrev = () => {
-    setSelectedId((prevId) =>
-      prevId === 1 ? solutionsData.length : prevId - 1
-    );
-    setActiveButton("prev");
+    if (selectedId > 1) {
+      setSelectedId((prevId) => prevId - 1);
+    }
   };
 
   const handleNext = () => {
-    setSelectedId((prevId) =>
-      prevId === solutionsData.length ? 1 : prevId + 1
-    );
-    setActiveButton("next");
+    if (selectedId < solutionsData.length) {
+      setSelectedId((prevId) => prevId + 1);
+    }
   };
 
   const selectedSolution = solutionsData.find((s) => s.id === selectedId);
@@ -143,10 +140,11 @@ export const BusinessSolutions = () => {
         <div className="justify-between items-center hidden md:flex">
           <button
             onClick={handlePrev}
-            className={`p-3 rounded-full transition-colors cursor-pointer ${
-              activeButton === "prev"
-                ? "bg-green-800 text-white"
-                : "bg-neutral-light-200 text-white"
+            disabled={selectedId === 1}
+            className={`p-3 rounded-full transition-colors ${
+              selectedId === 1
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-green-800 text-white cursor-pointer hover:bg-green-700"
             }`}
           >
             <ArrowLeftIcon className="w-5 h-5" />
@@ -158,10 +156,11 @@ export const BusinessSolutions = () => {
 
           <button
             onClick={handleNext}
-            className={`p-3 rounded-full transition-colors cursor-pointer ${
-              activeButton === "next"
-                ? "bg-green-800 text-white"
-                : "bg-neutral-light-200 text-white"
+            disabled={selectedId === solutionsData.length}
+            className={`p-3 rounded-full transition-colors ${
+              selectedId === solutionsData.length
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-green-800 text-white cursor-pointer hover:bg-green-700"
             }`}
           >
             <ArrowRightIcon className="w-5 h-5" />
@@ -184,7 +183,7 @@ export const BusinessSolutions = () => {
               <button
                 key={solution.id}
                 onClick={() => setSelectedId(solution.id)}
-                className={`w-[211px] py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`cursor-pointer text-[14px] w-[211px] py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-normal transition-all duration-300 ${
                   selectedId === solution.id
                     ? "bg-green-accents-1000 text-white shadow-md"
                     : "bg-green-50 text-green-light hover:bg-green-100"

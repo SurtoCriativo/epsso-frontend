@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function SecuritySection() {
+export default function ErgonomySection() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -31,7 +31,7 @@ export default function SecuritySection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/public/security-img.svg"
+              src="/public/medicine-img.svg"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}
@@ -51,7 +51,7 @@ export default function SecuritySection() {
               mb-6
             "
           >
-            Segurança do trabalho
+            Ergonomia e Qualidade de Vida
           </h2>
 
           <p
@@ -62,29 +62,27 @@ export default function SecuritySection() {
               mb-4 md:mb-6
             "
           >
-            Na EPSSO, acreditamos que a segurança no ambiente de trabalho é uma
-            responsabilidade compartilhada, mas o papel da sua empresa é
-            fundamental para criar condições ideais que promovam uma prática
-            segura e eficiente. Nosso compromisso é oferecer soluções
-            personalizadas, alinhadas às normas regulamentadoras, garantindo um
-            ambiente mais seguro para todos.
+            A qualidade de vida e o bem-estar dos seus colaboradores são
+            essenciais para um ambiente de trabalho saudável, produtivo e
+            sustentável. Por isso, destacamos a ergonomia e a qualidade de vida
+            como aspectos cruciais na esfera profissional. Contando com um
+            departamento exclusivo de Fisioterapia do Trabalho, nosso time de
+            profissionais desenvolve programas de prevenção, proteção e promoção
+            da saúde, focados em melhorar as condições ergonômicas e prevenir
+            doenças relacionadas ao esforço físico, postura e estresse.
           </p>
 
           <p
             className="
               text-left text-base
               text-neutral-700 leading-relaxed
-              max-w-[600px]
             "
           >
-            Com uma equipe de especialistas capacitados, fornecemos assessoria
-            completa em Segurança do Trabalho, desenvolvendo programas sob
-            medida, treinamentos inovadores e laudos técnicos precisos. Nosso
-            objetivo é proteger a integridade física dos seus colaboradores e
-            promover uma cultura de prevenção e confiança, refletindo a
-            qualidade e o conhecimento técnico que você merece. Conte conosco
-            para transformar a segurança do seu ambiente de trabalho em uma
-            vantagem competitiva!
+            Com avaliações ergonômicas, orientações de postura, treinamentos e
+            atividades, buscamos aumentar o bem-estar físico e mental dos
+            funcionários, promovendo uma cultura de cuidado contínuo. Confie na
+            EPSSO para criar um espaço de trabalho mais saudável, confortável e
+            preparado para os desafios do mercado.
           </p>
         </div>
       </div>

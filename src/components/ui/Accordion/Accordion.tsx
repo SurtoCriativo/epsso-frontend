@@ -155,7 +155,7 @@ const AccordionContent: React.FC<AccordionContentProps> = ({
 }) => {
   const { isOpen } = useAccordionContext();
   const contentClasses = `
-    flex px-14 flex-col items-start gap-4 self-stretch overflow-hidden text-[16px] text-neutral-700
+    flex px-14 flex-col items-start gap-4 self-stretch overflow-hidden text-[14px] md:text-[16px] text-neutral-700
     group-hover:text-white
     ${className || ""}
   `.trim();

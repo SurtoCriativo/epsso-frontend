@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function SecuritySection() {
+export default function MedicineSection() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}
@@ -31,7 +31,7 @@ export default function SecuritySection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/public/security-img.svg"
+              src="/public/medicine-img.svg"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}
@@ -51,7 +51,7 @@ export default function SecuritySection() {
               mb-6
             "
           >
-            Segurança do trabalho
+            Medicina do Trabalho
           </h2>
 
           <p
@@ -62,29 +62,35 @@ export default function SecuritySection() {
               mb-4 md:mb-6
             "
           >
-            Na EPSSO, acreditamos que a segurança no ambiente de trabalho é uma
-            responsabilidade compartilhada, mas o papel da sua empresa é
-            fundamental para criar condições ideais que promovam uma prática
-            segura e eficiente. Nosso compromisso é oferecer soluções
-            personalizadas, alinhadas às normas regulamentadoras, garantindo um
-            ambiente mais seguro para todos.
+            A saúde dos seus colaboradores é fundamental para o bem estar da
+            equipe e também para o sucesso do seu negócio. Na EPSSO, nosso
+            objetivo é oferecer soluções de Medicina do Trabalho que atendam às
+            necessidades específicas da sua empresa, sempre seguindo as normas
+            regulamentadoras.
           </p>
 
           <p
             className="
               text-left text-base
               text-neutral-700 leading-relaxed
-              max-w-[600px]
+              mb-4 md:mb-6
             "
           >
-            Com uma equipe de especialistas capacitados, fornecemos assessoria
-            completa em Segurança do Trabalho, desenvolvendo programas sob
-            medida, treinamentos inovadores e laudos técnicos precisos. Nosso
-            objetivo é proteger a integridade física dos seus colaboradores e
-            promover uma cultura de prevenção e confiança, refletindo a
-            qualidade e o conhecimento técnico que você merece. Conte conosco
-            para transformar a segurança do seu ambiente de trabalho em uma
-            vantagem competitiva!
+            Contamos com uma equipe de profissionais especializados que realizam
+            exames admissionais, periódicos e demissionais, além de desenvolver
+            programas de controle de riscos e orientações de saúde. Nosso foco é
+            garantir o bem-estar físico e mental dos seus funcionários,
+            promovendo uma cultura de prevenção e cuidado contínuo.
+          </p>
+          <p
+            className="
+              text-left text-base
+              text-neutral-700 leading-relaxed
+            "
+          >
+            Confie na EPSSO para cuidar da saúde ocupacional da sua equipe,
+            ajudando a criar um ambiente mais saudável, produtivo e preparado
+            para os desafios do mercado.
           </p>
         </div>
       </div>
