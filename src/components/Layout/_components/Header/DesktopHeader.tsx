@@ -62,7 +62,7 @@ export default function DesktopHeader({
           <li>
             <a
               href="/sobre-a-epsso"
-              className="transition-colors duration-200 hover:text-green-700"
+              className="transition-colors duration-200 text-dark-green-100 hover:text-green-700"
             >
               Sobre a EPSSO
             </a>
@@ -76,7 +76,7 @@ export default function DesktopHeader({
             <button
               type="button"
               ref={buttonRef}
-              className="flex items-center gap-1 transition-colors duration-200 hover:text-green-700 focus:outline-none cursor-pointer"
+              className="flex items-center gap-1 transition-colors duration-200 text-dark-green-100 hover:text-green-700 focus:outline-none cursor-pointer"
               aria-haspopup="true"
               aria-expanded={isOpen}
               aria-controls="solutions-dropdown"
@@ -88,7 +88,7 @@ export default function DesktopHeader({
           <li>
             <a
               href="/cursos-e-treinamentos"
-              className="transition-colors duration-200 hover:text-green-700"
+              className="transition-colors duration-200 text-dark-green-100 hover:text-green-700"
             >
               Cursos e Treinamentos
             </a>
@@ -97,7 +97,7 @@ export default function DesktopHeader({
           <li>
             <a
               href="/blog"
-              className="transition-colors duration-200 hover:text-green-700"
+              className="transition-colors duration-200 text-dark-green-100 hover:text-green-700"
             >
               Blog
             </a>
@@ -106,7 +106,7 @@ export default function DesktopHeader({
           <li>
             <a
               href="/fale-conosco"
-              className="transition-colors duration-200 hover:text-green-700"
+              className="transition-colors duration-200 text-dark-green-100 hover:text-green-700"
             >
               Fale Conosco
             </a>
