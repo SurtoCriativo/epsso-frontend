@@ -150,7 +150,7 @@ export default function WorkSafety() {
   );
 
   return (
-    <main className="min-h-screen">
+    <main className="w-full mx-auto px-4">
       {/* Quote no topo */}
       <QuoteSection>
         <p className="text-brand-400 font-medium mx-auto w-[342px] sm:w-[467px] text-[20px] sm:text-[32px]">
@@ -166,31 +166,35 @@ export default function WorkSafety() {
         <h1 className="font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça nossas soluções em Segurança do Trabalho:
         </h1>
-        <img
-          src="/interactive/interactive-work-safety.webp"
-          alt="Industrial Safety Overview"
-          className="w-full max-h-auto object-cover rounded-3xl pb-[80px]"
-        />
-        {interactivePoints.map((point) => (
-          <div
-            key={point.id}
-            className="absolute"
-            style={{ top: point.top, left: point.left }}
-            onMouseEnter={() => handleMouseEnter(point.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Tooltip
-              isVisible={activeId === point.id || tourId === point.id}
-              text={point.text}
-              position={point.position}
+
+        <div className="hidden sm:block">
+          <img
+            src="/interactive/interactive-work-safety.webp"
+            alt="Industrial Safety Overview"
+            className="w-full max-h-auto object-cover rounded-3xl pb-[80px]"
+          />
+
+          {interactivePoints.map((point) => (
+            <div
+              key={point.id}
+              className="absolute"
+              style={{ top: point.top, left: point.left }}
+              onMouseEnter={() => handleMouseEnter(point.id)}
+              onMouseLeave={handleMouseLeave}
             >
-              <button
-                onClick={() => handleButtonClick(point)}
-                className="cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-              />
-            </Tooltip>
-          </div>
-        ))}
+              <Tooltip
+                isVisible={activeId === point.id || tourId === point.id}
+                text={point.text}
+                position={point.position}
+              >
+                <button
+                  onClick={() => handleButtonClick(point)}
+                  className="cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                />
+              </Tooltip>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Multiple Accordions */}
