@@ -5,6 +5,7 @@ import React, {
   useState,
   useCallback,
   useMemo,
+  Children,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,8 +17,15 @@ import {
   iconVariants,
 } from "./Accordion.config";
 
+// Updated context to include hasContent
+interface ExtendedAccordionContextValue extends AccordionContextValue {
+  hasContent: boolean;
+}
+
 // context + hook
-const AccordionContext = createContext<AccordionContextValue | null>(null);
+const AccordionContext = createContext<ExtendedAccordionContextValue | null>(
+  null
+);
 const useAccordionContext = () => {
   const ctx = useContext(AccordionContext);
   if (!ctx)
@@ -53,25 +61,54 @@ const Accordion: React.FC<AccordionProps> & {
   Content: React.FC<AccordionContentProps>;
 } = ({ children, defaultOpen = false, onToggle, className }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  const toggle = useCallback(() => {
-    setIsOpen((prev) => {
-      const next = !prev;
-      onToggle?.(next);
-      return next;
+
+  // Check if Accordion.Content is present among children
+  const hasContent = useMemo(() => {
+    let hasContentChild = false;
+    Children.forEach(children, (child) => {
+      if (
+        React.isValidElement(child) &&
+        (child.type === AccordionContent ||
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (child.type as any)?.displayName === "AccordionContent")
+      ) {
+        hasContentChild = true;
+      }
     });
-  }, [onToggle]);
-  const value = useMemo(() => ({ isOpen, toggle }), [isOpen, toggle]);
+    return hasContentChild;
+  }, [children]);
+
+  const toggle = useCallback(() => {
+    // Only toggle if there's content
+    if (hasContent) {
+      setIsOpen((prev) => {
+        const next = !prev;
+        onToggle?.(next);
+        return next;
+      });
+    }
+  }, [onToggle, hasContent]);
+
+  const value = useMemo(
+    () => ({ isOpen, toggle, hasContent }),
+    [isOpen, toggle, hasContent]
+  );
 
   const accordionClasses = `
     group flex px-6 py-[17px] sm:py-[23px] flex-col justify-center items-start gap-4 self-stretch
-    rounded-3xl border border-gray-300 bg-gray-50 cursor-pointer
+    rounded-3xl border border-gray-300 bg-gray-50 ${
+      hasContent ? "cursor-pointer" : ""
+    }
     transition-colors duration-200 hover:bg-[#7FBC53] text-neutral-700 hover:text-white
     ${className || ""}
   `.trim();
 
   return (
     <AccordionContext.Provider value={value}>
-      <div onClick={toggle} className={accordionClasses}>
+      <div
+        onClick={hasContent ? toggle : undefined}
+        className={accordionClasses}
+      >
         {children}
       </div>
     </AccordionContext.Provider>
@@ -87,15 +124,20 @@ const AccordionHeading: React.FC<AccordionHeadingProps> = ({
   expandIcon,
   collapseIcon,
 }) => {
-  const { isOpen, toggle } = useAccordionContext();
+  const { isOpen, toggle, hasContent } = useAccordionContext();
 
   const headingClasses = `
-  flex items-center gap-4 self-stretch cursor-pointer select-none font-semibold
+  flex items-center gap-4 self-stretch ${
+    hasContent ? "cursor-pointer" : ""
+  } select-none font-semibold
   text-[14px] font-medium sm:font-semibold sm:text-[18px] hover:text-white
   ${className || ""}
 `.trim();
 
   const renderIcon = () => {
+    // Don't render any icon if there's no content
+    if (!hasContent) return null;
+
     if (expandIcon && collapseIcon) {
       return isOpen ? collapseIcon : expandIcon;
     }
@@ -118,14 +160,14 @@ const AccordionHeading: React.FC<AccordionHeadingProps> = ({
     <div
       className={headingClasses}
       role="button"
-      tabIndex={0}
+      tabIndex={hasContent ? 0 : -1}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (hasContent && (e.key === "Enter" || e.key === " ")) {
           e.preventDefault();
           toggle();
         }
       }}
-      aria-expanded={isOpen}
+      aria-expanded={hasContent ? isOpen : undefined}
     >
       {/* badge: centered + hoverable via group-hover */}
       <span
@@ -177,6 +219,9 @@ const AccordionContent: React.FC<AccordionContentProps> = ({
     </AnimatePresence>
   );
 };
+
+// Set display name for component detection
+AccordionContent.displayName = "AccordionContent";
 
 Accordion.Heading = AccordionHeading;
 Accordion.Content = AccordionContent;
