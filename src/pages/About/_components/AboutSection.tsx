@@ -41,7 +41,7 @@ export default function PurposeSection() {
         <div className="relative w-full max-w-[540px] ml-auto">
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/about/child.svg"
+              src="/about/hero.webp"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}

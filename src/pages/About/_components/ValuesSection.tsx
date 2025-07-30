@@ -6,7 +6,7 @@ export default function ValuesSection() {
       {/* Imagem de topo responsiva com foco central no mobile */}
       <div className="w-full overflow-hidden">
         <img
-          src="/about/value-peoples.svg"
+          src="/about/banner.webp"
           alt="Equipe de trabalho"
           width={1920}
           height={320}
@@ -16,7 +16,7 @@ export default function ValuesSection() {
 
       {/* Bloco verde com gradiente + border radius */}
       <div
-        className="w-full w-full py-[80px] md:py-[120px] text-white"
+        className="w-full py-[80px] md:py-[120px] text-white"
         style={{
           borderRadius: "0px 0px 16px 16px",
           background:

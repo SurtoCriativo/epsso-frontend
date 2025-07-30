@@ -5,7 +5,7 @@ export default function WhoWeAreSection() {
         {/* Imagem à esquerda (visível só no desktop) */}
         <div className="w-full md:w-[360px] order-2 md:order-1 flex-shrink-0 hidden md:block">
           <img
-            src="/about/peoples.svg"
+            src="/about/molduras.webp"
             alt="Equipe EPSSO"
             width={360}
             height={360}

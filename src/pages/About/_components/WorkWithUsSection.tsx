@@ -8,7 +8,7 @@ export default function WorkWithUsSection() {
         {/* Imagem - primeiro no mobile */}
         <div className="relative w-full h-auto flex justify-center md:justify-end overflow-hidden order-1 md:order-none">
           <img
-            src="/about/fale-conosco.svg"
+            src="/about/trabalhe-conosco.webp"
             alt="Equipe EPSSO"
             width={361}
             height={376}

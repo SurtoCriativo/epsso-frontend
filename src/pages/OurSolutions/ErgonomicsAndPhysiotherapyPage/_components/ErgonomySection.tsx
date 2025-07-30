@@ -31,7 +31,7 @@ export default function ErgonomySection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/ergonomy-img.svg"
+              src="/ergonomia.webp"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}
