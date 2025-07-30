@@ -31,7 +31,7 @@ export default function MedicineSection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/medicina.webp"
+              src="/services-pages/medicina.webp"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}

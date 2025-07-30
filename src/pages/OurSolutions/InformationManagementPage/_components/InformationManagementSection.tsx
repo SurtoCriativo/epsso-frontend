@@ -31,7 +31,7 @@ export default function InformationManagementSection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/information-management-image.svg"
+              src="/services-pages/gestao-informacoes.webp"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}

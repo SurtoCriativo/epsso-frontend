@@ -20,7 +20,7 @@ export default function SecuritySection() {
         <div className="w-full max-w-[540px] mb-6 md:mb-0 pt-[76px] md:pt-0 mx-auto order-first md:order-last">
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/seguranca.webp"
+              src="/services-pages/seguranca.webp"
               alt="Menino com capacete brincando com blocos"
               width={540}
               height={421}

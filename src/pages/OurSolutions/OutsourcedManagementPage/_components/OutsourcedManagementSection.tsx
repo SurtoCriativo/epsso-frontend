@@ -31,7 +31,7 @@ export default function OutsourcedManagementSection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/outsourced-img.svg"
+              src="/services-pages/gestao-terceirizados.webp"
               alt="Médica segurando prancheta"
               width={540}
               height={421}
