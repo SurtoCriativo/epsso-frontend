@@ -25,6 +25,7 @@ export interface BlogCardTitleProps {
   children: ReactNode;
   className?: string;
   maxLength?: number;
+  id?: string;
 }
 
 // BlogCard.Content component props

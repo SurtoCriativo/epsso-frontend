@@ -169,7 +169,7 @@ export default function ContactForm({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="bg-white text-gray-800 w-full max-w-[456px] min-h-[400px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col items-center justify-center text-center"
+              className="bg-white text-gray-800 w-full max-w-[456px] min-h-[765px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col items-center justify-center text-center"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -284,7 +284,7 @@ export default function ContactForm({
                     Telefone (WhatsApp)
                   </label>
                   <input
-                    type="text"
+                    type="tel"
                     {...register("phone")}
                     placeholder="(00) 00000-0000"
                     className="input w-full py-3 px-4 h-[48px]"

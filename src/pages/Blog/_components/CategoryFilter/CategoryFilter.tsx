@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
+
 export interface CategoryFilterProps {
   categories: any[];
   selectedCategoryId: number | null;
@@ -11,10 +13,11 @@ export default function CategoryFilter({
   onChange,
 }: CategoryFilterProps) {
   return (
-    <div className="flex justify-center items-center pt-8 pb-12">
+    <fieldset className="flex justify-center items-center pt-8 pb-12">
+      <legend className="sr-only">Filtrar categorias</legend>
       <label
         htmlFor="category"
-        className="block text-[20px] font-medium leading-7"
+        className="block text-[20px] font-medium leading-7 mr-4"
       >
         Leia sobre:
       </label>
@@ -37,6 +40,6 @@ export default function CategoryFilter({
           </option>
         ))}
       </select>
-    </div>
+    </fieldset>
   );
 }

@@ -58,10 +58,10 @@ export default function WorkWithUsSection() {
           {/* Botão */}
           <div className="w-full flex justify-center md:justify-start">
             <Link
-              to="/carreiras"
+              to="/trabalhe-conosco"
               className="inline-flex items-center justify-center gap-2 w-[248px] h-[48px] rounded-full bg-brand-500 text-white text-[14px] font-medium hover:bg-brand-700 transition"
             >
-              Veja nossas vagas abertas
+              Envie seu currículo
               <ArrowRight size={16} />
             </Link>
           </div>

@@ -70,7 +70,7 @@ export default function Footer() {
             <h4 className={headingStyle}>Institucional</h4>
             <ul className={listStyle}>
               <li>
-                <Link to="#" className={linkStyle}>
+                <Link to="/sobre-a-epsso" className={linkStyle}>
                   Sobre a EPSSO
                 </Link>
               </li>
@@ -87,8 +87,45 @@ export default function Footer() {
             <h4 className={headingStyle}>Soluções</h4>
             <ul className={listStyle}>
               <li>
-                <Link to="#" className={linkStyle}>
-                  Nossas Soluções
+                <Link
+                  to="/servicos/seguranca-do-trabalho"
+                  className={linkStyle}
+                >
+                  Segurança do Trabalho
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicos/medicina-do-trabalho" className={linkStyle}>
+                  Medicina do Trabalho
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/servicos/ergonomia-e-fisioterapia"
+                  className={linkStyle}
+                >
+                  Ergonomia e Fisioterapia
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/servicos/gestao-de-terceirizados"
+                  className={linkStyle}
+                >
+                  Gestão de Terceirizados
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/servicos/gestao-de-informacoes"
+                  className={linkStyle}
+                >
+                  Gestão de Informações
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicos/assessoria-juridica" className={linkStyle}>
+                  Asessoria Jurídica
                 </Link>
               </li>
               <li>
@@ -103,13 +140,14 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h4 className={headingStyle}>Suporte</h4>
             <ul className={listStyle}>
-              <li>
+              {/* "Central de Ajuda": hidden because its going to be included in near future */}
+              <li className="hidden">
                 <Link to="#" className={linkStyle}>
                   Central de Ajuda
                 </Link>
               </li>
               <li>
-                <Link to="#" className={linkStyle}>
+                <Link to="/fale-conosco" className={linkStyle}>
                   Fale Conosco
                 </Link>
               </li>
