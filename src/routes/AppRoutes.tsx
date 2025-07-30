@@ -69,7 +69,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/seguranca-trabalho"
+          path="/servicos/seguranca-do-trabalho"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <WorkSafety />
@@ -77,7 +77,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/medicina-trabalho"
+          path="/servicos/medicina-do-trabalho"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <OccupationalMedicine />
@@ -85,7 +85,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/ergonomia-fisioterapia"
+          path="/servicos/ergonomia-e-fisioterapia"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <ErgonomicsAndPhysiotherapy />
@@ -93,7 +93,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/gestao-terceirizados"
+          path="/servicos/gestao-de-terceirizados"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <OutsourcedManagement />
@@ -101,7 +101,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/gestao-informacoes"
+          path="/servicos/gestao-de-informacoes"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <InformationManagement />

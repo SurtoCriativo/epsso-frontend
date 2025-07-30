@@ -13,8 +13,8 @@ export default function Home() {
       <BusinessSolutions />
       <PlayerSolution />
       <Testimonials />
-      {<ClientLogosCarousel />}
-      <ContactForm />
+      <ClientLogosCarousel />
+      <ContactForm pageSource="Home" />
     </>
   );
 }

@@ -243,7 +243,11 @@ export default function WorkSafety() {
           ))}
         </div>
       </div>
-      <ContactForm />
+      <ContactForm
+        preSelectedSolution="seguranca-do-trabalho"
+        pageSource="Segurança do Trabalho"
+        successMessage="Obrigado! Um especialista em Segurança do Trabalho entrará em contato."
+      />
     </main>
   );
 }

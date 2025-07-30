@@ -235,7 +235,11 @@ export default function ErgonomicsAndPhysiotherapy() {
           ))}
         </div>
       </div>
-      <ContactForm />
+      <ContactForm
+        preSelectedSolution="ergonomia"
+        pageSource="Ergonomia e Fisioterapia"
+        successMessage="Obrigado! Um especialista em Ergonomia e Fisioterapia entrará em contato."
+      />
     </main>
   );
 }

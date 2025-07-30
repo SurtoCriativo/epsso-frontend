@@ -31,11 +31,13 @@ export default function OutsourcedManagementSection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/public/medicine-img.svg"
-              alt="Menino com capacete brincando com blocos"
+              src="/outsourced-img.svg"
+              alt="Médica segurando prancheta"
               width={540}
               height={421}
               className="object-cover w-full h-auto"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>

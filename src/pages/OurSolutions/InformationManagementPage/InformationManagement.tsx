@@ -232,7 +232,11 @@ export default function InformationManagement() {
           ))}
         </div>
       </div>
-      <ContactForm />
+      <ContactForm
+        preSelectedSolution="outros"
+        pageSource="Gestão de Informações"
+        successMessage="Obrigado! Um especialista em Gestão de Informações entrará em contato."
+      />
     </main>
   );
 }

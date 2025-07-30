@@ -219,7 +219,11 @@ export default function OutsourcedManagement() {
           ))}
         </div>
       </div>
-      <ContactForm />
+      <ContactForm
+        preSelectedSolution="gestao-de-terceirizados"
+        pageSource="Gestão de Terceirizados"
+        successMessage="Obrigado! Um especialista em Gestão de Terceirizados entrará em contato."
+      />
     </main>
   );
 }

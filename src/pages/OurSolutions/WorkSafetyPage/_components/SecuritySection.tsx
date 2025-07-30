@@ -31,11 +31,13 @@ export default function SecuritySection() {
         >
           <div className="overflow-hidden rounded-r-[40px]">
             <img
-              src="/public/security-img.svg"
-              alt="Menino com capacete brincando com blocos"
+              src="/security-img.svg"
+              alt="Mulher com EPI"
               width={540}
               height={421}
               className="object-cover w-full h-auto"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>

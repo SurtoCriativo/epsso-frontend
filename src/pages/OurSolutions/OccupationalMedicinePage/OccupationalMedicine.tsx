@@ -235,7 +235,11 @@ export default function OccupationalMedicine() {
           ))}
         </div>
       </div>
-      <ContactForm />
+      <ContactForm
+        preSelectedSolution="medicina-do-trabalho"
+        pageSource="Medicina do Trabalho"
+        successMessage="Obrigado! Um especialista em Medicina do Trabalho entrará em contato."
+      />
     </main>
   );
 }
