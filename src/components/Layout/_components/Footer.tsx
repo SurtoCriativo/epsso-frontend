@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const headingStyle =
@@ -15,37 +14,54 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row flex-wrap justify-between items-center md:items-start gap-y-12 md:gap-y-28 text-center md:text-left">
           {/* Coluna 1: Logo + Redes Sociais */}
           <div className="flex flex-col items-center md:items-center justify-center pt-2 min-w-[128px]">
+            {" "}
             <img
               src="/logo-epsso-footer.svg"
               alt="Logo EPSSO"
               width={144}
               height={44}
-            />
+            />{" "}
             <div className="flex gap-4 mt-4 md:mt-4">
+              {" "}
               <a
                 href="https://br.linkedin.com/company/epsso"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-[#5c6470] text-white transition-all duration-300 hover:bg-[#0077B5]"
               >
-                <FaLinkedinIn size={16} />
-              </a>
+                {" "}
+                <img
+                  src="/footer/linkedin-in.svg"
+                  alt="LinkedIn"
+                  className="w-7 h-7"
+                />{" "}
+              </a>{" "}
               <a
                 href="https://www.youtube.com/@epssosaudeempresarialcompl8237"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-[#5c6470] text-white transition-all duration-300 hover:bg-[#FF0000]"
               >
-                <FaYoutube size={16} />
-              </a>
+                {" "}
+                <img
+                  src="/footer/youtube-brands.svg"
+                  alt="YouTube"
+                  className="w-7 h-7"
+                />{" "}
+              </a>{" "}
               <a
                 href="https://www.instagram.com/saudeocupacionalepsso/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-[#5c6470] text-white transition-all duration-300 hover:bg-gradient-to-t from-yellow-400 via-red-500 to-purple-600"
               >
-                <FaInstagram size={16} />
-              </a>
+                {" "}
+                <img
+                  src="/footer/instagram-brands.svg"
+                  alt="Instagram"
+                  className="w-7 h-7"
+                />{" "}
+              </a>{" "}
             </div>
           </div>
 

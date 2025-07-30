@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function HeroSectionMobile() {
+  // Preload critical mobile hero image for better LCP
+  useEffect(() => {
+    const preloadImage = (src: string) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      document.head.appendChild(link);
+    };
+
+    preloadImage("/hero/hero-mobile.webp");
+  }, []);
+
   const commonStyle = {
     fontFamily: "Lexend, sans-serif",
     fontSize: "36px",
@@ -71,9 +85,16 @@ export default function HeroSectionMobile() {
       {/* Imagem do mobile fixa no canto inferior esquerdo e com largura total */}
       <div className="absolute bottom-0 left-0 w-full">
         <img
-          src="/hero/hero-mobile.svg"
+          src="/hero/hero-mobile.webp"
           alt="Pessoas"
           className="w-full h-auto object-contain"
+          // Add dimensions for better performance
+          width={390}
+          height={400}
+          // Remove lazy loading for potential LCP image
+          decoding="async"
+          // High priority for LCP image
+          fetchPriority="high"
         />
       </div>
     </section>

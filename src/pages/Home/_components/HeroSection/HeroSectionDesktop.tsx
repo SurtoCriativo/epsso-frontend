@@ -20,6 +20,8 @@ const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default function HeroSection() {
+  // Note: Preload links should be added to HTML head for optimal LCP performance
+
   return (
     <section
       className="relative w-full h-[668px] text-white overflow-hidden"
@@ -35,7 +37,7 @@ export default function HeroSection() {
         aria-hidden="true"
       >
         <img
-          src="/hero/hero-background.svg"
+          src="/hero/background.webp"
           alt=""
           width={556}
           height={668}
@@ -86,15 +88,17 @@ export default function HeroSection() {
           style={{ width: 690, height: 668 }}
         >
           <img
-            src="/hero/hero-people.svg"
+            src="/hero/profissionais.webp"
             alt="Pessoas"
             width={690}
             height={604}
             className="absolute bottom-0 right-0 select-none pointer-events-none"
-            loading="lazy"
+            // Removed loading="lazy" for potential LCP image
             decoding="async"
             draggable={false}
             style={{ width: 690, height: 604 }}
+            // Add fetchpriority for modern browsers
+            fetchPriority="high"
           />
         </div>
       </div>

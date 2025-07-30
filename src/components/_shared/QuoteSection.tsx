@@ -11,7 +11,7 @@ export default function QuoteSection({ children }: QuoteSectionProps) {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="h-[240px] px-[64px] max-w-[1128px] mx-auto text-center flex flex-col justify-center"
+        className="h-[240px] max-w-[1128px] mx-auto text-center flex flex-col justify-center"
       >
         <blockquote>{children}</blockquote>
       </motion.div>

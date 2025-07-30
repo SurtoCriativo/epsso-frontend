@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
 const logos = [
-  "/ClientCarousel/vermeer.svg",
-  "/ClientCarousel/iguatemi-campinas.svg",
-  "/ClientCarousel/kion-hroup.svg",
-  "/ClientCarousel/Ingredion.svg",
-  "/ClientCarousel/planit.svg",
-  "/ClientCarousel/netwire.svg",
-  "/ClientCarousel/vermeer.svg",
-  "/ClientCarousel/iguatemi-campinas.svg",
-  "/ClientCarousel/kion-hroup.svg",
-  "/ClientCarousel/Ingredion.svg",
-  "/ClientCarousel/planit.svg",
-  "/ClientCarousel/netwire.svg",
+  "/ClientCarousel/vermeer.webp",
+  "/ClientCarousel/iguatemi-campinas.webp",
+  "/ClientCarousel/kion-hroup.webp",
+  "/ClientCarousel/Ingredion.webp",
+  "/ClientCarousel/planit.webp",
+  "/ClientCarousel/netwire.webp",
+  "/ClientCarousel/vermeer.webp",
+  "/ClientCarousel/iguatemi-campinas.webp",
+  "/ClientCarousel/kion-hroup.webp",
+  "/ClientCarousel/Ingredion.webp",
+  "/ClientCarousel/planit.webp",
+  "/ClientCarousel/netwire.webp",
 ];
 
 export default function LogosCarousel() {
@@ -20,6 +20,24 @@ export default function LogosCarousel() {
   const animationFrameId = useRef<number | null>(null);
   const scrollAmount = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Preload logo images for better performance
+  useEffect(() => {
+    const uniqueLogos = Array.from(new Set(logos)); // Remove duplicates for preloading
+
+    const preloadImage = (src: string) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      document.head.appendChild(link);
+    };
+
+    // Preload all unique logo images
+    uniqueLogos.forEach((logo) => {
+      preloadImage(logo);
+    });
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -68,7 +86,10 @@ export default function LogosCarousel() {
               src={logo}
               alt={`Logo ${i + 1}`}
               className="object-contain h-[56px] w-auto"
-              loading="lazy"
+              // Remove loading="lazy" for carousel images that are immediately visible
+              width={120}
+              height={56}
+              decoding="async"
               draggable={false}
             />
           </div>

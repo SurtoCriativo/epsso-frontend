@@ -100,7 +100,7 @@ export default function MobileHeader() {
               <li>
                 <button
                   onClick={() => setSolutionsOpen(!solutionsOpen)}
-                  className="w-full flex items-center justify-between text-left text-dark-green-100 hover:text-green-700"
+                  className="w-full flex items-center gap-2 text-left text-dark-green-100 hover:text-green-700"
                 >
                   Nossas Soluções
                   <ChevronDown

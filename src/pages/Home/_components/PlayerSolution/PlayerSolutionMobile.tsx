@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  HandHeart,
-  ShieldCheck,
-  Layers,
-  Cpu,
-  type LucideProps,
-} from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
+interface YTPlayerProps {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  mute: () => void;
+  unMute: () => void;
+}
 
 declare global {
   interface Window {
@@ -17,7 +17,6 @@ declare global {
           videoId: string;
           events?: {
             onReady?: (event: { target: YTPlayerProps }) => void;
-            // Você pode adicionar outros eventos se quiser
           };
         }
       ) => YTPlayerProps;
@@ -25,23 +24,22 @@ declare global {
   }
 }
 
-interface YTPlayerProps {
-  playVideo: () => void;
-  pauseVideo: () => void;
-  mute: () => void;
-  unMute: () => void;
-}
-
 interface FeatureProps {
-  icon: React.ComponentType<LucideProps>;
+  icon: string;
   text: string;
 }
 
 const featuresData: FeatureProps[] = [
-  { icon: HandHeart, text: "Cuidado Humano em Cada Passo" },
-  { icon: ShieldCheck, text: "Consultoria que Inspira Confiança" },
-  { icon: Layers, text: "Soluções que se adaptam a você" },
-  { icon: Cpu, text: "Tecnologia com Propósito" },
+  {
+    icon: "/player/hand-heart.svg",
+    text: "Cuidado Humano em Cada Passo",
+  },
+  {
+    icon: "/player/shield-check.svg",
+    text: "Consultoria que Inspira Confiança",
+  },
+  { icon: "/player/layers.svg", text: "Soluções que se adaptam a você" },
+  { icon: "/player/cpu.svg", text: "Tecnologia com Propósito" },
 ];
 
 const PlayerSolutionMobile = () => {
@@ -100,12 +98,10 @@ const PlayerSolutionMobile = () => {
   return (
     <section className="bg-[linear-gradient(250deg,_#044019_0%,_#00290E_100%)] text-white py-20 md:py-24">
       <div className="px-4 flex flex-col items-center">
-        {/* Título Centralizado */}
         <h2 className="w-[328px] text-2xl text-center mb-12">
           Soluções para cuidar da saúde e da segurança do seu negócio
         </h2>
 
-        {/* Player Alinhado no Padding */}
         <div
           ref={videoContainerRef}
           className="w-full aspect-video max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"
@@ -123,11 +119,9 @@ const PlayerSolutionMobile = () => {
           )}
         </div>
 
-        {/* Lista de Features Alinhadas no Padding */}
         <div className="flex flex-col space-y-16 items-start mt-16 w-full max-w-[600px]">
           {featuresData.map((feature, index) => {
             const isActive = index === featuresData.length - 1;
-            const Icon = feature.icon;
 
             return (
               <div
@@ -139,11 +133,11 @@ const PlayerSolutionMobile = () => {
                     isActive ? "bg-brand-300" : "bg-brand-300/8"
                   }`}
                 >
-                  <Icon
-                    size={20}
-                    strokeWidth={1.5}
-                    className={`transition-colors duration-300 ${
-                      isActive ? "text-green-900" : "text-brand-300"
+                  <img
+                    src={feature.icon}
+                    alt=""
+                    className={`w-5 h-5 transition-colors duration-300 ${
+                      isActive ? "" : ""
                     }`}
                   />
                 </div>

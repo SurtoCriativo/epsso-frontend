@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { HandHeart, ShieldCheck, Layers, Cpu } from "lucide-react";
 
 declare global {
   interface Window {
@@ -11,7 +10,6 @@ declare global {
           videoId: string;
           events?: {
             onReady?: (event: { target: YTPlayer }) => void;
-            // Você pode adicionar outros eventos se quiser
           };
         }
       ) => YTPlayer;
@@ -26,23 +24,19 @@ interface YTPlayer {
   unMute: () => void;
 }
 
-interface YTPlayer {
-  playVideo: () => void;
-  pauseVideo: () => void;
-  mute: () => void;
-  unMute: () => void;
-}
-
 interface Feature {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  iconPath: string;
   text: string;
 }
 
 const featuresData: Feature[] = [
-  { icon: HandHeart, text: "Cuidado Humano em Cada Passo" },
-  { icon: ShieldCheck, text: "Consultoria que Inspira Confiança" },
-  { icon: Layers, text: "Soluções que se adaptam a você" },
-  { icon: Cpu, text: "Tecnologia com Propósito" },
+  { iconPath: "/player/hand-heart.svg", text: "Cuidado Humano em Cada Passo" },
+  {
+    iconPath: "/player/shield-check.svg",
+    text: "Consultoria que Inspira Confiança",
+  },
+  { iconPath: "/player/layers.svg", text: "Soluções que se adaptam a você" },
+  { iconPath: "/player/cpu.svg", text: "Tecnologia com Propósito" },
 ];
 
 const PlayerSolutionDesktop: React.FC = () => {
@@ -115,7 +109,6 @@ const PlayerSolutionDesktop: React.FC = () => {
             <div className="flex flex-col space-y-16">
               {featuresData.map((feature, index) => {
                 const isActive = index === featuresData.length - 1;
-                const Icon = feature.icon;
                 return (
                   <div
                     key={index}
@@ -126,11 +119,14 @@ const PlayerSolutionDesktop: React.FC = () => {
                         isActive ? "bg-brand-300" : "bg-brand-300/8"
                       }`}
                     >
-                      <Icon
-                        strokeWidth={1.5}
-                        className={`transition-colors duration-300 ${
-                          isActive ? "text-green-900" : "text-brand-300"
+                      <img
+                        src={feature.iconPath}
+                        alt=""
+                        className={`w-6 h-6 transition-opacity duration-300 ${
+                          isActive ? "opacity-100" : "opacity-70"
                         }`}
+                        aria-hidden="true"
+                        draggable={false}
                       />
                     </div>
                     <p className="text-base font-medium transition-colors duration-300 text-brand-300">
@@ -138,7 +134,7 @@ const PlayerSolutionDesktop: React.FC = () => {
                     </p>
                     {index < featuresData.length - 1 && (
                       <div
-                        className="absolute left-5 top-13  h-12 w-0 border-l border-dotted border-brand-300/50"
+                        className="absolute left-5 top-13 h-12 w-0 border-l border-dotted border-brand-300/50"
                         aria-hidden="true"
                       />
                     )}
