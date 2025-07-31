@@ -14,7 +14,7 @@ export default function TeamVoicesSection() {
       >
         {/* Conteúdo interno com padding */}
         <div className="max-w-[1128px] mx-auto text-center pt-[80px] pb-[80px] md:pt-[120px] md:pb-[120px] px-4">
-          <h2 className="text-brand-400 text-[24px] font-bold mb-12">
+          <h2 className="text-green-accents-400 text-[24px] font-medium mb-12">
             Aqui, construímos juntos
           </h2>
 
@@ -70,8 +70,8 @@ export default function TeamVoicesSection() {
                 <img
                   src="/about/icon-quotation-marks.svg"
                   alt="Aspas"
-                  width={48}
-                  height={32}
+                  width={38}
+                  height={22}
                   className="absolute top-6 right-6"
                 />
                 <div className="flex items-center gap-3">

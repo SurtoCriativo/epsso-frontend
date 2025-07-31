@@ -19,8 +19,8 @@ export default function HeroSectionCursos() {
             id="titulo-cursos"
             className="text-[32px] sm:text-[36px] md:text-[40px] font-bold leading-tight mb-4"
           >
-            Cursos
-            <br />e Treinamentos:
+            Cursos e <br />
+            Treinamentos:
           </h1>
           <p className="text-[32px] sm:text-[36px] md:text-[40px] font-normal leading-snug">
             Capacite sua equipe

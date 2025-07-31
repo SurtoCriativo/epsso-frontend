@@ -33,7 +33,7 @@ export default function TrainingSection() {
     >
       <div className="max-w-[1128px] mx-auto">
         {/* Título */}
-        <h2 className="text-[16px] md:text-[24px] font-medium text-brand-400 mb-8">
+        <h2 className="text-[24px] font-medium text-brand-400 mb-8">
           Nossos cursos e treinamentos
         </h2>
 
@@ -45,7 +45,7 @@ export default function TrainingSection() {
               className={`px-4 py-1 text-sm rounded-lg h-[32px] transition-all font-medium shadow-sm ${
                 selected === filter
                   ? "bg-green-800 text-white"
-                  : "bg-gray-100 text-neutral-700 hover:bg-green-200"
+                  : "bg-green-light-50 text-neutral-700"
               }`}
               onClick={() => setSelected(filter)}
             >
@@ -63,7 +63,7 @@ export default function TrainingSection() {
                   key={`heading-${item.heading}`}
                   className="w-full mt-10 mb-2"
                 >
-                  <h3 className="text-neutral-700 font-semibold text-[16px] md:text-[18px]">
+                  <h3 className="text-neutral-700 font-medium text-[16px] md:text-[18px]">
                     {item.heading}
                   </h3>
                 </div>

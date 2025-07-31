@@ -55,7 +55,7 @@ const PlayerSolutionDesktop: React.FC = () => {
 
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player("yt-player-desktop", {
-        videoId: "M7lc1UVf-VE",
+        videoId: "bniHzmKwnac",
         events: {
           onReady: () => {
             setIsPlayerReady(true);

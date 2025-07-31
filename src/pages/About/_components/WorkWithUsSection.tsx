@@ -59,7 +59,7 @@ export default function WorkWithUsSection() {
           <div className="w-full flex justify-center md:justify-start">
             <Link
               to="/trabalhe-conosco"
-              className="inline-flex items-center justify-center gap-2 w-[248px] h-[48px] rounded-full bg-brand-500 text-white text-[14px] font-medium hover:bg-brand-700 transition"
+              className="inline-flex items-center justify-center gap-2 w-[248px] h-[48px] rounded-full bg-dark-green-300 text-white text-[14px] font-medium hover:bg-brand-700 transition"
             >
               Envie seu currículo
               <ArrowRight size={16} />
