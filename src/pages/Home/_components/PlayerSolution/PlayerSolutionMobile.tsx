@@ -56,7 +56,7 @@ const PlayerSolutionMobile = () => {
 
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player("yt-player-mobile", {
-        videoId: "dQw4w9WgXcQ",
+        videoId: "bniHzmKwnac",
         events: {
           onReady: () => {
             setIsPlayerReady(true);
