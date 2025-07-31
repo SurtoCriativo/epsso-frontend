@@ -24,9 +24,7 @@ export default function Blog() {
   const stripHtml = useStripHtml();
 
   useHtmlMetaData({
-    title: `Últimas notícias${
-      selectedCategoryId ? ` - Categoria ${selectedCategoryId}` : ""
-    } | Epsso Blog`,
+    title: "EPSSO | Blog",
     metaDescription:
       "Leia as últimas notícias e artigos do nosso blog sobre diversos temas.",
   });
@@ -43,7 +41,7 @@ export default function Blog() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-[1128px] lg:flex flex-col max-w-7xl mx-auto py-4"
+      className="w-full max-w-[1128px] flex flex-col mx-auto py-4"
     >
       <CategoryFilter
         categories={categories}
@@ -59,13 +57,13 @@ export default function Blog() {
         <div className="flex-1">
           <h1
             id="blog-heading"
-            className="text-2xl font-medium text-brand-400 pb-9"
+            className="text-center md:text-start text-2xl font-medium text-brand-400 pb-9"
           >
             Últimas notícias
           </h1>
           <ul
             role="list"
-            className="grid justify-start [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4"
+            className="mx-auto grid justify-center [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4"
           >
             {posts.map((post) => (
               <li key={post.id}>
@@ -79,9 +77,9 @@ export default function Blog() {
           </ul>
         </div>
 
-        <div className="hidden lg:block">
+        <aside className="hidden md:block">
           <HighlightPosts />
-        </div>
+        </aside>
       </div>
 
       <Pagination

@@ -27,7 +27,7 @@ export default function PostDetails() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full max-w-7xl mx-auto py-4 px-4"
+      className="w-full max-w-[1128px] mx-auto py-4 px-4"
     >
       {/* Back to Blog Link */}
       <Link
@@ -127,7 +127,7 @@ export default function PostDetails() {
         </section>
 
         {/* Right Column - Highlight Posts */}
-        <aside className="pb-[120px]  lg:sticky lg:top-4 lg:h-fit">
+        <aside className="hidden md:block pb-[120px]  lg:sticky lg:top-4 lg:h-fit">
           <HighlightPosts />
         </aside>
       </div>

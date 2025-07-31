@@ -3,7 +3,7 @@ import { z } from "zod";
 export const trainingFormSchema = z.object({
   name: z.string().min(1, "Campo obrigatório"),
   lastname: z.string().min(1, "Campo obrigatório"),
-  phone: z.string().min(10, "Telefone inválido").max(11, "Telefone inválido"),
+  phone: z.string().min(14, "Telefone inválido").max(15, "Telefone inválido"),
   email: z.string().email("E-mail inválido"),
   company: z.string().min(1, "Campo obrigatório"),
   website: z.string().url("URL inválida"),

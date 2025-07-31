@@ -1,4 +1,4 @@
-export default function HeroSectionCursos() {
+export default function BlogHeroSection() {
   return (
     <section
       id="cursos"
@@ -7,9 +7,8 @@ export default function HeroSectionCursos() {
       aria-labelledby="titulo-cursos"
       className="relative w-full h-[440px] text-white"
       style={{
-        backgroundImage: `url('/trainingpage/hero-cursos.webp')`,
+        backgroundImage: `url('/blog-page/hero-blog.webp')`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       {/* Conteúdo */}
@@ -19,15 +18,12 @@ export default function HeroSectionCursos() {
             id="titulo-cursos"
             className="text-[32px] sm:text-[36px] md:text-[40px] font-bold leading-tight mb-4"
           >
-            Cursos e <br />
-            Treinamentos:
+            Segurança em
+            <br />
+            foco: <span className="font-normal">boas práticas</span>
           </h1>
           <p className="text-[32px] sm:text-[36px] md:text-[40px] font-normal leading-snug">
-            Capacite sua equipe
-            <br />
-            com certificações
-            <br />
-            atualizadas.
+            que salvam vidas.
           </p>
         </div>
       </header>

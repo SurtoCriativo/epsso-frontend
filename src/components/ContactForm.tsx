@@ -33,6 +33,11 @@ const serviceOptions = [
     label: "Assessoria Jurídica",
   },
   {
+    id: "gestao-de-informacoes",
+    value: "gestao-de-informacoes",
+    label: "Gestão de Informações",
+  },
+  {
     id: "gestao-de-terceirizados",
     value: "gestao-de-terceirizados",
     label: "Gestão de Terceirizados",

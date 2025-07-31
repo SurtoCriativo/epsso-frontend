@@ -5,6 +5,7 @@ import { Accordion } from "../../../components/ui/Accordion";
 import { Tooltip } from "../../../components/ui/Tooltip/Tooltip";
 import SecuritySection from "./_components/SecuritySection";
 import { workSafetyConstants } from "../../../contants/workSafetyConstants";
+import useHtmlMetaData from "../../../hooks/useHtmlMetaData";
 
 type PositionProps = "top" | "bottom" | "left" | "right";
 
@@ -62,6 +63,12 @@ export default function WorkSafety() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [tourId, setTourId] = useState<number | null>(null);
   const hasInteractedRef = useRef(false);
+
+  useHtmlMetaData({
+    title: "EPSSO | Segurança do Trabalho",
+    metaDescription:
+      "Na EPSSO, acreditamos que a segurança no ambiente de trabalho é uma responsabilidade compartilhada, mas o papel da sua empresa é fundamental para criar condições ideais que promovam uma prática segura e eficiente. Nosso compromisso é oferecer soluções personalizadas, alinhadas às normas regulamentadoras, garantindo um ambiente mais seguro para todos.",
+  });
 
   // Track currently open accordion
   const [currentOpenAccordion, setCurrentOpenAccordion] = useState<
@@ -178,12 +185,19 @@ export default function WorkSafety() {
         </p>
       </QuoteSection>
       <SecuritySection />
+      {/* image for mobile without interactive points */}
+      <img
+        src="/interactive/interactive-work-safety.webp"
+        alt="Industrial Safety Overview"
+        className="block sm:hidden w-full h-auto object-cover rounded-2xl mt-[80px] pb-[80px]"
+      />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
         <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça nossas soluções em Segurança do Trabalho:
         </h1>
 
+        {/* image for desktop with interactive images */}
         <div className="hidden sm:block">
           <img
             src="/interactive/interactive-work-safety.webp"

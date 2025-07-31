@@ -8,8 +8,9 @@ import useHtmlMetaData from "../../hooks/useHtmlMetaData";
 
 export default function About() {
   useHtmlMetaData({
-    title: "Sobre a Epsso",
-    metaDescription: "Tudo que você precisa saber sobre nós!",
+    title: "EPSSO | Sobre a Epsso",
+    metaDescription:
+      "Na EPSSO, nosso propósito é claro e inspirador: proteger o hoje das empresas e de seus colaboradores para construir um amanhã mais seguro, saudável e sustentável.",
   });
 
   return (

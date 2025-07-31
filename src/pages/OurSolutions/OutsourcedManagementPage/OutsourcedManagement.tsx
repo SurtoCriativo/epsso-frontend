@@ -5,6 +5,7 @@ import { Accordion } from "../../../components/ui/Accordion";
 import { Tooltip } from "../../../components/ui/Tooltip/Tooltip";
 import OutsourcedManagementSection from "./_components/OutsourcedManagementSection";
 import { outsourcedManagementConstants } from "../../../contants/outsourcedManagementConstants";
+import useHtmlMetaData from "../../../hooks/useHtmlMetaData";
 
 type PositionProps = "top" | "bottom" | "left" | "right";
 
@@ -46,6 +47,12 @@ export default function OutsourcedManagement() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [tourId, setTourId] = useState<number | null>(null);
   const hasInteractedRef = useRef(false);
+
+  useHtmlMetaData({
+    title: "EPSSO | Gestão de Terceirizados",
+    metaDescription:
+      "Contratar serviços de outsourcing e terceirização é uma estratégia eficiente que reduz custos, garante conformidade legal e permite que sua empresa concentre esforços no foco principal da empresa - enquanto a segurança e medicina do trabalho ficam por conta da EPSSO.",
+  });
 
   // Track currently open accordion
   const [currentOpenAccordion, setCurrentOpenAccordion] = useState<
@@ -145,12 +152,19 @@ export default function OutsourcedManagement() {
         </p>
       </QuoteSection>
       <OutsourcedManagementSection />
+      {/* image for mobile without interactive points */}
+      <img
+        src="/interactive/interactive-outsourced.webp"
+        alt="Industrial Safety Overview"
+        className="block sm:hidden w-full h-auto object-cover rounded-2xl mt-[80px] pb-[80px]"
+      />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
         <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça nossas soluções em Gestão de Serviços Terceirizados:
         </h1>
 
+        {/* image for desktop with interactive images */}
         <div className="hidden sm:block">
           <img
             src="/interactive/interactive-outsourced.webp"

@@ -5,6 +5,7 @@ import { Accordion } from "../../../components/ui/Accordion";
 import { Tooltip } from "../../../components/ui/Tooltip/Tooltip";
 import InformationManagementSection from "./_components/InformationManagementSection";
 import { informationManagementConstants } from "../../../contants/informationManagementConstants";
+import useHtmlMetaData from "../../../hooks/useHtmlMetaData";
 
 type PositionProps = "top" | "bottom" | "left" | "right";
 
@@ -62,6 +63,12 @@ export default function InformationManagement() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [tourId, setTourId] = useState<number | null>(null);
   const hasInteractedRef = useRef(false);
+
+  useHtmlMetaData({
+    title: "EPSSO | Gestão de Informações",
+    metaDescription:
+      "A gestão eficiente da saúde ocupacional é essencial para o sucesso do seu negócio e para o bem-estar dos seus colaboradores. Na EPSSO, oferecemos um software 100% online que centraliza e automatiza informações estratégicas, tornando o gerenciamento mais prático, ágil e preciso.",
+  });
 
   // Track currently open accordion
   const [currentOpenAccordion, setCurrentOpenAccordion] = useState<
@@ -161,12 +168,19 @@ export default function InformationManagement() {
         </p>
       </QuoteSection>
       <InformationManagementSection />
+      {/* image for mobile without interactive points */}
+      <img
+        src="/interactive/interactive-information.webp"
+        alt="Industrial Safety Overview"
+        className="block sm:hidden w-full h-auto object-cover rounded-2xl mt-[80px] pb-[80px]"
+      />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
         <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça algumas das facilidades que entregamos aos nossos clientes:
         </h1>
 
+        {/* image for desktop with interactive images */}
         <div className="hidden sm:block">
           <img
             src="/interactive/interactive-information.webp"
@@ -233,7 +247,7 @@ export default function InformationManagement() {
         </div>
       </div>
       <ContactForm
-        preSelectedSolution="outros"
+        preSelectedSolution="gestao-de-informacoes"
         pageSource="Gestão de Informações"
         successMessage="Obrigado! Um especialista em Gestão de Informações entrará em contato."
       />

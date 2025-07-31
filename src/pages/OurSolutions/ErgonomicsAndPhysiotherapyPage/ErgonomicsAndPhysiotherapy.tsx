@@ -5,6 +5,7 @@ import { Accordion } from "../../../components/ui/Accordion";
 import { Tooltip } from "../../../components/ui/Tooltip/Tooltip";
 import ErgonomySection from "./_components/ErgonomySection";
 import { ergonomyConstants } from "../../../contants/ergonomyConstants";
+import useHtmlMetaData from "../../../hooks/useHtmlMetaData";
 
 type PositionProps = "top" | "bottom" | "left" | "right";
 
@@ -62,6 +63,12 @@ export default function ErgonomicsAndPhysiotherapy() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [tourId, setTourId] = useState<number | null>(null);
   const hasInteractedRef = useRef(false);
+
+  useHtmlMetaData({
+    title: "EPSSO | Ergonomia e Fisioterapia",
+    metaDescription:
+      "Com avaliações ergonômicas, orientações de postura, treinamentos e atividades, buscamos aumentar o bem-estar físico e mental dos funcionários, promovendo uma cultura de cuidado contínuo. Confie na EPSSO para criar um espaço de trabalho mais saudável, confortável e preparado para os desafios do mercado.",
+  });
 
   // Track currently open accordion
   const [currentOpenAccordion, setCurrentOpenAccordion] = useState<
@@ -161,12 +168,19 @@ export default function ErgonomicsAndPhysiotherapy() {
         </p>
       </QuoteSection>
       <ErgonomySection />
+      {/* image for mobile without interactive points */}
+      <img
+        src="/interactive/interactive-ergonomy.webp"
+        alt="Industrial Safety Overview"
+        className="block sm:hidden w-full h-auto object-cover rounded-2xl mt-[80px] pb-[80px]"
+      />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
         <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
           Conheça nossas soluções em Ergonomia e Qualidade de Vida:
         </h1>
 
+        {/* image for desktop with interactive images */}
         <div className="hidden sm:block">
           <img
             src="/interactive/interactive-ergonomy.webp"
