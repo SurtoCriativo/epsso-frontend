@@ -9,18 +9,22 @@ const useHtmlMetaData = ({ title, metaDescription }: HtmlMetaDataProps) => {
   useEffect(() => {
     // Store original values
     const originalTitle = document.title;
-    const originalMetaContent = document
-      .querySelector('meta[name="description"]')
-      ?.getAttribute("content");
+    const metaDescriptionElement = document.querySelector(
+      'meta[name="description"]'
+    );
+    const originalMetaContent =
+      metaDescriptionElement?.getAttribute("content") || "";
 
     // Update document title
     if (title) {
       document.title = title;
     }
 
-    // Update meta description
+    // Update or create meta description
     if (metaDescription) {
-      let meta = document.querySelector('meta[name="description"]');
+      let meta = document.querySelector(
+        'meta[name="description"]'
+      ) as HTMLMetaElement;
 
       if (!meta) {
         meta = document.createElement("meta");
@@ -38,8 +42,13 @@ const useHtmlMetaData = ({ title, metaDescription }: HtmlMetaDataProps) => {
       }
 
       const meta = document.querySelector('meta[name="description"]');
-      if (meta && originalMetaContent) {
-        meta.setAttribute("content", originalMetaContent);
+      if (meta) {
+        if (originalMetaContent) {
+          meta.setAttribute("content", originalMetaContent);
+        } else {
+          // If there was no original meta description, remove the one we created
+          meta.remove();
+        }
       }
     };
   }, [title, metaDescription]);

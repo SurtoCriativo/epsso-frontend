@@ -19,6 +19,21 @@ export const EMAIL_TEMPLATES: Record<string, EmailTemplateConfigProps> = {
       "solutions",
     ],
   },
+  jobApplication: {
+    templateId: import.meta.env.VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID,
+    defaultTo: "contact@yourcompany.com",
+    defaultSubject: "Aplicação para Trabalho",
+    requiredFields: [
+      "name",
+      "lastname",
+      "email",
+      "phone",
+      "city",
+      "state",
+      "solutions",
+      // "file" removed - we'll send file metadata instead
+    ],
+  },
 };
 
 export type EmailTemplateType = keyof typeof EMAIL_TEMPLATES;

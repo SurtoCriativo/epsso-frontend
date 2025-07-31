@@ -3,22 +3,17 @@ import { z } from "zod";
 export const jobApplicationFormSchema = z.object({
   name: z.string().min(1, "Campo obrigatório"),
   lastname: z.string().min(1, "Campo obrigatório"),
-  phone: z.string().min(10, "Telefone inválido").max(11, "Telefone inválido"),
+  phone: z.string().min(14, "Telefone inválido").max(15, "Telefone inválido"),
   email: z.string().email("E-mail inválido"),
-  website: z.string().url("URL inválida"),
   city: z.string().min(1, "Campo obrigatório"),
   state: z.string().min(1, "Campo obrigatório"),
-  job_role: z.string().min(1, "Campo obrigatório"),
   solutions: z.string().min(1, "Campo obrigatório"),
   message: z.string().max(120, "Máximo de 120 caracteres").optional(),
   file: z
-    .any()
-    .refine((file) => file instanceof File && file.size > 0, {
-      message: "Arquivo obrigatório",
-    })
+    .instanceof(File, { message: "Arquivo obrigatório" })
+    .refine((file) => file.size > 0, "Arquivo obrigatório")
     .refine(
       (file) =>
-        file instanceof File &&
         [
           "application/pdf",
           "application/msword",

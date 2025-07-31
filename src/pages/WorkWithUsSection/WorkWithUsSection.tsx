@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import JobApplicationForm from "./_components/JobApplicationForm";
+import useHtmlMetaData from "../../hooks/useHtmlMetaData";
 
 export default function WorkWithUsSection() {
+  useHtmlMetaData({
+    title: "EPSSO | Trabalhe Conosco",
+    metaDescription:
+      "Você pode enviar seu currículo para recrutamento@epsso.com.br ou preencha o formulário desta página para entrar em contato conosco e enviar seu currículo.",
+  });
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 30 }}

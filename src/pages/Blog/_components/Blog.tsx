@@ -9,7 +9,6 @@ import CategoryFilter from "./CategoryFilter/CategoryFilter";
 import BlogPostCard from "./BlogPostCard/BlogPostCard";
 import Pagination from "./Pagination/Pagination";
 import HighlightPosts from "./HighlightPosts/HighlightPosts";
-import useHtmlMetaData from "../../../hooks/useHtmlMetaData";
 
 export default function Blog() {
   const [page, setPage] = useState(1);
@@ -22,12 +21,6 @@ export default function Blog() {
   });
   const { categories } = useFilteredCategories([1, 3]); // Exclude "Destaque" and "Uncategorized"
   const stripHtml = useStripHtml();
-
-  useHtmlMetaData({
-    title: "EPSSO | Blog",
-    metaDescription:
-      "Leia as últimas notícias e artigos do nosso blog sobre diversos temas.",
-  });
 
   const posts = useMemo(() => data?.posts ?? [], [data]);
   const totalPages = data?.totalPages ?? 1;

@@ -1,7 +1,12 @@
 import QuoteSection from "../../components/_shared/QuoteSection";
+import useHtmlMetaData from "../../hooks/useHtmlMetaData";
 import ContactUsForm from "./_components/ContactUsForm";
 
 export default function ContactUsPage() {
+  useHtmlMetaData({
+    title: "EPSSO | Fale Conosco",
+    metaDescription: "Como nós podemos te ajudar hoje?",
+  });
   return (
     <main className="">
       <QuoteSection>

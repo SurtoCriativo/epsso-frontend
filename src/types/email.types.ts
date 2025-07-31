@@ -20,9 +20,10 @@ export interface ContactEmailData extends BaseEmailData {
   phone: string;
   email: string;
   website?: string;
-  job_role: string;
+  job_role?: string;
   solutions: string;
   message?: string;
+  file?: string;
   // Additional fields for tracking
   page_source?: string;
   submitted_at?: string;
