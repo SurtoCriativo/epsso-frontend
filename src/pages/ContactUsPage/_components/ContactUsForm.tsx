@@ -1,4 +1,4 @@
-import { Clock, MapPin, Mail, Phone, MessageSquare } from "lucide-react";
+import { Clock, MapPin, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,20 +27,14 @@ export default function ContactUsForm() {
 
   return (
     <div className="py-12 px-4 md:px-0 w-full">
-      {/* Cabeçalho "Como nós podemos te ajudar hoje?" */}
-      <div className="max-w-[1128px] mx-auto text-center mb-8">
-        {/* Se não for usar conteúdo aqui, pode remover essa div */}
-      </div>
-
-      {/* Container das duas colunas: formulário à esquerda, detalhes à direita */}
       <div className="max-w-[1128px] mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-16">
-        {/* Coluna da Esquerda: Formulário */}
+        {/* Formulário */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-gray-800 w-full max-w-[456px] min-h-[756px] md:min-h-[756px] rounded-2xl p-[32px_24px] flex flex-col justify-between overflow-y-auto"
+          className="text-gray-800 w-full max-w-[456px] min-h-[756px] rounded-2xl p-[32px_24px] flex flex-col justify-between overflow-y-auto"
         >
           <h2 className="text-xl font-semibold text-dark-green-800">
             Deixe sua mensagem
@@ -50,7 +44,6 @@ export default function ContactUsForm() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-[16px]">
-            {/* Campos do formulário (Nome, Sobrenome, Telefone, E-mail, Assunto, Mensagem) */}
             <div>
               <label className="block text-sm font-medium mb-2">Nome</label>
               <input
@@ -89,8 +82,8 @@ export default function ContactUsForm() {
                 type="text"
                 {...register("phone")}
                 placeholder="(00) 00000-0000"
-                className="input w-full py-3 px-4 h-[48px] rounded-md focus:outline-none border border-gray-300"
                 maxLength={11}
+                className="input w-full py-3 px-4 h-[48px] rounded-md focus:outline-none border border-gray-300"
               />
               {errors.phone && (
                 <span className="text-red-500 text-sm mt-1 block">
@@ -160,13 +153,13 @@ export default function ContactUsForm() {
 
           <button
             type="submit"
-            className="bg-dark-green-300 hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition flex items-center justify-center"
+            className="cursor-pointer bg-dark-green-300 hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition flex items-center justify-center"
           >
             Enviar mensagem
           </button>
         </motion.form>
 
-        {/* Coluna da Direita: Detalhes de Contato */}
+        {/* Detalhes de contato */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -218,13 +211,18 @@ export default function ContactUsForm() {
 
           <hr className="border-t border-gray-200 my-4" />
 
+          {/* ✅ Botão atualizado com novo ícone */}
           <a
             href="https://wa.me/5519999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white border border-dark-green-300 hover:bg-dark-green-50 hover:text-dark-green-700 rounded-full w-full py-3 text-dark-green-300 transition cursor-pointer flex items-center justify-center text-base font-semibold"
+            className="bg-neutral-gray-100 mt-[15px] hover:text-dark-green-700 rounded-full w-full py-3 px-4 text-dark-green-300 transition cursor-pointer flex items-center justify-start text-base font-semibold"
           >
-            <MessageSquare className="mr-2" size={20} />
+            <img
+              src="/trabalhe-conosco/whatsapp-icon.svg"
+              alt="WhatsApp"
+              className="w-5 h-5 mr-2"
+            />
             Estamos no WhatsApp
           </a>
         </motion.div>

@@ -247,7 +247,7 @@ export default function TrainingSection() {
 
             <button
               type="submit"
-              className="bg-[#7FBC53] hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition"
+              className="bg-dark-green-300 hover:bg-green-700 rounded-full w-[169px] h-[48px] mx-auto mt-8 text-white transition"
             >
               Solicitar contato
             </button>

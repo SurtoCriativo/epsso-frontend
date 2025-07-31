@@ -103,6 +103,9 @@ body {
   --color-neutral-500: #e0e0e0;
   --color-neutral-700: #444d5a;
 
+  /* Neutral Gray */
+  --color-neutral-gray-100: #f9fafb;
+
   /* Solid Colors */
   --color-neutral-light: #f7f9fb;
   --color-neutral-darker: #1b1f24;

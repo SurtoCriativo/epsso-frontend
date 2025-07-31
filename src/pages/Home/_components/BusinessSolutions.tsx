@@ -58,7 +58,7 @@ const solutionsData: SolutionProps[] = [
     ),
     contentDescription:
       "Soluções completas para proteger sua equipe: treinamentos, laudos técnicos, CIPA, LTCAT, PPRA, PPRPS, NR 15, NR 16, NR 18, NR 33, NR 35, serviço de assessoria, e mais.",
-    link: "servicos/seguranca-trabalho",
+    link: "servicos/seguranca-do-trabalho",
     linkText: "Proteger minha equipe agora",
   },
   {
@@ -80,7 +80,7 @@ const solutionsData: SolutionProps[] = [
     ),
     contentDescription:
       "Programas e atividades de prevenção, proteção e promoção da Saúde Ocupacional: laudos, análise ergonômica do trabalho, assistência em perícias judiciais, treinamentos, NR 17, entre outros.",
-    link: "servicos/ergonomia-fisioterapia",
+    link: "/servicos/ergonomia-e-fisioterapia",
     linkText: "Melhorar a ergonomia",
   },
   {

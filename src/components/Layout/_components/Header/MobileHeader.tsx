@@ -11,27 +11,27 @@ export default function MobileHeader() {
     {
       label: "Segurança do Trabalho",
       icon: "/icons/work-security.svg",
-      href: "/servicos/seguranca-trabalho",
+      href: "/servicos/seguranca-do-trabalho",
     },
     {
       label: "Medicina do Trabalho",
       icon: "/icons/work-medicine.svg",
-      href: "/servicos/medicina-trabalho",
+      href: "/servicos/medicina-do-trabalho",
     },
     {
       label: "Ergonomia e Fisioterapia",
       icon: "/icons/physiotherapy.svg",
-      href: "/servicos/ergonomia-fisioterapia",
+      href: "/servicos/ergonomia-e-fisioterapia",
     },
     {
       label: "Gestão de Terceirizados",
       icon: "/icons/outsource-management.svg",
-      href: "/servicos/gestao-terceirizados",
+      href: "/servicos/gestao-de-terceirizados",
     },
     {
       label: "Gestão de Informações",
       icon: "/icons/data-management.svg",
-      href: "/servicos/gestao-informacoes",
+      href: "/servicos/gestao-de-informacoes",
     },
     {
       label: "Assessoria Jurídica",
