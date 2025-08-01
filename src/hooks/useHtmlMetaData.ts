@@ -7,6 +7,9 @@ interface HtmlMetaDataProps {
 
 const useHtmlMetaData = ({ title, metaDescription }: HtmlMetaDataProps) => {
   useEffect(() => {
+    // Scroll to top of the page
+    window.scrollTo(0, 0);
+
     // Store original values
     const originalTitle = document.title;
     const metaDescriptionElement = document.querySelector(
