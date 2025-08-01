@@ -70,14 +70,14 @@ const BlogCardTitle: React.FC<BlogCardTitleProps> = memo(
 
     return (
       <div id={id} className="px-4 py-6">
-        <h3
+        <h1
           className={`text-base font-bold leading-6 text-neutral-700 ${
             className || ""
           }`}
           title={shouldTruncate ? title : undefined}
         >
           {displayTitle}
-        </h3>
+        </h1>
       </div>
     );
   }

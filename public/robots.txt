@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://epsso.com.br/sitemap.xml
+Sitemap: https://devepsso.vercel.app/sitemap.xml

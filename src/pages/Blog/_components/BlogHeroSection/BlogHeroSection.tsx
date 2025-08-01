@@ -2,7 +2,7 @@ export default function BlogHeroSection() {
   return (
     <section
       id="cursos"
-      role="img"
+      role="banner"
       aria-label="Banner de Cursos e Treinamentos"
       aria-labelledby="titulo-cursos"
       className="relative w-full h-[440px] text-white"

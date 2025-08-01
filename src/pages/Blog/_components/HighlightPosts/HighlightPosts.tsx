@@ -66,9 +66,9 @@ export default function HighlightPosts() {
                     {displayCategory.name}
                   </span>
                 )}
-                <h3 className="text-base font-bold leading-6 text-[#444D5A] mb-2">
+                <h1 className="text-base font-bold leading-6 text-[#444D5A] mb-2">
                   {post.title.rendered}
-                </h3>
+                </h1>
                 <p
                   className="text-xs font-normal leading-4 text-[#444D5A] mb-2"
                   dangerouslySetInnerHTML={{

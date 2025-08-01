@@ -1,3 +1,4 @@
+// src/services/email/emailService.ts
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import emailjs from "@emailjs/browser";
 
@@ -76,13 +77,17 @@ class EmailService {
         throw new Error("Missing email service configuration");
       }
 
-      // Prepare template parameters
+      // Prepare template parameters - include ALL data fields
       const templateParams = {
-        ...data,
+        ...data, // This spreads all fields from data
         to_email: template.defaultTo,
         subject: template.defaultSubject,
         sent_at: new Date().toLocaleString("pt-BR"),
       };
+
+      // Debug log to verify file URL is included
+      console.log("Template params being sent to EmailJS:", templateParams);
+      console.log("File URL:", templateParams.file);
 
       // Send email with retry logic
       const response = await this.retryOperation(() =>

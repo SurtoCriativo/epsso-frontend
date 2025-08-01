@@ -1,16 +1,13 @@
 import { useEmail } from "../useEmail";
 import type { JobApplicationFormSchema } from "../../schemas/jobApplicationFormSchema";
 import type { EmailError, EmailResponse } from "../../types/email.types";
+import { uploadService } from "../../services/upload/uploadService";
 
 interface UseJobApplicationFormOptions {
   onSuccess?: () => void;
   onError?: (error: EmailError) => void;
   pageSource?: string;
 }
-
-// Configure your Cloudinary account
-const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
-const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 
 export const useJobApplicationForm = (
   options: UseJobApplicationFormOptions = {}
@@ -28,38 +25,18 @@ export const useJobApplicationForm = (
     },
   });
 
-  const uploadToCloudinary = async (file: File): Promise<string> => {
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-
-    try {
-      const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Upload failed");
-      }
-
-      const data = await response.json();
-      return data.secure_url;
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      throw error;
-    }
-  };
-
   const sendJobApplication = async (formData: JobApplicationFormSchema) => {
     try {
       const file = formData.file as File;
 
-      // Upload file to Cloudinary
-      const fileUrl = await uploadToCloudinary(file);
+      // Upload file to WordPress
+      console.log("Uploading file to WordPress...");
+      const uploadResult = await uploadService.uploadToWordPress(file);
+      console.log("Upload result:", uploadResult);
+
+      if (!uploadResult.url) {
+        throw new Error("Upload successful but no URL returned");
+      }
 
       const emailPayload = {
         name: formData.name,
@@ -70,13 +47,17 @@ export const useJobApplicationForm = (
         state: formData.state,
         solutions: formData.solutions,
         message: formData.message || "Sem mensagem adicional",
-        file: fileUrl, // Now sending the URL instead of the file object
-        file_name: file.name,
+        file: uploadResult.url, // This is the URL that should be in the payload
+        file_url: uploadResult.url, // Alternative field name for the template
+        file_name: uploadResult.filename || file.name,
         file_size: `${(file.size / 1024 / 1024).toFixed(2)} MB`,
         file_type: file.type,
-        page_source: "Trabalhe Conosco",
+        page_source: options.pageSource || "Trabalhe Conosco",
         submitted_at: new Date().toLocaleString("pt-BR"),
       };
+
+      console.log("Email payload being sent:", emailPayload);
+      console.log("File URL in payload:", emailPayload.file);
 
       mutation.mutate(emailPayload);
     } catch (error) {

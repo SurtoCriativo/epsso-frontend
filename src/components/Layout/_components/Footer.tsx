@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Coluna 2: Institucional */}
           <div className="flex flex-col items-center md:items-start">
-            <h4 className={headingStyle}>Institucional</h4>
+            <p className={headingStyle}>Institucional</p>
             <ul className={listStyle}>
               <li>
                 <Link to="/sobre-a-epsso" className={linkStyle}>
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Coluna 3: Soluções */}
           <div className="flex flex-col items-center md:items-start">
-            <h4 className={headingStyle}>Soluções</h4>
+            <p className={headingStyle}>Soluções</p>
             <ul className={listStyle}>
               <li>
                 <Link
@@ -138,7 +138,7 @@ export default function Footer() {
 
           {/* Coluna 4: Suporte */}
           <div className="flex flex-col items-center md:items-start">
-            <h4 className={headingStyle}>Suporte</h4>
+            <p className={headingStyle}>Suporte</p>
             <ul className={listStyle}>
               {/* "Central de Ajuda": hidden because its going to be included in near future */}
               <li className="hidden">
