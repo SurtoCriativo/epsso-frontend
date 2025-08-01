@@ -92,7 +92,7 @@ export default function CategoryFilter({
                 <button
                   type="button"
                   onClick={() => handleSelect(0)}
-                  className={`w-full px-5 py-3 text-left hover:bg-green-soft-200 transition-colors duration-150 ${
+                  className={`cursor-pointer w-full px-5 py-3 text-left hover:bg-green-soft-200 transition-colors duration-150 ${
                     selectedCategoryId === null || selectedCategoryId === 0
                       ? "bg-green-soft-300 text-green-accents-900 font-medium"
                       : "text-neutral-700"
@@ -110,7 +110,7 @@ export default function CategoryFilter({
                   <button
                     type="button"
                     onClick={() => handleSelect(category.id)}
-                    className={`w-full px-5 py-3 text-left hover:bg-green-soft-200 transition-colors duration-150 ${
+                    className={`cursor-pointer w-full px-5 py-3 text-left hover:bg-green-soft-200 transition-colors duration-150 ${
                       selectedCategoryId === category.id
                         ? "bg-green-soft-300 text-green-accents-900 font-medium"
                         : "text-neutral-700"
