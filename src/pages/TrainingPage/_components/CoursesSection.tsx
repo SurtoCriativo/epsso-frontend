@@ -84,7 +84,7 @@ export default function TrainingSection() {
                   <h4 className="text-[16px] md:text-[14px] font-bold leading-snug text-black">
                     {item.title}
                   </h4>
-                  <p className="text-[16px] md:text-[14px] text-green-700 leading-normal">
+                  <p className="text-[16px] md:text-[14px] text-neutral-700 leading-normal">
                     {item.subtitle}
                   </p>
                 </div>

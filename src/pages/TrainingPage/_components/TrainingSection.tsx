@@ -2,29 +2,12 @@ import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Star } from "lucide-react";
+
 import {
   type TrainingFormSchema,
   trainingFormSchema,
 } from "../../../schemas/trainingFormSchema";
 import { useContactForm } from "../../../hooks/email/useContactForm";
-
-const testimonials = [
-  {
-    name: "Juliana Martins",
-    date: "21/06/2025",
-    avatar: "/trainingpage/avatar-juliana.png",
-    quote:
-      "Os cursos da EPSSO são excelentes! O conteúdo é atualizado e a plataforma é muito fácil de usar. Eu recomendo bastante.",
-  },
-  {
-    name: "Carlos Henrique",
-    date: "03/04/2025",
-    avatar: "/trainingpage/avatar-carlos.png",
-    quote:
-      "Fizemos os treinamentos com a EPSSO e ficamos impressionados com a qualidade e a clareza do conteúdo. A equipe toda aprendeu muito!",
-  },
-];
 
 interface TrainingSectionProps {
   preSelectedSolution?: string;
@@ -99,43 +82,30 @@ export default function TrainingSection({
     <section className="w-full bg-[linear-gradient(0deg,#007A2B_0%,#005B27_100%)] py-20 px-4">
       <div className="max-w-[1128px] mx-auto grid grid-cols-1 md:grid-cols-2 items-start gap-12">
         {/* Depoimentos */}
-        <div className="text-white flex flex-col">
-          <h2 className="text-xl font-semibold mb-8 px-4 md:px-0">
-            Depoimentos
+        <div className="w-full md:w-[552px] mx-auto md:mx-0">
+          <div className="inline-flex items-center w-[134px] h-[28px] gap-2 bg-green-soft-300 rounded-full py-[2px] px-3 shadow-sm mb-6">
+            <img
+              src="/about/message-square.svg"
+              alt="Ícone Depoimentos"
+              className="w-3 h-3"
+              aria-hidden="true"
+            />
+            <span className="text-green-accents-600 text-[10px] font-medium m-0">
+              FALE COM A EPSSO
+            </span>
+          </div>
+
+          {/* Título */}
+          <h2 className="text-white text-[22px] md:text-[32px] font-medium leading-tight mb-4">
+            Pronto para treinar sua equipe?
           </h2>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="mb-10 px-4 md:px-0 max-w-[456px]">
-              <div className="flex items-center gap-4 mb-2">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-10 h-10 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-sm font-medium leading-tight">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-white/70 leading-tight">
-                    {testimonial.date}
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-[2px] mb-2">
-                {Array(5)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className="fill-[#7FBC53] text-[#7FBC53]"
-                    />
-                  ))}
-              </div>
-              <p className="text-sm text-white/90 leading-relaxed">
-                "{testimonial.quote}"
-              </p>
-            </div>
-          ))}
+
+          {/* Parágrafo */}
+          <p className="text-white text-sm leading-relaxed">
+            Estamos prontos para ajudar sua empresa a crescer com treinamentos
+            sob medida. Preencha o formulário ao lado. Vamos entender suas
+            necessidades e indicar a melhor solução para sua equipe.
+          </p>
         </div>
 
         {/* Formulário / Sucesso */}
@@ -192,7 +162,7 @@ export default function TrainingSection({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-hidden mx-auto relative"
+                className="bg-white text-gray-800 w-full max-w-[456px] min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-hidden relative"
               >
                 {/* Loading overlay */}
                 {isLoading && (

@@ -51,8 +51,8 @@ export default function WhyChooseEpsso() {
 
   return (
     <section className="bg-white relative">
-      <div className="max-w-[1128px] mx-auto py-12 px-4">
-        <h2 className="text-green-700 text-lg font-semibold mb-8">
+      <div className="max-w-[1128px] mx-auto py-12 px-4 md:px-0">
+        <h2 className="text-green-700 text-lg font-medium mb-8">
           Por que escolher a EPSSO?
         </h2>
 

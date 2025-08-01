@@ -98,7 +98,7 @@ export default function JobApplicationForm() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white text-gray-800 w-full max-w-none min-h-[756px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-y-auto relative"
+          className="bg-white text-gray-800 w-full max-w-none min-h-[597px] rounded-2xl shadow-lg p-[32px_24px] flex flex-col justify-between overflow-y-auto relative"
         >
           {/* Loading overlay */}
           {isLoading && (
@@ -221,26 +221,8 @@ export default function JobApplicationForm() {
               )}
             </div>
 
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium mb-2">Solução</label>
-              <select
-                {...register("solutions")}
-                className="input w-full h-[48px] px-3"
-              >
-                <option value="">Selecione</option>
-                <option value="seguranca">Segurança do Trabalho</option>
-                <option value="medicina">Medicina do Trabalho</option>
-                <option value="cursos">Cursos e Treinamentos</option>
-              </select>
-              {errors.solutions && (
-                <span className="text-red-500 text-sm">
-                  {errors.solutions.message}
-                </span>
-              )}
-            </div>
-
             {/* Currículo */}
-            <div className="md:col-span-2">
+            <div className="mt-3.5 mb-3.5 md:col-span-2">
               <label className="block text-sm font-medium mb-2">
                 Currículo (PDF ou DOC)
               </label>
