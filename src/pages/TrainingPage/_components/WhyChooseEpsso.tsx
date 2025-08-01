@@ -70,7 +70,7 @@ export default function WhyChooseEpsso() {
               <h3 className="font-semibold text-neutral-darker">
                 {card.title}
               </h3>
-              <p className="text-sm text-dark-green">{card.description}</p>
+              <p className="text-sm text-neutral-700 ">{card.description}</p>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ export default function WhyChooseEpsso() {
               <h3 className="font-semibold text-neutral-darker">
                 {card.title}
               </h3>
-              <p className="text-sm text-dark-green">{card.description}</p>
+              <p className="text-sm text-neutral-700">{card.description}</p>
             </div>
           ))}
         </div>

@@ -33,9 +33,13 @@ export default function TrainingSection() {
     >
       <div className="max-w-[1128px] mx-auto">
         {/* Título */}
-        <h2 className="text-[24px] font-medium text-brand-400 mb-8">
+        <h2 className="text-[24px] font-medium text-brand-400 mb-3">
           Nossos cursos e treinamentos
         </h2>
+        <p className="text-[16px] text-neutral-700  mb-11">
+          Quer saber mais sobre um curso? Envie sua mensagem pelo formulário
+          abaixo.
+        </p>
 
         {/* Filtros */}
         <div className="flex gap-3 flex-wrap mb-10">
