@@ -45,7 +45,6 @@ export const useJobApplicationForm = (
         email: formData.email,
         city: formData.city,
         state: formData.state,
-        solutions: formData.solutions,
         message: formData.message || "Sem mensagem adicional",
         file: uploadResult.url, // This is the URL that should be in the payload
         file_url: uploadResult.url, // Alternative field name for the template

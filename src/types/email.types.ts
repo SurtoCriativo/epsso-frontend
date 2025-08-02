@@ -21,7 +21,7 @@ export interface ContactEmailData extends BaseEmailData {
   email: string;
   website?: string;
   job_role?: string;
-  solutions: string;
+  solutions?: string;
   message?: string;
   file?: string;
   // Additional fields for tracking

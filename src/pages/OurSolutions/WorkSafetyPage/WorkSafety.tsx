@@ -185,47 +185,42 @@ export default function WorkSafety() {
         </p>
       </QuoteSection>
       <SecuritySection />
-      {/* image for mobile without interactive points */}
-      <img
-        src="/interactive/interactive-work-safety.webp"
-        alt="Industrial Safety Overview"
-        className="block sm:hidden w-full h-auto object-cover rounded-2xl mt-[80px] pb-[80px]"
-      />
 
       <section className="relative w-full max-w-[1128px] mx-auto">
-        <h1 className="mx-auto py-6 max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400 pb-[40px]">
+        <h1 className="mx-auto max-w-[343px] md:pt-0 md:max-w-[1128px] text-center text-[20px] pt-4 md:text-left md:text-[24px] font-medium text-2xl text-green-accents-400">
           Conheça nossas soluções em Segurança do Trabalho:
         </h1>
+        <p className="text-center md:text-left text-[16px] md:text-[18px] text-neutral-700 pb-[40px]">
+          Veja todas nossas soluções abaixo da imagem.
+        </p>
 
         {/* image for desktop with interactive images */}
-        <div className="hidden sm:block">
-          <img
-            src="/interactive/interactive-work-safety.webp"
-            alt="Industrial Safety Overview"
-            className="w-full max-h-auto object-cover rounded-3xl pb-[80px]"
-          />
+        <img
+          src="/interactive/interactive-work-safety.webp"
+          alt="Industrial Safety Overview"
+          className="w-full max-h-auto object-cover rounded-3xl pb-[80px]"
+        />
 
-          {interactivePoints.map((point) => (
-            <div
-              key={point.id}
-              className="absolute"
-              style={{ top: point.top, left: point.left }}
-              onMouseEnter={() => handleMouseEnter(point.id)}
-              onMouseLeave={handleMouseLeave}
+        {interactivePoints.map((point) => (
+          <div
+            key={point.id}
+            className="hidden md:block md:absolute"
+            style={{ top: point.top, left: point.left }}
+            onMouseEnter={() => handleMouseEnter(point.id)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Tooltip
+              isVisible={activeId === point.id || tourId === point.id}
+              text={point.text}
+              position={point.position}
             >
-              <Tooltip
-                isVisible={activeId === point.id || tourId === point.id}
-                text={point.text}
-                position={point.position}
-              >
-                <button
-                  onClick={() => handleButtonClick(point)}
-                  className="cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                />
-              </Tooltip>
-            </div>
-          ))}
-        </div>
+              <button
+                onClick={() => handleButtonClick(point)}
+                className="cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              />
+            </Tooltip>
+          </div>
+        ))}
       </section>
 
       {/* Multiple Accordions */}

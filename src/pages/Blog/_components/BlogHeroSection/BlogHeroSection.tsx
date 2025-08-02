@@ -16,7 +16,7 @@ export default function BlogHeroSection() {
         <div className="max-w-[480px]">
           <h1
             id="titulo-cursos"
-            className="text-[32px] sm:text-[36px] md:text-[40px] font-bold leading-tight mb-4"
+            className="text-[32px] sm:text-[36px] md:text-[40px] font-bold leading-tight"
           >
             Segurança em
             <br />

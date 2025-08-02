@@ -23,15 +23,7 @@ export const EMAIL_TEMPLATES: Record<string, EmailTemplateConfigProps> = {
     templateId: import.meta.env.VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID,
     defaultTo: "trabalhe-conosco@yourcompany.com",
     defaultSubject: "Aplicação para Trabalho",
-    requiredFields: [
-      "name",
-      "lastname",
-      "email",
-      "phone",
-      "city",
-      "state",
-      "solutions",
-    ],
+    requiredFields: ["name", "lastname", "email", "phone", "city", "state"],
   },
 };
 

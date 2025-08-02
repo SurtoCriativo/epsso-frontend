@@ -129,8 +129,8 @@ const AccordionHeading: React.FC<AccordionHeadingProps> = ({
   const headingClasses = `
   flex items-center gap-4 self-stretch ${
     hasContent ? "cursor-pointer" : ""
-  } select-none font-semibold
-  text-[14px] font-medium sm:font-semibold sm:text-[18px] hover:text-white
+  } select-none
+  text-[12.5px] font-medium sm:font-semibold sm:text-[18px] hover:text-white
   ${className || ""}
 `.trim();
 

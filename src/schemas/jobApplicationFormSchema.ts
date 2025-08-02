@@ -7,7 +7,6 @@ export const jobApplicationFormSchema = z.object({
   email: z.string().email("E-mail inválido"),
   city: z.string().min(1, "Campo obrigatório"),
   state: z.string().min(1, "Campo obrigatório"),
-  solutions: z.string().min(1, "Campo obrigatório"),
   message: z.string().max(120, "Máximo de 120 caracteres").optional(),
   file: z
     .instanceof(File, { message: "Arquivo obrigatório" })
