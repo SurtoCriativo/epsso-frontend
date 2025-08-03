@@ -344,7 +344,7 @@ export const BusinessSolutions = () => {
                 className={`cursor-pointer text-[14px] w-[211px] py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-normal transition-all duration-300 ${
                   selectedId === solution.id
                     ? "bg-green-accents-1000 text-white shadow-md"
-                    : "bg-green-50 text-green-light hover:bg-green-100"
+                    : "bg-green-100 text-[#084C30]"
                 }`}
               >
                 {solution.tabTitle}
@@ -377,7 +377,7 @@ export const BusinessSolutions = () => {
                 className={`cursor-pointer text-[14px] w-[211px] py-2 px-5 flex-shrink-0 whitespace-nowrap rounded-full text-sm font-normal transition-all duration-300 ${
                   selectedId === solution.id
                     ? "bg-green-accents-1000 text-white shadow-md"
-                    : "bg-green-50 text-green-light hover:bg-green-100"
+                    : "bg-green-100 text-[#084C30]"
                 }`}
               >
                 {solution.tabTitle}
@@ -480,7 +480,7 @@ export const BusinessSolutions = () => {
         )}
 
         {/* Mobile Pagination */}
-        <div className="flex justify-center items-center gap-2 mt-8">
+        <div className="flex justify-center items-center gap-8 mt-8">
           {solutionsData.map((_, index) => (
             <button
               key={index}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const testimonials = [
   {
@@ -34,15 +34,7 @@ const testimonials = [
 const TestimonialsMobile: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = testimonials.length;
-
   const [touchStartX, setTouchStartX] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, 9000);
-    return () => clearInterval(timer);
-  }, [totalPages]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.changedTouches[0].clientX);
@@ -50,10 +42,13 @@ const TestimonialsMobile: React.FC = () => {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     const deltaX = e.changedTouches[0].clientX - touchStartX;
-    if (deltaX > 50) {
-      setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-    } else if (deltaX < -50) {
-      setCurrentPage((prev) => (prev + 1) % totalPages);
+
+    if (deltaX > 50 && currentPage > 0) {
+      // Swipe para a direita → voltar
+      setCurrentPage((prev) => prev - 1);
+    } else if (deltaX < -50 && currentPage < totalPages - 1) {
+      // Swipe para a esquerda → avançar
+      setCurrentPage((prev) => prev + 1);
     }
   };
 

@@ -406,7 +406,7 @@ export default function ContactForm({
                     className="input resize-none w-full py-3 px-4 h-[121px]"
                     disabled={isLoading}
                   />
-                  <div className="absolute bottom-2 right-4 text-right text-xs text-gray-400">
+                  <div className="absolute bottom-2 right-4 text-right text-xs text-gray-500">
                     {messageValue.length}/120
                   </div>
                   {errors.message && (

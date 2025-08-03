@@ -75,7 +75,7 @@ const TestimonialsDesktop: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, 9000);
+    }, 15000); // 15 segundos
     return () => clearInterval(interval);
   }, [totalPages]);
 
