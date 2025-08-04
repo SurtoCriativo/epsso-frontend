@@ -358,7 +358,7 @@ export default function ContactUsForm() {
           <hr className="border-t border-gray-200 my-4" />
 
           <a
-            href="https://wa.me/5519999999999"
+            href="https://wa.me/5519971723110"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-neutral-gray-100 mt-[15px] hover:text-dark-green-700 rounded-full w-full py-3 px-4 text-dark-green-300 transition cursor-pointer flex items-center justify-start text-base font-semibold"

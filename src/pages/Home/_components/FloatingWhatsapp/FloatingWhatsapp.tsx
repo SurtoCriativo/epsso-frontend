@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function FloatingWhatsapp() {
   return (
     <motion.a
-      href="https://wa.me/5511999999999" // <-- Substitua pelo número real com DDI
+      href="https://wa.me/5519997697385" // <-- Substitua pelo número real com DDI
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
