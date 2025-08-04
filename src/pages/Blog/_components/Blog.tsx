@@ -48,26 +48,34 @@ export default function Blog() {
 
       <div className="flex gap-8">
         <div className="flex-1">
-          <h1
-            id="blog-heading"
-            className="text-center md:text-start text-2xl font-medium text-brand-400 pb-9"
-          >
-            Últimas notícias
-          </h1>
-          <ul
-            role="list"
-            className="mx-auto grid justify-center [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4"
-          >
-            {posts.map((post) => (
-              <li key={post.id}>
-                <BlogPostCard
-                  post={post}
-                  categories={categories}
-                  stripHtml={stripHtml}
-                />
-              </li>
-            ))}
-          </ul>
+          {posts.length > 0 ? (
+            <>
+              <h1
+                id="blog-heading"
+                className="text-center md:text-start text-2xl font-medium text-brand-400 pb-9"
+              >
+                Últimas notícias
+              </h1>
+              <ul
+                role="list"
+                className="mx-auto grid justify-center [grid-template-columns:264px] sm:[grid-template-columns:repeat(3,264px)] grid-rows-2 gap-4"
+              >
+                {posts.map((post) => (
+                  <li key={post.id}>
+                    <BlogPostCard
+                      post={post}
+                      categories={categories}
+                      stripHtml={stripHtml}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <h1 className="text-xl font-medium text-gray-600 pb-9">
+              Nenhum post ainda foi adicionado ao blog...
+            </h1>
+          )}
         </div>
 
         <aside className="hidden md:block">

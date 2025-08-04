@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 
 // Base site URL
-const BASE_URL = "https://devepsso.vercel.app";
+const BASE_URL = "https://wwww.epsso.com.br";
 
 // Static routes (add all you want indexed)
 const routes = [
@@ -35,5 +35,3 @@ ${routes
 // Write to public/sitemap.xml
 const filePath = resolve("public", "sitemap.xml");
 writeFileSync(filePath, sitemap, "utf8");
-
-console.log("✅ sitemap.xml successfully written to public/");
