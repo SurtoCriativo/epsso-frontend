@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+# Allow existing files/directories through
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Otherwise, redirect everything to index.html
+RewriteRule . /index.html [L]

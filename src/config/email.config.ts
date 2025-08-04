@@ -8,7 +8,6 @@ export interface EmailTemplateConfigProps {
 export const EMAIL_TEMPLATES: Record<string, EmailTemplateConfigProps> = {
   contact: {
     templateId: import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
-    defaultTo: "comercial@yourcompany.com",
     defaultSubject: "Novo contato recebido",
     requiredFields: [
       "name",
@@ -21,7 +20,6 @@ export const EMAIL_TEMPLATES: Record<string, EmailTemplateConfigProps> = {
   },
   jobApplication: {
     templateId: import.meta.env.VITE_EMAILJS_JOB_APPLICATION_TEMPLATE_ID,
-    defaultTo: "trabalhe-conosco@yourcompany.com",
     defaultSubject: "Aplicação para Trabalho",
     requiredFields: ["name", "lastname", "email", "phone", "city", "state"],
   },
