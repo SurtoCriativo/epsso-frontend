@@ -18,6 +18,16 @@ const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    const element = document.getElementById("formulario-contato");
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section
       className="relative w-full h-[668px] text-white overflow-hidden"
@@ -60,23 +70,22 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          {/* 🚀 Botão ajustado para scroll suave */}
-          <a href="#formulario-contato">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer"
-              style={{
-                fontFamily: '"GT Walsheim", sans-serif',
-                fontSize: "14px",
-                fontStyle: "normal",
-                fontWeight: 500,
-                lineHeight: "20px",
-              }}
-            >
-              Fale com a gente
-              <ArrowRightIcon className="w-5 h-5" />
-            </button>
-          </a>
+          {/* Botão com scroll suave sem alterar URL */}
+          <button
+            type="button"
+            onClick={scrollToContact}
+            className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer"
+            style={{
+              fontFamily: '"GT Walsheim", sans-serif',
+              fontSize: "14px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            Fale com a gente
+            <ArrowRightIcon className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Wrapper da imagem */}
