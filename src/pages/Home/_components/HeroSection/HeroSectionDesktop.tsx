@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 // Ícone reutilizado
 const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -20,8 +18,6 @@ const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default function HeroSection() {
-  // Note: Preload links should be added to HTML head for optimal LCP performance
-
   return (
     <section
       className="relative w-full h-[668px] text-white overflow-hidden"
@@ -64,7 +60,8 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          <Link to="/fale-conosco">
+          {/* 🚀 Botão ajustado para scroll suave */}
+          <a href="#formulario-contato">
             <button
               type="button"
               className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer"
@@ -79,7 +76,7 @@ export default function HeroSection() {
               Fale com a gente
               <ArrowRightIcon className="w-5 h-5" />
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* Wrapper da imagem */}
@@ -93,11 +90,9 @@ export default function HeroSection() {
             width={690}
             height={604}
             className="absolute bottom-0 right-0 select-none pointer-events-none"
-            // Removed loading="lazy" for potential LCP image
             decoding="async"
             draggable={false}
             style={{ width: 690, height: 604 }}
-            // Add fetchpriority for modern browsers
             fetchPriority="high"
           />
         </div>

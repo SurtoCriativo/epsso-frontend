@@ -160,6 +160,10 @@ body {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .ripple-animation {
   position: relative;
 }
