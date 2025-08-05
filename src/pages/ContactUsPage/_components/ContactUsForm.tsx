@@ -258,11 +258,12 @@ export default function ContactUsForm() {
                     >
                       <option value="">Selecione</option>
                       <option value="duvida_geral">Dúvida Geral</option>
-                      <option value="suporte_tecnico">Suporte Técnico</option>
                       <option value="orcamento">Orçamento</option>
                       <option value="parceria">Parceria</option>
+                      <option value="suporte_tecnico">Suporte Técnico</option>
                       <option value="outros">Outros</option>
                     </select>
+
                     {errors.subject && (
                       <span className="text-red-500 text-sm mt-1 block">
                         {errors.subject.message}

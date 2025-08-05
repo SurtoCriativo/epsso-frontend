@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
 const CAROUSEL_CONFIG = {
-  speed: 0.5,
+  speed: 0.3,
   gap: 60,
   logoHeight: 56,
   logoWidth: 120,

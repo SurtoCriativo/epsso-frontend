@@ -11,7 +11,7 @@ export default function HeroSectionMobile() {
       document.head.appendChild(link);
     };
 
-    preloadImage("/hero/hero-mobile.webp");
+    preloadImage("/hero/imagem-header-profissionais-mobile.webp");
   }, []);
 
   const commonStyle = {
@@ -82,7 +82,7 @@ export default function HeroSectionMobile() {
 
       <div className="absolute bottom-0 left-0 w-full">
         <img
-          src="/hero/hero-mobile.webp"
+          src="/hero/imagem-header-profissionais-mobile.webp"
           alt="Pessoas"
           className="w-full h-auto object-contain"
           width={390}

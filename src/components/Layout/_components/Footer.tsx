@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   const headingStyle =
-    "font-medium text-[20px] leading-[160%] pt-2 text-center md:text-left";
-  const linkStyle = "hover:text-brand-300 transition-colors duration-200";
+    "font-semibold text-[20px] leading-[160%] pt-2 text-center md:text-left";
+  const linkStyle =
+    "hover:text-brand-300 font-light transition-colors duration-200";
   const listStyle =
-    "text-base leading-[2.2] text-white font-normal text-center md:text-left mt-[24px]";
+    "text-base  leading-[2.2] text-white font-light text-center md:text-left mt-[24px]";
 
   return (
     <footer className="bg-neutral text-white py-10 px-6">

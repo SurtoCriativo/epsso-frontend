@@ -11,27 +11,12 @@ import { formatPhone } from "../utils/formatters";
 
 const serviceOptions = [
   {
-    id: "seguranca-do-trabalho",
-    value: "seguranca-do-trabalho",
-    label: "Segurança do Trabalho",
-  },
-  {
-    id: "medicina-do-trabalho",
-    value: "medicina-do-trabalho",
-    label: "Medicina do Trabalho",
-  },
-  { id: "e-social", value: "esocial", label: "e-Social" },
-  { id: "ergonomia", value: "ergonomia", label: "Ergonomia" },
-  {
-    id: "servicos-in-company",
-    value: "servicos-in-company",
-    label: "Serviços In Company",
-  },
-  {
     id: "assessoria-juridica",
     value: "assessoria-juridica",
     label: "Assessoria Jurídica",
   },
+  { id: "e-social", value: "esocial", label: "e-Social" },
+  { id: "ergonomia", value: "ergonomia", label: "Ergonomia" },
   {
     id: "gestao-de-informacoes",
     value: "gestao-de-informacoes",
@@ -42,17 +27,33 @@ const serviceOptions = [
     value: "gestao-de-terceirizados",
     label: "Gestão de Terceirizados",
   },
+  {
+    id: "medicina-do-trabalho",
+    value: "medicina-do-trabalho",
+    label: "Medicina do Trabalho",
+  },
+  {
+    id: "seguranca-do-trabalho",
+    value: "seguranca-do-trabalho",
+    label: "Segurança do Trabalho",
+  },
+  {
+    id: "servicos-in-company",
+    value: "servicos-in-company",
+    label: "Serviços In Company",
+  },
+  // "Outros" sempre por último
   { id: "outros", value: "outros", label: "Outros" },
 ];
 
 const sectorOptions = [
-  { value: "rh", label: "RH" },
-  { value: "seguranca", label: "Segurança" },
+  { value: "compliance", label: "Compliance" },
   { value: "financeiro", label: "Financeiro" },
+  { value: "juridico", label: "Jurídico" },
   { value: "manutencao", label: "Manutenção" },
   { value: "operacoes", label: "Operações" },
-  { value: "juridico", label: "Jurídico" },
-  { value: "compliance", label: "Compliance" },
+  { value: "rh", label: "RH" },
+  { value: "seguranca", label: "Segurança" },
   { value: "outro", label: "Outro" },
 ];
 

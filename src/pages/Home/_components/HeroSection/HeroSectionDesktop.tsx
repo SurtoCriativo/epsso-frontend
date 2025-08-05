@@ -88,7 +88,7 @@ export default function HeroSection() {
           style={{ width: 690, height: 668 }}
         >
           <img
-            src="/hero/profissionais.webp"
+            src="/hero/imagem-profissionais-hero.webp"
             alt="Pessoas"
             width={690}
             height={604}
