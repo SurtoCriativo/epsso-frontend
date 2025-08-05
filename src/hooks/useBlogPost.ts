@@ -10,7 +10,7 @@ interface UseBlogPostParamsProps {
 export function useBlogPost({
   post,
   categories,
-  excludeCategoryId = 3,
+  excludeCategoryId = 2,
 }: UseBlogPostParamsProps) {
   const categoryInfo = useMemo(() => {
     const validCategoryId = post.categories.find(

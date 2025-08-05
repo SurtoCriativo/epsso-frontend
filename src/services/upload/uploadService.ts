@@ -75,22 +75,15 @@ class UploadService {
     const headers: HeadersInit = {};
 
     // Basic auth with application password
-    if (
-      UPLOAD_CONFIG.wordpress.username &&
-      UPLOAD_CONFIG.wordpress.appPassword
-    ) {
-      const credentials = btoa(
-        `${UPLOAD_CONFIG.wordpress.username}:${UPLOAD_CONFIG.wordpress.appPassword}`
-      );
-      headers["Authorization"] = `Basic ${credentials}`;
-    }
-
     try {
-      const response = await fetch("https://epsso.com.br/wp-json/wp/v2/media", {
-        method: "POST",
-        body: formData,
-        headers,
-      });
+      const response = await fetch(
+        "https://epsso.com.br/cms/wp-json/wp/v2/media",
+        {
+          method: "POST",
+          body: formData,
+          headers,
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));

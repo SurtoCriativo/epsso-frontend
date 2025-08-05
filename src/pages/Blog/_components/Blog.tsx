@@ -19,7 +19,7 @@ export default function Blog() {
     page,
     categoryId: selectedCategoryId,
   });
-  const { categories } = useFilteredCategories([1, 3]); // Exclude "Destaque" and "Uncategorized"
+  const { categories } = useFilteredCategories([1, 2]); // Exclude "Destaque" and "Uncategorized"
   const stripHtml = useStripHtml();
 
   const posts = useMemo(() => data?.posts ?? [], [data]);
