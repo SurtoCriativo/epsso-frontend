@@ -18,12 +18,11 @@ export default function BlogHeroSection() {
             id="titulo-cursos"
             className="text-[32px] sm:text-[36px] md:text-[40px] font-bold leading-tight"
           >
-            Segurança em
+            Blog da EPSSO:
             <br />
-            foco: <span className="font-normal">boas práticas</span>
           </h1>
           <p className="text-[32px] sm:text-[36px] md:text-[40px] font-normal leading-snug">
-            que salvam vidas.
+            informação de qualidade e boas práticas para você e sua sua empresa
           </p>
         </div>
       </header>

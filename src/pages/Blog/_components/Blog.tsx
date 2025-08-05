@@ -72,7 +72,7 @@ export default function Blog() {
               </ul>
             </>
           ) : (
-            <h1 className="text-xl font-medium text-gray-600 pb-9">
+            <h1 className="text-xl font-medium text-gray-600 pb-9 px-4 md:px-0">
               Nenhum post ainda foi adicionado ao blog...
             </h1>
           )}
