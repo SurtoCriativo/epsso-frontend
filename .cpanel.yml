@@ -1,0 +1,12 @@
+deployment:
+  tasks:
+    # Set the path to your document root (adjust for your cPanel username/domain).
+    - export DEPLOYPATH=/home/epssoc88/public_html
+
+    # Copy the prebuilt files from dist/ into the document root.
+    # --delete removes files from the destination that no longer exist in dist.
+    - /bin/rsync -a --delete dist/ $DEPLOYPATH/
+
+    # Fix directory and file permissions (optional but recommended).
+    - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 '{}' \;
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 '{}' \;
