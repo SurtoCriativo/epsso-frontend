@@ -1,11 +1,14 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { UserRound, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function MobileHeader() {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+
+  const isHome = location.pathname === "/";
 
   const solutions = [
     {
@@ -40,9 +43,38 @@ export default function MobileHeader() {
     },
   ];
 
+  // Fecha o menu ao rolar a tela
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+      setSolutionsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
+
+  // Scroll instantâneo ao clicar na logo estando na home
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo(0, 0); // scroll instantâneo
+    }
+  };
+
   return (
     <div className="flex lg:hidden items-center justify-between px-4 py-4">
-      <Link to="/" className="transition-all duration-300 ease-in-out">
+      <Link
+        to="/"
+        onClick={handleLogoClick}
+        className="transition-all duration-300 ease-in-out"
+        aria-label="Voltar para a página inicial"
+      >
         <img
           src="/logo-epsso.svg"
           alt="Logo da EPSSO"
@@ -101,6 +133,8 @@ export default function MobileHeader() {
                 <button
                   onClick={() => setSolutionsOpen(!solutionsOpen)}
                   className="w-full flex items-center gap-2 text-left text-dark-green-100 hover:text-green-700"
+                  aria-expanded={solutionsOpen}
+                  aria-controls="solutions-dropdown"
                 >
                   Nossas Soluções
                   <ChevronDown
@@ -114,6 +148,7 @@ export default function MobileHeader() {
                 <AnimatePresence>
                   {solutionsOpen && (
                     <motion.ul
+                      id="solutions-dropdown"
                       className="mt-3 mb-3 flex flex-col gap-4 pl-3 border-l border-gray-200"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
@@ -129,7 +164,7 @@ export default function MobileHeader() {
                             <div className="w-7 h-7 bg-brand-300 rounded flex items-center justify-center">
                               <img
                                 src={item.icon}
-                                alt="icon"
+                                alt={`${item.label} icon`}
                                 className="w-4 h-4"
                               />
                             </div>

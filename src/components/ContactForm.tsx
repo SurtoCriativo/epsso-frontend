@@ -69,7 +69,7 @@ export default function ContactForm({
   preSelectedSolution,
   pageSource = "Home",
   onSuccess,
-  successMessage = "Obrigado pelo contato! Retornaremos em breve.",
+  successMessage = "",
   className,
 }: ContactFormProps) {
   const {
@@ -200,8 +200,7 @@ export default function ContactForm({
                 {successMessage}
               </h3>
               <p className="text-gray-600 mb-8">
-                Nossa equipe analisará sua solicitação e entrará em contato nas
-                próximas 24 horas úteis.
+                Nossa equipe comercial retornará este contato em breve!
               </p>
               <button
                 onClick={handleSendAnother}
@@ -352,7 +351,7 @@ export default function ContactForm({
                   </label>
                   <select
                     {...register("job_role")}
-                    className="input w-full h-[48px] px-4"
+                    className="custom-select w-full h-[48px] px-4"
                     disabled={isLoading}
                   >
                     <option value="">Selecione</option>
@@ -376,7 +375,7 @@ export default function ContactForm({
                   </label>
                   <select
                     {...register("solutions")}
-                    className="input w-full h-[48px] px-4"
+                    className="custom-select w-full h-[48px] px-4"
                     disabled={isLoading}
                   >
                     <option value="">Selecione</option>

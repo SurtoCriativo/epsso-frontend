@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ChevronDown, UserRound } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SolutionsDropdown from "../../../SolutionsDropdown";
 
 interface DesktopHeaderProps {
@@ -18,6 +18,9 @@ export default function DesktopHeader({
   dropdownPosition,
   setDropdownPosition,
 }: DesktopHeaderProps) {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   const timeoutRef = useRef<number | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -44,10 +47,22 @@ export default function DesktopHeader({
     }, 150);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo(0, 0); // scroll instantâneo
+    }
+  };
+
   return (
     <div className="w-[1128px] hidden lg:flex max-w-7xl mx-auto py-4 items-center justify-between">
       {/* Logo */}
-      <Link to="/" className="mr-8 flex-shrink-0">
+      <Link
+        to="/"
+        onClick={handleLogoClick}
+        className="mr-8 flex-shrink-0"
+        aria-label="Voltar para a página inicial"
+      >
         <img
           src="/logo-epsso.svg"
           alt="Logo da EPSSO"

@@ -78,10 +78,11 @@ export default function JobApplicationForm() {
             </svg>
           </div>
           <h3 className="text-2xl font-bold mb-4">
-            Obrigado pela candidatura!
+            Obrigado pelo seu interesse em fazer parte do time EPSSO!
           </h3>
           <p className="text-gray-600 mb-8">
-            Recebemos seu currículo e entraremos em contato em até 5 dias úteis.
+            Seu currículo foi recebido com sucesso e será incluído em nosso
+            Banco de Talentos para oportunidades futuras.
           </p>
           <button
             onClick={handleSendAnother}
@@ -205,7 +206,7 @@ export default function JobApplicationForm() {
               <label className="block text-sm font-medium mb-2">Estado</label>
               <select
                 {...register("state")}
-                className="input w-full h-[48px] px-3"
+                className="custom-select w-full h-[48px] px-3"
               >
                 <option value="">Selecione</option>
                 {ufConstants.map((uf) => (

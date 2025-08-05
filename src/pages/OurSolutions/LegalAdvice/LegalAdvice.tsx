@@ -201,7 +201,7 @@ export default function LegalAdvice() {
             >
               <button
                 onClick={() => handleButtonClick(point)}
-                className="cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                className="ripple-animation cursor-pointer w-6 h-6 border-brand-300 border-2 bg-green-accents-400 rounded-full flex items-center justify-center text-white font-bold shadow-md hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               />
             </Tooltip>
           </div>
@@ -227,7 +227,7 @@ export default function LegalAdvice() {
                   className="max-h-[36px] sm:max-h-[40px]"
                   index={i + 1}
                 >
-                  <h3 className="flex-1 font-medium sm:font-semibold">
+                  <h3 className="flex-1 font-medium sm:font-medium">
                     {item.heading}
                   </h3>
                 </Accordion.Heading>
@@ -242,7 +242,7 @@ export default function LegalAdvice() {
       <ContactForm
         preSelectedSolution="assessoria-juridica"
         pageSource="Assessoria Jurídica"
-        successMessage="Obrigado! Um especialista em Assessoria Jurídica entrará em contato."
+        successMessage="Obrigado pelo seu interesse por soluções em Assessoria Jurídica."
       />
     </main>
   );

@@ -1,19 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
-const logos = [
-  "/ClientCarousel/vermeer.webp",
-  "/ClientCarousel/iguatemi-campinas.webp",
-  "/ClientCarousel/kion-hroup.webp",
-  "/ClientCarousel/Ingredion.webp",
-  "/ClientCarousel/planit.webp",
-  "/ClientCarousel/netwire.webp",
-  "/ClientCarousel/vermeer.webp",
-  "/ClientCarousel/iguatemi-campinas.webp",
-  "/ClientCarousel/kion-hroup.webp",
-  "/ClientCarousel/Ingredion.webp",
-  "/ClientCarousel/planit.webp",
-  "/ClientCarousel/netwire.webp",
-];
+const CAROUSEL_CONFIG = {
+  speed: 0.5,
+  gap: 60,
+  logoHeight: 56,
+  logoWidth: 120,
+} as const;
+
+const logoData = [
+  { src: "/ClientCarousel/iguatemi-campinas.svg", alt: "Iguatemi Campinas" },
+  { src: "/ClientCarousel/kion-group.svg", alt: "Kion Group" },
+  { src: "/ClientCarousel/ingredion.svg", alt: "Ingredion" },
+  { src: "/ClientCarousel/planit.svg", alt: "Planit" },
+  { src: "/ClientCarousel/netwire.svg", alt: "Netwire" },
+  { src: "/ClientCarousel/vermeer.svg", alt: "Vermeer" },
+  { src: "/ClientCarousel/candido-ferreira.svg", alt: "Cândido Ferreira" },
+  { src: "/ClientCarousel/gowan-brasil.svg", alt: "Gowan Brasil" },
+  { src: "/ClientCarousel/mcsol.svg", alt: "McSol" },
+  { src: "/ClientCarousel/enforce.svg", alt: "Enforce" },
+  { src: "/ClientCarousel/agis.svg", alt: "Agis" },
+] as const;
 
 export default function LogosCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -21,9 +27,15 @@ export default function LogosCarousel() {
   const scrollAmount = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Triple the logos to ensure seamless infinite scroll
+  const duplicatedLogos = useMemo(
+    () => [...logoData, ...logoData, ...logoData],
+    []
+  );
+
   // Preload logo images for better performance
   useEffect(() => {
-    const uniqueLogos = Array.from(new Set(logos)); // Remove duplicates for preloading
+    const uniqueLogos = Array.from(new Set(logoData.map((logo) => logo.src)));
 
     const preloadImage = (src: string) => {
       const link = document.createElement("link");
@@ -34,63 +46,86 @@ export default function LogosCarousel() {
     };
 
     // Preload all unique logo images
-    uniqueLogos.forEach((logo) => {
-      preloadImage(logo);
-    });
+    uniqueLogos.forEach(preloadImage);
   }, []);
 
-  useEffect(() => {
+  const step = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    const speed = 0.5;
+    if (!isPaused) {
+      scrollAmount.current += CAROUSEL_CONFIG.speed;
 
-    function step() {
-      if (!track) return;
-      if (!isPaused) {
-        scrollAmount.current += speed;
-        if (scrollAmount.current >= track.scrollWidth / 2) {
-          scrollAmount.current = 0;
-        }
-        track.style.transform = `translateX(-${scrollAmount.current}px)`;
+      // Reset when we've scrolled one full set (1/3 of total width)
+      const resetPoint = track.scrollWidth / 3;
+      if (scrollAmount.current >= resetPoint) {
+        scrollAmount.current = 0;
       }
-      animationFrameId.current = requestAnimationFrame(step);
-    }
 
+      track.style.transform = `translateX(-${scrollAmount.current}px)`;
+    }
+    animationFrameId.current = requestAnimationFrame(step);
+  }, [isPaused]);
+
+  useEffect(() => {
     animationFrameId.current = requestAnimationFrame(step);
 
     return () => {
-      if (animationFrameId.current)
+      if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
+      }
     };
-  }, [isPaused]);
+  }, [step]);
 
-  const duplicatedLogos = [...logos, ...logos];
+  const handleMouseEnter = useCallback(() => setIsPaused(true), []);
+  const handleMouseLeave = useCallback(() => setIsPaused(false), []);
 
   return (
-    <section className="overflow-hidden w-full pt-20 pb-24 bg-transparent">
+    <section
+      className="overflow-hidden w-full pt-20 pb-24 bg-transparent"
+      aria-label="Client logos carousel"
+    >
       <h2 className="text-center mb-[40px] text-[24px] md:text-[32px] text-dark-green-100 font-medium select-none">
         Temos a confiança de marcas líderes de mercado
       </h2>
 
       <div
         ref={trackRef}
-        className="flex whitespace-nowrap will-change-transform gap-[60px]"
-        style={{ transform: "translateX(0)" }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        className="flex whitespace-nowrap will-change-transform"
+        style={{
+          transform: "translateX(0)",
+          gap: `${CAROUSEL_CONFIG.gap}px`,
+          width: "fit-content",
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        role="marquee"
+        aria-label="Scrolling client logos"
       >
-        {duplicatedLogos.map((logo, i) => (
-          <div key={i} className="flex-shrink-0">
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={`${logo.src}-${index}`}
+            className="flex-shrink-0"
+            role="img"
+            aria-label={logo.alt}
+          >
             <img
-              src={logo}
-              alt={`Logo ${i + 1}`}
-              className="object-contain h-[56px] w-auto"
-              // Remove loading="lazy" for carousel images that are immediately visible
-              width={120}
-              height={56}
+              src={logo.src}
+              alt={logo.alt}
+              className="object-contain select-none"
+              style={{
+                height: `${CAROUSEL_CONFIG.logoHeight}px`,
+                width: "auto",
+              }}
+              width={CAROUSEL_CONFIG.logoWidth}
+              height={CAROUSEL_CONFIG.logoHeight}
               decoding="async"
               draggable={false}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = "none";
+                console.warn(`Failed to load logo: ${logo.src}`);
+              }}
             />
           </div>
         ))}

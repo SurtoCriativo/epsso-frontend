@@ -108,10 +108,11 @@ export default function ContactUsForm() {
                   </svg>
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  Mensagem enviada!
+                  Obrigado pelo seu interesse em relação à EPSSO.
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  Obrigado pelo contato. Responderemos em breve.
+                  Nossa equipe analisará sua mensagem e retornará este contato
+                  em breve!
                 </p>
                 <button
                   onClick={handleSendAnother}
@@ -234,7 +235,7 @@ export default function ContactUsForm() {
                     <input
                       type="email"
                       {...register("email")}
-                      placeholder="exemplo@seuemail.com.br"
+                      placeholder="comercial@epsso.com.br"
                       className="input w-full py-3 px-4 h-[48px] rounded-md focus:outline-none border border-gray-300"
                       disabled={isLoading}
                     />
@@ -252,7 +253,7 @@ export default function ContactUsForm() {
                     </label>
                     <select
                       {...register("subject")}
-                      className="input w-full h-[48px] rounded-md focus:outline-none px-4 border border-gray-300"
+                      className="custom-select w-full h-[48px] rounded-md focus:outline-none px-4 border border-gray-300"
                       disabled={isLoading}
                     >
                       <option value="">Selecione</option>
@@ -343,7 +344,7 @@ export default function ContactUsForm() {
             <Mail className="text-dark-green-300 mr-3 mt-1" size={20} />
             <div>
               <h3 className="font-medium text-gray-700 text-base">E-mail</h3>
-              <p className="text-sm text-gray-600">suporte@exemplo.com.br</p>
+              <p className="text-sm text-gray-600">comercial@epsso.com.br</p>
             </div>
           </div>
 

@@ -44,7 +44,19 @@
 }
 
 .input {
+  @apply rounded-xl border border-gray-300 py-2 text-sm placeholder-gray-400;
+}
+
+.custom-select {
   @apply w-full rounded-xl border border-gray-300 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all;
+  padding-right: 2.5rem !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("/services-pages/arrow-select.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  background-size: 16px;
 }
 
 body {
@@ -130,4 +142,54 @@ body {
 
 .animate-in {
   animation: slideIn 0.2s ease-out;
+}
+
+.pulse-animation {
+  animation: pulse-wave 2s infinite;
+}
+
+@keyframes pulse-wave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.ripple-animation {
+  position: relative;
+}
+
+.ripple-animation::before,
+.ripple-animation::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #22c55e;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: ripple 2s infinite;
+}
+
+.ripple-animation::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
 }

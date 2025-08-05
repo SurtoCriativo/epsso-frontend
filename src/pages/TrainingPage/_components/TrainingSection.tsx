@@ -20,7 +20,7 @@ export default function TrainingSection({
   preSelectedSolution,
   pageSource = "TrainingPage",
   onSuccess,
-  successMessage = "Obrigado pelo contato! Retornaremos em breve.",
+  successMessage = "Obrigado pelo seu interesse por soluções em Cursos e Treinamentos.",
 }: TrainingSectionProps) {
   const {
     register,
@@ -144,8 +144,7 @@ export default function TrainingSection({
                   {successMessage}
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  Nossa equipe analisará sua solicitação e entrará em contato
-                  nas próximas 24 horas úteis.
+                  Nossa equipe comercial retornará este contato em breve!
                 </p>
                 <button
                   onClick={handleSendAnother}

@@ -1,0 +1,19 @@
+import{r as l,R as C,j as e,A as f,m as h}from"./index-Rb_83lJ8.js";const w={open:{height:"auto",opacity:1,transition:{height:{duration:.3,ease:"easeOut"},opacity:{duration:.25,ease:"easeOut"}}},closed:{height:0,opacity:0,transition:{height:{duration:.3,ease:"easeIn"},opacity:{duration:.25,ease:"easeIn"}}}},b={open:{rotate:180,transition:{duration:.3,ease:"easeInOut"}},closed:{rotate:0,transition:{duration:.3,ease:"easeInOut"}}},g=l.createContext(null),v=()=>{const t=l.useContext(g);if(!t)throw new Error("Accordion compound components must be used within <Accordion>");return t},j=({className:t})=>e.jsx("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:t,children:e.jsx("path",{d:"M6 9L12 15L18 9",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"})}),y=({children:t,defaultOpen:s=!1,onToggle:n,className:i})=>{const[a,u]=l.useState(s),r=l.useMemo(()=>{let d=!1;return l.Children.forEach(t,o=>{C.isValidElement(o)&&(o.type===m||o.type?.displayName==="AccordionContent")&&(d=!0)}),d},[t]),x=l.useCallback(()=>{r&&u(d=>{const o=!d;return n?.(o),o})},[n,r]),c=l.useMemo(()=>({isOpen:a,toggle:x,hasContent:r}),[a,x,r]),p=`
+    group flex px-6 py-[17px] sm:py-[23px] flex-col justify-center items-start gap-4 self-stretch
+    rounded-3xl border border-gray-300 bg-gray-50 ${r?"cursor-pointer":""}
+    transition-colors duration-200 hover:bg-[#7FBC53] text-neutral-700 hover:text-white
+    ${i||""}
+  `.trim();return e.jsx(g.Provider,{value:c,children:e.jsx("div",{onClick:r?x:void 0,className:p,children:t})})},A=({index:t,children:s,className:n,icon:i,expandIcon:a,collapseIcon:u})=>{const{isOpen:r,toggle:x,hasContent:c}=v(),p=`
+  flex items-center gap-4 self-stretch ${c?"cursor-pointer":""} select-none
+  text-[12.5px] font-medium sm:font-semibold sm:text-[18px] hover:text-white
+  ${n||""}
+`.trim(),d=()=>{if(!c)return null;if(a&&u)return r?u:a;const o=i||e.jsx(j,{className:"text-dark-green-300 group-hover:text-white"});return e.jsx(h.div,{variants:b,initial:"closed",animate:r?"open":"closed",className:"flex items-center",children:o})};return e.jsxs("div",{className:p,role:"button",tabIndex:c?0:-1,onKeyDown:o=>{c&&(o.key==="Enter"||o.key===" ")&&(o.preventDefault(),x())},"aria-expanded":c?r:void 0,children:[e.jsx("span",{className:`\r
+          flex items-center justify-center\r
+          py-[7px] px-[12px] w-[40px] h-[40px] rounded-full\r
+          bg-dark-green-300 group-hover:bg-white\r
+          transition-colors duration-200\r
+        `,children:e.jsx("p",{className:"text-white font-bold text-[18px] group-hover:text-[#008F32] transition-colors duration-200",children:t})}),s,d()]})},m=({children:t,className:s,...n})=>{const{isOpen:i}=v(),a=`
+    flex px-14 flex-col items-start gap-4 self-stretch overflow-hidden text-[14px] md:text-[16px] text-neutral-700
+    group-hover:text-white
+    ${s||""}
+  `.trim();return e.jsx(f,{initial:!1,children:i&&e.jsx(h.div,{className:a,variants:w,initial:"closed",animate:"open",exit:"closed",...n,children:t})})};m.displayName="AccordionContent";y.Heading=A;y.Content=m;const N={top:"left-1/2 -translate-x-1/2 -top-2 translate-y-[-100%]",bottom:"left-1/2 -translate-x-1/2 -bottom-2 translate-y-[100%]",left:"top-0 -left-3 translate-x-[-100%]",right:"top-0 -right-3 translate-x-[100%]"},k={hidden:t=>{let s=0,n=0;return t==="top"&&(s=10),t==="bottom"&&(s=-10),t==="left"&&(n=10),t==="right"&&(n=-10),{opacity:0,y:s,x:n,scale:.95}},visible:{opacity:1,y:0,x:0,scale:1}},F=({text:t,children:s,isVisible:n,position:i="top"})=>e.jsxs("div",{className:"relative flex items-center",children:[s,e.jsx(f,{children:n&&e.jsx(h.div,{custom:i,variants:k,initial:"hidden",animate:"visible",exit:"hidden",transition:{duration:.2,ease:"easeInOut"},className:`absolute w-max max-w-xs bg-[#FFFFFF] text-[#303030] font-bold text-xs rounded-md p-4 shadow-lg z-10 ${N[i]}`,children:t})})]});export{y as A,F as T};
