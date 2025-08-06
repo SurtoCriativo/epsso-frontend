@@ -1,4 +1,4 @@
-import{a as s,j as e,L as i,m as r}from"./index-DM_Pfc_v.js";import{u as n}from"./useHtmlMetaData-2sTNiLSi.js";/**
+import{a as s,j as e,L as i,m as r}from"./index-BeWHwAy1.js";import{u as n}from"./useHtmlMetaData-CIauiCUd.js";/**
  * @license lucide-react v0.523.0 - ISC
  *
  * This source code is licensed under the ISC license.

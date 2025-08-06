@@ -119,7 +119,7 @@ export default function MobileHeader() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <ul className="flex flex-col p-4 gap-10 text-[14px] font-medium text-neutral-900">
+            <ul className="flex flex-col p-4 gap-6 text-[14px] font-medium text-neutral-900">
               <li>
                 <a
                   href="/sobre-a-epsso"

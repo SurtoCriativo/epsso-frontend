@@ -60,6 +60,7 @@ export default function HeroSectionMobile() {
       style={{
         background:
           "linear-gradient(0deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.24) 100%), linear-gradient(180deg, var(--background-green-lighter, #007A2B) 0%, var(--background-green-light, #005B27) 100%)",
+        isolation: "isolate", // ADICIONADO: Cria contexto de empilhamento isolado
       }}
     >
       {/* Container do conteúdo */}
@@ -82,7 +83,7 @@ export default function HeroSectionMobile() {
           <button
             type="button"
             onClick={scrollToForm}
-            className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer relative z-50"
+            className="inline-flex items-center justify-center gap-2 bg-white text-green-light w-[189px] h-[48px] rounded-full transition hover:opacity-90 cursor-pointer relative z-[1]" // ALTERADO: z-50 para z-[1] + isolation resolve o problema
             style={{
               fontFamily: '"GT Walsheim", sans-serif',
               fontSize: "14px",
