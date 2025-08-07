@@ -22,9 +22,9 @@ export default function MobileHeader() {
       href: "/servicos/medicina-do-trabalho",
     },
     {
-      label: "Ergonomia e Fisioterapia",
+      label: "Ergonomia",
       icon: "/icons/physiotherapy.svg",
-      href: "/servicos/ergonomia-e-fisioterapia",
+      href: "/servicos/ergonomia",
     },
     {
       label: "Gestão de Terceirizados",

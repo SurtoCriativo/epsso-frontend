@@ -85,7 +85,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/servicos/ergonomia-e-fisioterapia"
+          path="/servicos/ergonomia"
           element={
             <Suspense fallback={<SpinnerLoader message="Carregando..." />}>
               <ErgonomicsAndPhysiotherapy />

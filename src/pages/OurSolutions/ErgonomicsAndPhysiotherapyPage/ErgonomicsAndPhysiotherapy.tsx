@@ -19,43 +19,35 @@ const interactivePoints: {
 }[] = [
   {
     id: 1,
-    top: "37%",
+    top: "32%",
     left: "18%",
     text: "Laudo/análise ergonômica do trabalho – NR 17",
-    position: "right",
-    accordionIndex: 1, // Maps to index 1 in ergonomyConstants
-  },
-  {
-    id: 2,
-    top: "68%",
-    left: "30%",
-    text: "Treinamento – Levantamento e Transporte Manual de Cargas",
-    position: "right",
-    accordionIndex: 4, // Maps to index 4 in ergonomyConstants
-  },
-  {
-    id: 3,
-    top: "41%",
-    left: "46.5%",
-    text: "Avaliação Fisioterapêutica",
-    position: "right",
-    accordionIndex: 5, // Maps to index 5 in ergonomyConstants
-  },
-  {
-    id: 4,
-    top: "23%",
-    left: "58%",
-    text: "Programa de Ginástica Laboral",
     position: "right",
     accordionIndex: 0, // Maps to index 0 in ergonomyConstants
   },
   {
-    id: 5,
-    top: "48%",
-    left: "79%",
-    text: "Escola da Coluna",
+    id: 2,
+    top: "69%",
+    left: "38.5%",
+    text: "Treinamento – Levantamento e Transporte Manual de Cargas",
     position: "right",
-    accordionIndex: 9, // Maps to index 9 in ergonomyConstants
+    accordionIndex: 2, // Maps to index 2 in ergonomyConstants
+  },
+  {
+    id: 3,
+    top: "53%",
+    left: "72%",
+    text: "Assistência em Perídia Judicial",
+    position: "right",
+    accordionIndex: 1, // Maps to index 1 in ergonomyConstants
+  },
+  {
+    id: 4,
+    top: "25%",
+    left: "68%",
+    text: "Palestras, SIPAT e Eventos",
+    position: "right",
+    accordionIndex: 3, // Maps to index 3 in ergonomyConstants
   },
 ];
 
@@ -65,7 +57,7 @@ export default function ErgonomicsAndPhysiotherapy() {
   const hasInteractedRef = useRef(false);
 
   useHtmlMetaData({
-    title: "EPSSO | Ergonomia e Fisioterapia",
+    title: "EPSSO | Ergonomia",
     metaDescription:
       "Com avaliações ergonômicas, orientações de postura, treinamentos e atividades, buscamos aumentar o bem-estar físico e mental dos funcionários, promovendo uma cultura de cuidado contínuo. Confie na EPSSO para criar um espaço de trabalho mais saudável, confortável e preparado para os desafios do mercado.",
   });
@@ -180,7 +172,7 @@ export default function ErgonomicsAndPhysiotherapy() {
 
         {/* image for desktop with interactive images */}
         <img
-          src="/interactive/interactive-ergonomy.webp"
+          src="/interactive/ergonomy.webp"
           alt="Industrial Safety Overview"
           className="w-full max-h-auto object-cover rounded-3xl pb-[80px]"
         />
@@ -247,8 +239,8 @@ export default function ErgonomicsAndPhysiotherapy() {
       </div>
       <ContactForm
         preSelectedSolution="ergonomia"
-        pageSource="Ergonomia e Fisioterapia"
-        successMessage="Obrigado pelo seu interesse por soluções em Ergonomia e Fisioterapia."
+        pageSource="Ergonomia"
+        successMessage="Obrigado pelo seu interesse por soluções em Ergonomia."
       />
     </main>
   );

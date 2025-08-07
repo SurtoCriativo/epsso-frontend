@@ -101,11 +101,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/servicos/ergonomia-e-fisioterapia"
-                  className={linkStyle}
-                >
-                  Ergonomia e Fisioterapia
+                <Link to="/servicos/ergonomia" className={linkStyle}>
+                  Ergonomia
                 </Link>
               </li>
               <li>

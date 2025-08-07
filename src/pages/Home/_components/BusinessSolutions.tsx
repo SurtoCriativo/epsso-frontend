@@ -63,7 +63,7 @@ const solutionsData: SolutionProps[] = [
       <>Segurança não é só uma norma, é um compromisso com a vida</>
     ),
     contentDescription:
-      "Soluções completas para proteger sua equipe: treinamentos, laudos técnicos, CIPA, LTCAT, PPRA, PPRPS, NR 15, NR 16, NR 18, NR 33, NR 35, serviço de assessoria, e mais.",
+      "Soluções completas para proteger sua equipe: treinamentos, laudos técnicos, CIPA, LTCAT, PGR, PPRPS, NR 15, NR 16, NR 18, NR 33, NR 35, serviço de assessoria, e mais.",
     link: "servicos/seguranca-do-trabalho",
     linkText: "Proteger minha equipe agora",
   },
@@ -79,14 +79,14 @@ const solutionsData: SolutionProps[] = [
   },
   {
     id: 3,
-    tabTitle: "Ergonomia e Fisioterapia",
+    tabTitle: "Ergonomia",
     image: "./OurSolutions/ergonomia-e-fisioterapia.webp",
     contentTitle: (
       <>Cuidar da ergonomia é garantir bem-estar e melhores resultados</>
     ),
     contentDescription:
       "Programas e atividades de prevenção, proteção e promoção da Saúde Ocupacional: laudos, análise ergonômica do trabalho, assistência em perícias judiciais, treinamentos, NR 17, entre outros.",
-    link: "/servicos/ergonomia-e-fisioterapia",
+    link: "/servicos/ergonomia",
     linkText: "Melhorar a ergonomia",
   },
   {

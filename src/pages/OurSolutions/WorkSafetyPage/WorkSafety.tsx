@@ -29,7 +29,7 @@ const interactivePoints: {
     id: 2,
     top: "51%",
     left: "60%",
-    text: "PPRA - Programa de Prevenção de Riscos Ambientais",
+    text: "PGR - Programa de Gerenciamento de Riscos",
     position: "right",
     accordionIndex: 3, // Maps to index 3 in workSafetyConstants
   },

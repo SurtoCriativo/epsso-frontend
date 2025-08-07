@@ -67,11 +67,7 @@ export default function ErgonomySection() {
             A qualidade de vida e o bem-estar dos seus colaboradores são
             essenciais para um ambiente de trabalho saudável, produtivo e
             sustentável. Por isso, destacamos a ergonomia e a qualidade de vida
-            como aspectos cruciais na esfera profissional. Contando com um
-            departamento exclusivo de Fisioterapia do Trabalho, nosso time de
-            profissionais desenvolve programas de prevenção, proteção e promoção
-            da saúde, focados em melhorar as condições ergonômicas e prevenir
-            doenças relacionadas ao esforço físico, postura e estresse.
+            como aspectos cruciais na esfera profissional.
           </p>
 
           <p

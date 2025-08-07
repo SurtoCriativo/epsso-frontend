@@ -13,9 +13,8 @@ export const outsourcedManagementConstants = [
     heading: "Para seus Clientes",
     content:
       "Gestão de Ambulatório para Atendimento ao Público\n" +
-      "\u00A0 \u00A0• Montagem e Administração de Ambulatório de Enfermagem para grandes Lojas, Instituições Educacionais, Shopping Centers, Supermercados, etc\n" +
-      "\u00A0 \u00A0• Equipe de profissionais Técnicos, Bombeiros, Enfermeiros, Médicos, Fisioterapeutas, Psicólogos, Nutricionistas, entre outros\n" +
-      "\u00A0 \u00A0• Projeto e instalação de mobiliário e equipamentos / veículos de resgate\n" +
+      "\u00A0 \u00A0• Montagem e Administração de Ambulatório de Enfermagem para grandes Lojas, Instituições Educacionais, Shopping Centers, Supermercados etc\n" +
+      "\u00A0 \u00A0• Equipe de profissionais Técnicos, Bombeiros, Enfermeiros, Médicos,Psicólogos, entre outros\n" +
       "\u00A0 \u00A0• Implantação de Software para Controle Estatístico de Atendimento / Relatório Gerenciais e Operacionais\n",
   },
   {

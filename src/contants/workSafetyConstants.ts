@@ -11,12 +11,12 @@ export const workSafetyConstants = [
   },
   {
     heading:
-      "PPRPS - Programa de Prevenção de Riscos em Prensas e Equipamentos Similiares",
+      "Análise de riscos em prensas e equipamentos similares conforme NR12",
     content:
-      "Aplicado em empresas que utilizam prensas e equipamentos similares em seu sistema de produção. Realização de Treinamentos, de acordo com a NR 12.",
+      "Aplicado em empresas que utilizam prensas e equipamentos similares em seu sistema de produção. Realização de Treinamentos, de acordo com a NR12.",
   },
   {
-    heading: "PPRA - Programa de Prevenção de Riscos Ambientais",
+    heading: "PGR - Programa de Gerenciamento de Riscos",
     content:
       "Com o objetivo de minimizar ou neutralizar os riscos relacionados às atividades ocupacionais. Lei no 6.514/77, combinada com a Portaria 3.214/78 em sua Norma Regulamentadora no 9.",
   },
@@ -43,7 +43,7 @@ export const workSafetyConstants = [
   {
     heading: "Avaliações",
     content:
-      "Avaliações realizadas em complemento ao PPRA, LTCAT ou Laudo Ambiental, com o objetivo de quantificar a intensidade de exposição dos colaboradores a determinado agente químico, físico ou biológico. Amostragens de poeiras, gases e vapores, ruído, vibrações e exposição ao calor.",
+      "Avaliações realizadas em complemento ao PGR, LTCAT ou Laudo Ambiental, com o objetivo de quantificar a intensidade de exposição dos colaboradores a determinado agente químico, físico ou biológico. Amostragens de poeiras, gases e vapores, ruído, vibrações e exposição ao calor.",
   },
   {
     heading: "PCMAT",
@@ -53,7 +53,7 @@ export const workSafetyConstants = [
   {
     heading: "Treinamento para o Designado da CIPA",
     content:
-      "Comissão Interna de Prevenção de Acidentes. Segundo item 5.32.2, treinamento anual de 20 horas, para empresas que não se enquadrem no Quadro I da NR 5.",
+      "“Quando a empresa não se enquadrar no quadro 01 da NR-05, deverá designar um responsável para ser o multiplicador da empresa",
   },
   {
     heading: "Treinamento para Trabalho em Altura",
@@ -74,11 +74,6 @@ export const workSafetyConstants = [
   {
     heading: "Treinamento para Trabalho em Espaço Confinado",
     content:
-      "Treinamento ministrado por Técnico de Segurança do Trabalho, envolvendo parte teórica e prática, com base na NR 33.",
-  },
-  {
-    heading: "Assessoria em Proteção e Combate a Incêndio",
-    content:
-      "Acompanhamento de Regularização junto ao Corpo de Bombeiros. Projetos Técnicos, Laudos e Treinamentos. Obtenção e Renovação do AVCB – Auto de Vistoria do Corpo de Bombeiros.",
+      "Treinamento ministrado por um profissional, envolvendo parte teórica e prática, com base na NR 33.",
   },
 ];

@@ -52,20 +52,6 @@ const testimonials = [
     comment:
       "Temos o cuidado de contratar uma empresa que nos atendesse com perfeição, orientando da melhor forma sobre saúde e qualidade de vida dos colaboradores.",
   },
-  {
-    avatar: "about/avatar-3.svg",
-    name: "Juliana Costa",
-    company: "Empresa XPTO",
-    comment:
-      "Estamos muito satisfeitos com o serviço e o atendimento recebido pela nossa equipe.",
-  },
-  {
-    avatar: "about/avatar-4.svg",
-    name: "Carlos Souza",
-    company: "Indústria ABC",
-    comment:
-      "A parceria tem nos ajudado a reduzir riscos e manter a conformidade.",
-  },
 ];
 
 const TestimonialsDesktop: React.FC = () => {
@@ -99,10 +85,11 @@ const TestimonialsDesktop: React.FC = () => {
       </p>
 
       <div className="relative flex items-center w-full">
+        {/* quanto for utilizar este componente, em className -> remova a classe "hidden" e adicione "flex" no lugar */}
         <button
           onClick={prev}
           aria-label="Voltar"
-          className="w-12 h-12 p-3 bg-green-800 rounded-full flex items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
+          className="hidden w-12 h-12 p-3 bg-green-800 rounded-full items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
         >
           <ArrowLeftIcon className="text-white" />
         </button>
@@ -162,20 +149,22 @@ const TestimonialsDesktop: React.FC = () => {
           </div>
         </div>
 
+        {/* quanto for utilizar este componente, em className -> remova a classe "hidden" e adicione "flex" no lugar */}
         <button
           onClick={next}
           aria-label="Avançar"
-          className="w-12 h-12 p-3 bg-[#005B27] rounded-full flex items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
+          className="hidden w-12 h-12 p-3 bg-[#005B27] rounded-full items-center justify-center hover:brightness-110 transition-colors cursor-pointer"
         >
           <ArrowRightIcon className="text-white" />
         </button>
       </div>
 
+      {/* quanto for utilizar este componente, em className -> remova a classe "hidden" e adicione "flex" no lugar */}
       <div className="flex justify-center mt-6 space-x-2">
         {Array.from({ length: totalPages }).map((_, i) => (
           <div
             key={i}
-            className={`transition-all duration-300 ${
+            className={`hidden transition-all duration-300 ${
               i === currentPage
                 ? "w-2 h-2 rounded-full bg-green-600"
                 : "w-10 h-2 rounded-full bg-green-100"

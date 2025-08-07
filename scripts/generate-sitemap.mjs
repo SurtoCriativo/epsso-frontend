@@ -10,7 +10,7 @@ const routes = [
   "/sobre-a-epsso",
   "/servicos/seguranca-do-trabalho",
   "/servicos/medicina-do-trabalho",
-  "/servicos/ergonomia-e-fisioterapia",
+  "/servicos/ergonomia",
   "/servicos/gestao-de-terceirizados",
   "/servicos/gestao-de-informacoes",
   "/servicos/assessoria-juridica",

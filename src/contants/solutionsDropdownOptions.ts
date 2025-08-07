@@ -14,11 +14,11 @@ export const solutionsOptions = [
     slug: "/servicos/medicina-do-trabalho",
   },
   {
-    icon: "/icons/physiotherapy.svg",
-    title: "Ergonomia e Fisioterapia",
+    icon: "/icons/ergonomy.svg",
+    title: "Ergonomia",
     description:
       "Analisamos e ajustamos postos de trabalho para prevenir lesões e melhorar o conforto dos colaboradores.",
-    slug: "/servicos/ergonomia-e-fisioterapia",
+    slug: "/servicos/ergonomia",
   },
   {
     icon: "/icons/outsource-management.svg",

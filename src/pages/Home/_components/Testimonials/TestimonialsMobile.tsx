@@ -15,20 +15,6 @@ const testimonials = [
     comment:
       "Temos o cuidado de contratar uma empresa que nos atendesse com perfeição, orientando da melhor forma sobre saúde e qualidade de vida dos colaboradores.",
   },
-  {
-    avatar: "about/avatar-3.svg",
-    name: "Juliana Costa",
-    company: "Empresa XPTO",
-    comment:
-      "Estamos muito satisfeitos com o serviço e o atendimento recebido pela nossa equipe.",
-  },
-  {
-    avatar: "about/avatar-4.svg",
-    name: "Carlos Souza",
-    company: "Indústria ABC",
-    comment:
-      "A parceria tem nos ajudado a reduzir riscos e manter a conformidade.",
-  },
 ];
 
 const TestimonialsMobile: React.FC = () => {

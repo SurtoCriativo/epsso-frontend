@@ -6,7 +6,7 @@ export const informationManagementConstants = [
     heading: "Assinatura Digital",
   },
   {
-    heading: "Entrega de EPI",
+    heading: "Gestão de Entrega de EPI",
   },
   {
     heading: "Gestão de Treinamento",
