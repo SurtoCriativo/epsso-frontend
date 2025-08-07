@@ -13,6 +13,7 @@ node_modules
 .env.production
 
 # Editor directories and files
+stats.html
 .vscode/*
 !.vscode/extensions.json
 .idea

@@ -28,7 +28,9 @@
     "react-indiana-drag-scroll": "^2.2.1",
     "react-router-dom": "^7.6.2",
     "react-swipeable": "^7.0.2",
+    "rollup-plugin-visualizer": "^6.0.3",
     "usehooks-ts": "^3.1.1",
+    "vite-plugin-compression": "^0.5.1",
     "zod": "^3.25.67"
   },
   "devDependencies": {
@@ -40,6 +42,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@types/terser": "^3.12.0",
     "@vitejs/plugin-react": "^4.5.2",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
@@ -52,6 +55,7 @@
     "postcss": "^8.5.6",
     "sitemap-generator": "^8.5.1",
     "tailwindcss": "^4.1.11",
+    "terser": "^5.43.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0",

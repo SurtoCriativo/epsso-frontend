@@ -1,0 +1,1 @@
+const e=e=>{const l=e.replace(/\D/g,"");return l.length<=2?l:l.length<=6?`(${l.slice(0,2)}) ${l.slice(2)}`:l.length<=10?`(${l.slice(0,2)}) ${l.slice(2,6)}-${l.slice(6)}`:`(${l.slice(0,2)}) ${l.slice(2,7)}-${l.slice(7,11)}`};export{e as f};
